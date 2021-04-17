@@ -1,0 +1,30 @@
+.boxClassement{
+    color: black;
+    background-color: #CFCFCF;
+}
+.btnEffacer{
+    font-family:Arial;
+    font-size:large;
+    padding: 10px 15px;
+}
+.combo{
+    font-family:Arial;
+    font-size:16px; 
+    padding: 1px 1px;
+}
+.titre {
+    color: black; 
+}
+.separateur {
+    background-color: rgb(88, 85, 85);
+}
+.btnRetour {
+    all: unset; 
+    border: 0px; 
+}
+.btnRetour:hover{
+    box-shadow: none;
+    text-shadow: none;
+    border: 0px; 
+}
+

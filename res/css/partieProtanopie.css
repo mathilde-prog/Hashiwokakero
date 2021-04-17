@@ -1,0 +1,16 @@
+@import url("partieNormal.css");
+
+@define-color highlightProta #ffff00;
+@define-color valideProta #7f2fff;
+@define-color invalideProta #fd3333;
+
+#lbl_interface_gras_important{color: @invalideProta}
+#btn_grille_highlighted {background: radial-gradient(closest-side, @highlightProta 83%, rgba(0,0,0,0));}
+#btn_grille_highlighted:hover {background: radial-gradient(closest-side, @highlightProta 83%, rgba(0,0,0,0));}
+#btn_grille_highlighted:active{background: radial-gradient(closest-side, @highlightProta 83%, rgba(0,0,0,0));}
+#btn_grille_valide {background: radial-gradient(closest-side, @valideProta 83%, rgba(0,0,0,0));}
+#btn_grille_valide:hover {background: radial-gradient(closest-side, @valideProta 83%, rgba(0,0,0,0));}
+#btn_grille_valide:active{background: radial-gradient(closest-side, @valideProta 83%, rgba(0,0,0,0));}
+#btn_grille_invalide {background: radial-gradient(closest-side, @invalideProta 83%, rgba(0,0,0,0));}
+#btn_grille_invalide:hover {background: radial-gradient(closest-side, @invalideProta 83%, rgba(0,0,0,0));}
+#btn_grille_invalide:active{background: radial-gradient(closest-side, @invalideProta 83%, rgba(0,0,0,0));}

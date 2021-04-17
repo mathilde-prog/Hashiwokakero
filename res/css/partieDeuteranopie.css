@@ -1,0 +1,16 @@
+@import url("partieNormal.css");
+
+@define-color highlightDeute #ffff00;
+@define-color valideDeute #00B9F2;
+@define-color invalideDeute #4AAE56;
+
+#lbl_interface_gras_important{color: @invalideDeute}
+#btn_grille_highlighted {background: radial-gradient(closest-side, @highlightDeute 83%, rgba(0,0,0,0));}
+#btn_grille_highlighted:hover {background: radial-gradient(closest-side, @highlightDeute 83%, rgba(0,0,0,0));}
+#btn_grille_highlighted:active{background: radial-gradient(closest-side, @highlightDeute 83%, rgba(0,0,0,0));}
+#btn_grille_valide {background: radial-gradient(closest-side, @valideDeute 83%, rgba(0,0,0,0));}
+#btn_grille_valide:hover {background: radial-gradient(closest-side, @valideDeute 83%, rgba(0,0,0,0));}
+#btn_grille_valide:active{background: radial-gradient(closest-side, @valideDeute 83%, rgba(0,0,0,0));}
+#btn_grille_invalide {background: radial-gradient(closest-side, @invalideDeute 83%, rgba(0,0,0,0));}
+#btn_grille_invalide:hover {background: radial-gradient(closest-side, @invalideDeute 83%, rgba(0,0,0,0));}
+#btn_grille_invalide:active{background: radial-gradient(closest-side, @invalideDeute 83%, rgba(0,0,0,0));}

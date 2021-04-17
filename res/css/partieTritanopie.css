@@ -1,0 +1,16 @@
+@import url("partieNormal.css");
+
+@define-color highlightTrita #ebc700;
+@define-color valideTrita #029e0f;
+@define-color invalideTrita #fd3333;
+
+#lbl_interface_gras_important{color: @invalideTrita}
+#btn_grille_highlighted {background: radial-gradient(closest-side, @highlightTrita 83%, rgba(0,0,0,0));}
+#btn_grille_highlighted:hover {background: radial-gradient(closest-side, @highlightTrita 83%, rgba(0,0,0,0));}
+#btn_grille_highlighted:active{background: radial-gradient(closest-side, @highlightTrita 83%, rgba(0,0,0,0));}
+#btn_grille_valide {background: radial-gradient(closest-side, @valideTrita 83%, rgba(0,0,0,0));}
+#btn_grille_valide:hover {background: radial-gradient(closest-side, @valideTrita 83%, rgba(0,0,0,0));}
+#btn_grille_valide:active{background: radial-gradient(closest-side, @valideTrita 83%, rgba(0,0,0,0));}
+#btn_grille_invalide {background: radial-gradient(closest-side, @invalideTrita 83%, rgba(0,0,0,0));}
+#btn_grille_invalide:hover {background: radial-gradient(closest-side, @invalideTrita 83%, rgba(0,0,0,0));}
+#btn_grille_invalide:active{background: radial-gradient(closest-side, @invalideTrita 83%, rgba(0,0,0,0));}

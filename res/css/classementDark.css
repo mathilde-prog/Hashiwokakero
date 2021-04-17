@@ -1,0 +1,33 @@
+.boxClassement {
+    color: #FFFFFF;
+    background-color: #212121;
+}
+.combo{
+    font-family:Arial;
+    font-size:16px;
+    padding: 1px 1px;
+}
+.btnEffacer{
+    font-family:Arial;
+    font-size:large;
+    padding: 10px 15px;
+    color: black; 
+}
+.separateur {
+    background-color:#58534e;
+}
+.btnRetour{
+    padding: 1px 1px;
+}
+.btnRetour {
+    all: unset; 
+    border: 0px; 
+}
+.btnRetour:hover{
+    box-shadow: none;
+    text-shadow: none;
+    border: 0px; 
+}
+.titre {
+    color: white; 
+}

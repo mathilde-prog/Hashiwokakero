@@ -1,0 +1,41 @@
+@import url("partieLight.css");
+
+@define-color highlightNorm #ffff00;
+@define-color valideNorm #7CFC00;
+@define-color invalideNorm #fd3333;
+
+#ConseilsTextView{font-size: 1.5em}
+#lbl_interface{font-size: 1.3em}
+#lbl_interface_italic{font-size: 1.3em; font-style: italic}
+#lbl_interface_gras{font-size: 1.3em; font-weight: bold}
+#lbl_interface_gras_important{font-size: 1.3em; font-weight: bold; color: @invalideNorm}
+#btn_interface{font-size: 1.6em}
+#btn_grille {all : unset;}
+#btn_grille {padding:0px;margin:0px;border:0px;min-width:0px;}
+#btn_grille:hover {all: unset;}
+#btn_grille:hover{box-shadow: none;text-shadow: none;border:0px;min-width:0px; }
+#btn_grille:active {all : unset;}
+#btn_grille:active{background: rgba(0,0,0,0);}
+#btn_grille_highlighted {all : unset;}
+#btn_grille_highlighted {background:radial-gradient(closest-side, @highlightNorm 83%, rgba(0,0,0,0));padding:0px;margin:0px;border:0px;min-width:0px;}
+#btn_grille_highlighted:hover {all: unset;}
+#btn_grille_highlighted:hover {background:radial-gradient(closest-side, @highlightNorm 83%, rgba(0,0,0,0));box-shadow: none;text-shadow: none;border:0px;min-width:0px; }
+#btn_grille_highlighted:active {all : unset;}
+#btn_grille_highlighted:active{background:radial-gradient(closest-side, @highlightNorm 83%, rgba(0,0,0,0));}
+#btn_grille_valide {all : unset;}
+#btn_grille_valide {background:radial-gradient(closest-side, @valideNorm 83%, rgba(0,0,0,0));padding:0px;margin:0px;border:0px;min-width:0px;}
+#btn_grille_valide:hover {all: unset;}
+#btn_grille_valide:hover {background:radial-gradient(closest-side, @valideNorm 83%, rgba(0,0,0,0));box-shadow: none;text-shadow: none;border:0px;min-width:0px; }
+#btn_grille_valide:active {all : unset;}
+#btn_grille_valide:active{background:radial-gradient(closest-side, @valideNorm 83%, rgba(0,0,0,0));}
+#btn_grille_invalide {all : unset;}
+#btn_grille_invalide {background:radial-gradient(closest-side, @invalideNorm 83%, rgba(0,0,0,0));padding:0px;margin:0px;border:0px;min-width:0px;}
+#btn_grille_invalide:hover {all: unset;}
+#btn_grille_invalide:hover {background:radial-gradient(closest-side, @invalideNorm 83%, rgba(0,0,0,0));box-shadow: none;text-shadow: none;border:0px;min-width:0px; }
+#btn_grille_invalide:active {all : unset;}
+#btn_grille_invalide:active{background:radial-gradient(closest-side, @invalideNorm 83%, rgba(0,0,0,0));}
+#btn_grille_ile {all : unset;}
+#btn_grille_ile {padding:0px;margin:0px;border:0px;min-width:0px;}
+#btn_grille_ile:hover {all: unset;}
+#btn_grille_ile:hover{box-shadow: none;text-shadow: none;border:0px;min-width:0px; }
+#btn_grille_ile:active {all : unset;}

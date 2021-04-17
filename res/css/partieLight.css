@@ -1,0 +1,11 @@
+@define-color backgroundLight #CFCFCF;
+@define-color texteLight #000000;
+
+#box_contenu{background: @backgroundLight; border:10px solid @backgroundLight;}
+#box_ingame{background: @backgroundLight; border:100px solid @backgroundLight;}
+#lbl_interface{color:@texteLight}
+#lbl_interface_italic{color:@texteLight}
+#lbl_interface_gras{color:@texteLight}
+#btn_grille_ile {background: radial-gradient(closest-side, @backgroundLight 83%, rgba(0,0,0,0));}
+#btn_grille_ile:hover {background: radial-gradient(closest-side, @backgroundLight 83%, rgba(0,0,0,0));}
+#btn_grille_ile:active {background: radial-gradient(closest-side, @backgroundLight 83%, rgba(0,0,0,0));}
