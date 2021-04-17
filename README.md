@@ -1,4 +1,4 @@
-# Hashiwokakero" 
+# Hashiwokakero
 
 Projet réalisé en 3ème année de licence informatique avec une équipe de 7 personnes dans le cadre du module Génie Logiciel 2. 
 Conception et réalisation d'une application permettant la résolution et l'aide à la résolution de puzzles de type Hashi. 
