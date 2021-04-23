@@ -16,3 +16,9 @@ Apprendre à travailler en équipe, pratiquer les différentes phases de la conc
 * PROUDY Julien
 * UFACIK Fatih
 
+## Pré-requis 
+* Ruby 2.7 ou Ruby 3.x
+* Avoir installé les Ruby gems suivantes : gtk3, activerecord, sqlite3
+
+## Lancement 
+Exécuter le fichier Alias_Lancement.rb situé dans src
