@@ -388,7 +388,7 @@ class Aide
             end
 
             if((ileVoisineQuiManque1Pont == 1) && (voisinesCorrectementReliee == ile.nbVoisins()-1))
-                conseil = Conseil.nouveau("Cette île peut être reliée avec son île voisine par un pont simple supplémentaire sans problème",3)
+                conseil = Conseil.nouveau("On remarque qu'une île peut être reliée avec son île voisine par un pont simple supplémentaire sans problème",3)
                 conseil.ajoutIleConcernee(ile)
                 @listeDesConseils.push(conseil) 
             end
@@ -416,7 +416,7 @@ class Aide
 
             if(voisinesBloqueesOuRemplies.uniq.length() == ile.nbVoisins()) 
                 voisinesBloqueesOuRemplies.clear(); 
-                conseil = Conseil.nouveau("Cette île ne peut être reliée à aucune autre île, il faut revoir les ponts de ses îles voisines",0)
+                conseil = Conseil.nouveau("On remarque qu'une île ne peut être reliée à aucune autre île, il faut revoir les ponts de ses îles voisines",0)
                 conseil.ajoutIleConcernee(ile)
                 @listeDesConseils.push(conseil) 
             end  

@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Classement - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/navigation.js" defer></script>
+<script src="./js/search.js" defer></script>
+<script src="./js/search_index.js" defer></script>
+<script src="./js/searcher.js" defer></script>
+<script src="./js/darkfish.js" defer></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+<div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  <p class="link">Gtk::Builder
+</div>
+
+    
+    
+    
+<!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    <li ><a href="#method-c-creeSiBesoinBDDClassement">::creeSiBesoinBDDClassement</a>
+    <li ><a href="#method-c-creer">::creer</a>
+    <li class="calls-super" ><a href="#method-c-new">::new</a>
+    <li ><a href="#method-i-actualiseTableauDesScores">#actualiseTableauDesScores</a>
+    <li ><a href="#method-i-calculRang">#calculRang</a>
+    <li ><a href="#method-i-effaceClassement">#effaceClassement</a>
+    <li ><a href="#method-i-gereVisibiliteDifficulte">#gereVisibiliteDifficulte</a>
+    <li ><a href="#method-i-retourMenu">#retourMenu</a>
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Classement">
+  <h1 id="class-Classement" class="class">
+    class Classement
+  </h1>
+
+  <section class="description">
+    
+<p>La classe <a href="Classement.html"><code>Classement</code></a> représente le classement et son interface.  Cette classe contient les variables d&#39;instances suivantes : </p>
+<dl class="rdoc-list note-list"><dt>@fenetre
+<dd>
+<p>Fenêtre pour intégrer l&#39;interface du classement </p>
+</dd><dt>@boxClassement
+<dd>
+<p>Box qui contient l&#39;interface du classement </p>
+</dd><dt>@boxMenu
+<dd>
+<p>Box qui contient le menu qui appelle le classement </p>
+</dd><dt>@ancienTitre
+<dd>
+<p>Titre du menu qui appelle le classement</p>
+</dd><dt>@scrolledWindow
+<dd>
+<p>Fenêtre défilable pour les données du classement </p>
+</dd><dt>@listeDonneesClassement
+<dd>
+<p>Liste pour stocker les données du classement </p>
+</dd><dt>@zoneDonneesClassement
+<dd>
+<p>Zone d&#39;affichage des données du classement </p>
+</dd><dt>@messageClassement
+<dd>
+<p>Zone pour le message du classement </p>
+</dd><dt>@bufferMessageClassement
+<dd>
+<p>Buffer qui contient le texte du message du classement </p>
+</dd><dt>@btnRetourMenu
+<dd>
+<p>Bouton pour retourner au menu </p>
+</dd><dt>@boutonEffacer
+<dd>
+<p>Bouton pour effacer les scores </p>
+</dd><dt>@comboBoxMode
+<dd>
+<p>Combobox pour choisir le mode </p>
+</dd><dt>@comboBoxDifficulte
+<dd>
+<p>Combobox pour choisir la difficulté</p>
+</dd><dt>@etiquetteDifficulte
+<dd>
+<p>Etiquette “Difficulté”</p>
+</dd><dt>@pseudo
+<dd>
+<p>Pseudo du joueur qui regarde le classement </p>
+</dd><dt>@nbJoueursDansLeClassement
+<dd>
+<p>Nombre de joueurs dans le classement</p>
+</dd></dl>
+
+  </section>
+
+  <section id="5Buntitled-5D" class="documentation-section">
+
+
+
+
+
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+      <div id="method-c-creeSiBesoinBDDClassement" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">creeSiBesoinBDDClassement</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Crée la base de données classement si elle n&#39;existe pas</p>
+
+          <div class="method-source-code" id="creeSiBesoinBDDClassement-source">
+            <pre><span class="ruby-comment"># File Interface/interfaceClassement.rb, line 156</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Classement</span>.<span class="ruby-identifier ruby-title">creeSiBesoinBDDClassement</span> 
+        <span class="ruby-keyword">begin</span>
+                <span class="ruby-identifier">db</span> = <span class="ruby-constant">SQLite3</span><span class="ruby-operator">::</span><span class="ruby-constant">Database</span>.<span class="ruby-identifier">open</span> <span class="ruby-string">&quot;../res/database/classement.db&quot;</span>
+                <span class="ruby-identifier">db</span>.<span class="ruby-identifier">execute</span> <span class="ruby-string">&quot;CREATE TABLE IF NOT EXISTS classement_libres (pseudo TEXT, score NUMERIC, difficulte NUMERIC);&quot;</span>
+                <span class="ruby-identifier">db</span>.<span class="ruby-identifier">execute</span> <span class="ruby-string">&quot;CREATE TABLE IF NOT EXISTS classement_puzzle_rushes (pseudo TEXT, score NUMERIC);&quot;</span>
+                <span class="ruby-identifier">db</span>.<span class="ruby-identifier">execute</span> <span class="ruby-string">&quot;CREATE TABLE IF NOT EXISTS classement_progressifs (pseudo TEXT, score NUMERIC);&quot;</span>         
+        <span class="ruby-keyword">rescue</span> <span class="ruby-constant">SQLite3</span><span class="ruby-operator">::</span><span class="ruby-constant">Exception</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">e</span> 
+                <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Exception occurred&quot;</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-identifier">e</span>
+        <span class="ruby-keyword">ensure</span>
+                <span class="ruby-identifier">db</span>.<span class="ruby-identifier">close</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">db</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-c-creer" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">creer</span><span
+            class="method-args">(pseudoJoueur, fenetreMenu, boxMenu)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Création du classement </p>
+<ul><li>
+<p><code>pseudoJoueur</code> - Pseudo du joueur qui regarde le classement </p>
+</li><li>
+<p><code>fenetreMenu</code> - Fenêtre du menu qui appelle le classement </p>
+</li><li>
+<p><code>boxMenu</code> - Box qui contient le menu qui appelle le classement</p>
+</li></ul>
+
+          <div class="method-source-code" id="creer-source">
+            <pre><span class="ruby-comment"># File Interface/interfaceClassement.rb, line 42</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Classement</span>.<span class="ruby-identifier ruby-title">creer</span>(<span class="ruby-identifier">pseudoJoueur</span>, <span class="ruby-identifier">fenetreMenu</span>, <span class="ruby-identifier">boxMenu</span>)
+        <span class="ruby-identifier">new</span>(<span class="ruby-identifier">pseudoJoueur</span>, <span class="ruby-identifier">fenetreMenu</span>, <span class="ruby-identifier">boxMenu</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-c-new" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(pseudoJoueur, fenetreMenu, boxMenu)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Méthode d&#39;initialisation du classement </p>
+<ul><li>
+<p><code>pseudoJoueur</code> - Pseudo du joueur qui regarde le classement </p>
+</li><li>
+<p><code>fenetreMenu</code> - Fenêtre du menu qui appelle le classement </p>
+</li><li>
+<p><code>boxMenu</code> - Box qui contient le menu qui appelle le classement</p>
+</li></ul>
+            <div class="method-calls-super">
+              Calls superclass method
+              
+            </div>
+
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File Interface/interfaceClassement.rb, line 50</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span> (<span class="ruby-identifier">pseudoJoueur</span>, <span class="ruby-identifier">fenetreMenu</span>, <span class="ruby-identifier">boxMenu</span>)
+    <span class="ruby-keyword">super</span>()
+    
+        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">add_from_file</span>(<span class="ruby-keyword">__FILE__</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-string">&quot;.rb&quot;</span>,<span class="ruby-string">&quot;.glade&quot;</span>))
+        <span class="ruby-comment"># Création d&#39;une variable d&#39;instance par composant identifié dans glade</span>
+        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">objects</span>.<span class="ruby-identifier">each</span>() { <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span>     
+                        <span class="ruby-keyword">unless</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">builder_name</span>.<span class="ruby-identifier">start_with?</span>(<span class="ruby-string">&quot;___object&quot;</span>) 
+                                <span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-node">&quot;@#{p.builder_name}&quot;</span>.<span class="ruby-identifier">intern</span>, <span class="ruby-keyword">self</span>[<span class="ruby-identifier">p</span>.<span class="ruby-identifier">builder_name</span>]) 
+                        <span class="ruby-keyword">end</span>
+        }
+        
+        <span class="ruby-comment"># On connecte les signaux aux méthodes (qui doivent exister)</span>
+        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">connect_signals</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">handler</span><span class="ruby-operator">|</span> 
+                        <span class="ruby-keyword">begin</span>
+                                <span class="ruby-identifier">method</span>(<span class="ruby-identifier">handler</span>) 
+                        <span class="ruby-keyword">rescue</span>      
+                                <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;\t\t[Attention] Vous devez définir la méthode #{handler} :\n\t\t\tdef #{handler}\n\t\t\t\t....\n\t\t\tend\n&quot;</span>
+                                <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">send</span>( <span class="ruby-value">:define_method</span>, <span class="ruby-identifier">handler</span>.<span class="ruby-identifier">intern</span>) {
+                                        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;La méthode #{handler} n&#39;est pas encore définie.. Arrêt&quot;</span>
+                                        <span class="ruby-constant">Gtk</span>.<span class="ruby-identifier">main_quit</span>
+                                }
+                                <span class="ruby-keyword">retry</span>
+                        <span class="ruby-keyword">end</span>
+        }     
+
+        <span class="ruby-comment">#Configuration globale de la fenêtre</span>
+        <span class="ruby-ivar">@fenetre</span> = <span class="ruby-identifier">fenetreMenu</span>
+        <span class="ruby-ivar">@ancienTitre</span> = <span class="ruby-ivar">@fenetre</span>.<span class="ruby-identifier">title</span>;
+        <span class="ruby-ivar">@fenetre</span>.<span class="ruby-identifier">set_title</span>(<span class="ruby-string">&quot;Hashi - Tableau des scores&quot;</span>)
+        <span class="ruby-ivar">@fenetre</span>.<span class="ruby-identifier">add</span>(<span class="ruby-ivar">@boxClassement</span>)
+
+        <span class="ruby-ivar">@boxMenu</span> = <span class="ruby-identifier">boxMenu</span>
+
+        <span class="ruby-comment"># On applique le bon CSS selon le thème (clair ou sombre).</span>
+        <span class="ruby-constant">Theme</span>.<span class="ruby-identifier">themeClassementAppliquer</span>(<span class="ruby-ivar">@btnRetourMenu</span>)
+
+        <span class="ruby-comment"># Création de 3 colonnes (classement / pseudo / score) pour la zone des données du classement</span>
+        <span class="ruby-ivar">@listeDonneesClassement</span> = <span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">ListStore</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">String</span>, <span class="ruby-constant">String</span>, <span class="ruby-constant">String</span>)
+        <span class="ruby-ivar">@zoneDonneesClassement</span> = <span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">TreeView</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@listeDonneesClassement</span>)
+        <span class="ruby-identifier">renderer</span> = <span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">CellRendererText</span>.<span class="ruby-identifier">new</span>
+
+        <span class="ruby-comment"># Colonne Classement</span>
+        <span class="ruby-identifier">column</span> = <span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">TreeViewColumn</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Classement&quot;</span>,<span class="ruby-identifier">renderer</span>, <span class="ruby-value">:text</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">0</span>)
+        <span class="ruby-identifier">column</span>.<span class="ruby-identifier">resizable</span> = <span class="ruby-keyword">false</span>
+        <span class="ruby-identifier">column</span>.<span class="ruby-identifier">expand</span> = <span class="ruby-keyword">true</span> 
+        <span class="ruby-ivar">@zoneDonneesClassement</span>.<span class="ruby-identifier">append_column</span>(<span class="ruby-identifier">column</span>)
+
+        <span class="ruby-comment"># Colonne Pseudo</span>
+        <span class="ruby-identifier">column</span> = <span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">TreeViewColumn</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Pseudo&quot;</span>,<span class="ruby-identifier">renderer</span>, <span class="ruby-value">:text</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">1</span>)
+        <span class="ruby-identifier">column</span>.<span class="ruby-identifier">resizable</span> = <span class="ruby-keyword">false</span>
+        <span class="ruby-identifier">column</span>.<span class="ruby-identifier">expand</span> = <span class="ruby-keyword">true</span> 
+        <span class="ruby-ivar">@zoneDonneesClassement</span>.<span class="ruby-identifier">append_column</span>(<span class="ruby-identifier">column</span>)
+
+        <span class="ruby-comment"># Colonne Score</span>
+        <span class="ruby-identifier">column</span> = <span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">TreeViewColumn</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Score&quot;</span>,<span class="ruby-identifier">renderer</span>, <span class="ruby-value">:text</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">2</span>)
+        <span class="ruby-identifier">column</span>.<span class="ruby-identifier">resizable</span> = <span class="ruby-keyword">false</span>
+        <span class="ruby-identifier">column</span>.<span class="ruby-identifier">expand</span> = <span class="ruby-keyword">true</span> 
+        <span class="ruby-ivar">@zoneDonneesClassement</span>.<span class="ruby-identifier">append_column</span>(<span class="ruby-identifier">column</span>)
+
+        <span class="ruby-ivar">@scrolledWindow</span>.<span class="ruby-identifier">add_with_viewport</span>(<span class="ruby-ivar">@zoneDonneesClassement</span>)
+        <span class="ruby-ivar">@zoneDonneesClassement</span>.<span class="ruby-identifier">show_all</span>
+
+        <span class="ruby-comment"># Buffer pour le message du classement</span>
+<span class="ruby-ivar">@bufferMessageClassement</span> = <span class="ruby-ivar">@messageClassement</span>.<span class="ruby-identifier">buffer</span>
+
+        <span class="ruby-ivar">@pseudo</span> = <span class="ruby-identifier">pseudoJoueur</span> 
+        <span class="ruby-ivar">@nbJoueursDansLeClassement</span> = <span class="ruby-value">0</span>
+
+        <span class="ruby-identifier">actualiseTableauDesScores</span>(); 
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+    </section>
+
+     <section id="private-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Private Instance Methods</h3>
+       </header>
+
+      <div id="method-i-actualiseTableauDesScores" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">actualiseTableauDesScores</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Actualise le tableau des scores</p>
+
+          <div class="method-source-code" id="actualiseTableauDesScores-source">
+            <pre><span class="ruby-comment"># File Interface/interfaceClassement.rb, line 182</span>
+        <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">actualiseTableauDesScores</span> <span class="ruby-comment">#:doc:</span>
+        <span class="ruby-identifier">gereVisibiliteDifficulte</span>()    
+        
+        <span class="ruby-comment"># # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #</span>
+        <span class="ruby-comment"># Récupération des données du classement selon ce que l&#39;utilisateur choisit dans la ou les combobox #</span>
+        <span class="ruby-comment"># # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #</span>
+        <span class="ruby-keyword">case</span> <span class="ruby-ivar">@comboBoxMode</span>.<span class="ruby-identifier">active_iter</span>[<span class="ruby-value">0</span>] 
+        <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;Libre&quot;</span> 
+                <span class="ruby-comment"># Récupération des tableaux contenant les pseudos et scores à partir de la classe ClassementLibre</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-ivar">@comboBoxDifficulte</span>.<span class="ruby-identifier">active_iter</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&quot;Facile&quot;</span>
+                        <span class="ruby-identifier">tableauPseudos</span> = <span class="ruby-constant">ClassementLibre</span>.<span class="ruby-identifier">recupereTableauPseudos</span>(<span class="ruby-value">1</span>)
+                        <span class="ruby-identifier">tableauScores</span> = <span class="ruby-constant">ClassementLibre</span>.<span class="ruby-identifier">recupereTableauScores</span>(<span class="ruby-value">1</span>)
+                <span class="ruby-keyword">elsif</span> <span class="ruby-ivar">@comboBoxDifficulte</span>.<span class="ruby-identifier">active_iter</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&quot;Moyen&quot;</span>
+                        <span class="ruby-identifier">tableauPseudos</span> = <span class="ruby-constant">ClassementLibre</span>.<span class="ruby-identifier">recupereTableauPseudos</span>(<span class="ruby-value">2</span>)
+                        <span class="ruby-identifier">tableauScores</span> = <span class="ruby-constant">ClassementLibre</span>.<span class="ruby-identifier">recupereTableauScores</span>(<span class="ruby-value">2</span>)
+                <span class="ruby-keyword">else</span> <span class="ruby-ivar">@comboBoxDifficulte</span>.<span class="ruby-identifier">active_iter</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&quot;Difficile&quot;</span>
+                        <span class="ruby-identifier">tableauPseudos</span> = <span class="ruby-constant">ClassementLibre</span>.<span class="ruby-identifier">recupereTableauPseudos</span>(<span class="ruby-value">3</span>)
+                        <span class="ruby-identifier">tableauScores</span> = <span class="ruby-constant">ClassementLibre</span>.<span class="ruby-identifier">recupereTableauScores</span>(<span class="ruby-value">3</span>)
+                <span class="ruby-keyword">end</span> 
+
+        <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;Progressif&quot;</span>
+                <span class="ruby-comment"># Récupération des tableaux contenant les pseudos et scores à partir de la classe ClassementProgressif</span>
+                <span class="ruby-identifier">tableauPseudos</span> = <span class="ruby-constant">ClassementProgressif</span>.<span class="ruby-identifier">recupereTableauPseudos</span>()
+                <span class="ruby-identifier">tableauScores</span> = <span class="ruby-constant">ClassementProgressif</span>.<span class="ruby-identifier">recupereTableauScores</span>()
+
+        <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;Puzzle Rush&quot;</span>
+                <span class="ruby-comment"># Récupération des tableaux contenant les pseudos et scores à partir de la classe ClassementPuzzleRush</span>
+                <span class="ruby-identifier">tableauPseudos</span> = <span class="ruby-constant">ClassementPuzzleRush</span>.<span class="ruby-identifier">recupereTableauPseudos</span>()
+                <span class="ruby-identifier">tableauScores</span> = <span class="ruby-constant">ClassementPuzzleRush</span>.<span class="ruby-identifier">recupereTableauScores</span>()
+        <span class="ruby-keyword">end</span> 
+
+        <span class="ruby-comment"># # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #</span>
+        <span class="ruby-comment"># Affichage du rang, du pseudo et du score de chaque joueur qui figure dans le classement #</span>
+        <span class="ruby-comment"># # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #</span>
+        <span class="ruby-ivar">@nbJoueursDansLeClassement</span> = <span class="ruby-identifier">tableauPseudos</span>.<span class="ruby-identifier">length</span>()
+        <span class="ruby-ivar">@listeDonneesClassement</span>.<span class="ruby-identifier">clear</span>
+
+        <span class="ruby-comment"># Cas classement vide - aucune donnée</span>
+        <span class="ruby-keyword">if</span>(<span class="ruby-ivar">@nbJoueursDansLeClassement</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>)
+                <span class="ruby-identifier">iter</span> = <span class="ruby-ivar">@listeDonneesClassement</span>.<span class="ruby-identifier">append</span>
+                <span class="ruby-identifier">iter</span>[<span class="ruby-value">0</span>] = <span class="ruby-string">&quot;N/A&quot;</span>
+                <span class="ruby-identifier">iter</span>[<span class="ruby-value">1</span>] = <span class="ruby-string">&quot;N/A&quot;</span>
+                <span class="ruby-identifier">iter</span>[<span class="ruby-value">2</span>] = <span class="ruby-string">&quot;N/A&quot;</span>
+        <span class="ruby-keyword">else</span> 
+                <span class="ruby-comment"># Ajoute les rangs, pseudos et scores des joueurs à la liste des données du classement</span>
+                <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-ivar">@nbJoueursDansLeClassement</span><span class="ruby-value">-1</span>
+                        <span class="ruby-identifier">iter</span> = <span class="ruby-ivar">@listeDonneesClassement</span>.<span class="ruby-identifier">append</span>
+                        <span class="ruby-identifier">iter</span>[<span class="ruby-value">0</span>] = (<span class="ruby-identifier">i</span><span class="ruby-value">+1</span>).<span class="ruby-identifier">to_s</span> <span class="ruby-comment"># Rang</span>
+                        <span class="ruby-identifier">iter</span>[<span class="ruby-value">1</span>] = <span class="ruby-identifier">tableauPseudos</span>[<span class="ruby-identifier">i</span>] <span class="ruby-comment"># Pseudo</span>
+                        <span class="ruby-identifier">iter</span>[<span class="ruby-value">2</span>] = <span class="ruby-identifier">tableauScores</span>[<span class="ruby-identifier">i</span>] <span class="ruby-comment"># Score</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span> 
+
+        <span class="ruby-comment"># Calcule le rang du joueur qui regarde le classement et lui affiche un message</span>
+        <span class="ruby-identifier">calculRang</span>(<span class="ruby-identifier">tableauPseudos</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-calculRang" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">calculRang</span><span
+            class="method-args">(tableauPseudos)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Calcule le rang du joueur qui regarde le classement et affiche un message sur l&#39;interface </p>
+<ul><li>
+<p><code>tableauPseudos</code> - Tableau contenant les pseudos</p>
+</li></ul>
+
+          <div class="method-source-code" id="calculRang-source">
+            <pre><span class="ruby-comment"># File Interface/interfaceClassement.rb, line 241</span>
+        <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">calculRang</span>(<span class="ruby-identifier">tableauPseudos</span>) <span class="ruby-comment">#:doc:</span>
+
+        <span class="ruby-keyword">if</span>(<span class="ruby-ivar">@nbJoueursDansLeClassement</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>)
+                <span class="ruby-ivar">@bufferMessageClassement</span>.<span class="ruby-identifier">set_text</span>(<span class="ruby-string">&quot;Il n&#39;y pas de classement pour ce mode.\n&quot;</span>)
+        <span class="ruby-keyword">else</span> 
+                <span class="ruby-identifier">ind</span> = <span class="ruby-identifier">tableauPseudos</span>.<span class="ruby-identifier">index</span>(<span class="ruby-ivar">@pseudo</span>)
+                <span class="ruby-keyword">if</span>(<span class="ruby-identifier">ind</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>)
+                        <span class="ruby-ivar">@bufferMessageClassement</span>.<span class="ruby-identifier">set_text</span>(<span class="ruby-string">&quot;Vous n&#39;apparaissez pas dans ce classement.\n&quot;</span>)
+                <span class="ruby-keyword">elsif</span> ((<span class="ruby-identifier">ind</span><span class="ruby-value">+1</span>) <span class="ruby-operator">==</span> <span class="ruby-value">1</span>)
+                        <span class="ruby-ivar">@bufferMessageClassement</span>.<span class="ruby-identifier">set_text</span>(<span class="ruby-string">&quot;Bravo, vous êtes le numéro 1 à ce classement !&quot;</span>)
+                <span class="ruby-keyword">else</span>
+                       <span class="ruby-ivar">@bufferMessageClassement</span>.<span class="ruby-identifier">set_text</span>(<span class="ruby-string">&quot;Pour ce classement, vous êtes &quot;</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">ind</span><span class="ruby-value">+1</span>).<span class="ruby-identifier">to_s</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;ème sur &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@nbJoueursDansLeClassement</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;.&quot;</span>)
+                <span class="ruby-keyword">end</span> 
+        <span class="ruby-keyword">end</span> 
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-effaceClassement" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">effaceClassement</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Efface le classement sélectionné par le joueur</p>
+
+          <div class="method-source-code" id="effaceClassement-source">
+            <pre><span class="ruby-comment"># File Interface/interfaceClassement.rb, line 129</span>
+        <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">effaceClassement</span> <span class="ruby-comment">#:doc:</span>
+        <span class="ruby-comment"># Affichage particulier dans l&#39;interface quand le classement est effacé</span>
+        <span class="ruby-ivar">@bufferMessageClassement</span>.<span class="ruby-identifier">set_text</span>(<span class="ruby-string">&quot;Il n&#39;y pas de classement pour ce mode.\n&quot;</span>)
+        <span class="ruby-ivar">@listeDonneesClassement</span>.<span class="ruby-identifier">clear</span> 
+        <span class="ruby-identifier">iter</span> = <span class="ruby-ivar">@listeDonneesClassement</span>.<span class="ruby-identifier">append</span> 
+        <span class="ruby-identifier">iter</span>[<span class="ruby-value">0</span>] = <span class="ruby-string">&quot;N/A&quot;</span>
+        <span class="ruby-identifier">iter</span>[<span class="ruby-value">1</span>] = <span class="ruby-string">&quot;N/A&quot;</span>
+        <span class="ruby-identifier">iter</span>[<span class="ruby-value">2</span>] = <span class="ruby-string">&quot;N/A&quot;</span>
+
+        <span class="ruby-comment"># Efface le classement dans la base de données</span>
+        <span class="ruby-keyword">case</span> <span class="ruby-ivar">@comboBoxMode</span>.<span class="ruby-identifier">active_iter</span>[<span class="ruby-value">0</span>] 
+        <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;Libre&quot;</span> 
+                <span class="ruby-keyword">if</span> <span class="ruby-ivar">@comboBoxDifficulte</span>.<span class="ruby-identifier">active_iter</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&quot;Facile&quot;</span>
+                        <span class="ruby-constant">ClassementLibre</span>.<span class="ruby-identifier">effaceNiveau</span>(<span class="ruby-value">1</span>)
+                <span class="ruby-keyword">elsif</span> <span class="ruby-ivar">@comboBoxDifficulte</span>.<span class="ruby-identifier">active_iter</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&quot;Moyen&quot;</span>
+                        <span class="ruby-constant">ClassementLibre</span>.<span class="ruby-identifier">effaceNiveau</span>(<span class="ruby-value">2</span>)
+                <span class="ruby-keyword">else</span> <span class="ruby-ivar">@comboBoxDifficulte</span>.<span class="ruby-identifier">active_iter</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&quot;Difficile&quot;</span>
+                        <span class="ruby-constant">ClassementLibre</span>.<span class="ruby-identifier">effaceNiveau</span>(<span class="ruby-value">3</span>)
+                <span class="ruby-keyword">end</span> 
+        <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;Progressif&quot;</span>
+                <span class="ruby-constant">ClassementProgressif</span>.<span class="ruby-identifier">effaceToi</span>()
+        <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;Puzzle Rush&quot;</span>
+                <span class="ruby-constant">ClassementPuzzleRush</span>.<span class="ruby-identifier">effaceToi</span>()
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-gereVisibiliteDifficulte" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">gereVisibiliteDifficulte</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Gère la visibilité de la combobox Difficulte</p>
+
+          <div class="method-source-code" id="gereVisibiliteDifficulte-source">
+            <pre><span class="ruby-comment"># File Interface/interfaceClassement.rb, line 171</span>
+        <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">gereVisibiliteDifficulte</span> <span class="ruby-comment">#:doc:</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-ivar">@comboBoxMode</span>.<span class="ruby-identifier">active_iter</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">!=</span> <span class="ruby-string">&quot;Libre&quot;</span>
+                <span class="ruby-ivar">@comboBoxDifficulte</span>.<span class="ruby-identifier">visible</span> = <span class="ruby-keyword">false</span> 
+                <span class="ruby-ivar">@etiquetteDifficulte</span>.<span class="ruby-identifier">visible</span> = <span class="ruby-keyword">false</span>
+        <span class="ruby-keyword">else</span>  
+                <span class="ruby-ivar">@comboBoxDifficulte</span>.<span class="ruby-identifier">visible</span> = <span class="ruby-keyword">true</span> 
+                <span class="ruby-ivar">@etiquetteDifficulte</span>.<span class="ruby-identifier">visible</span> = <span class="ruby-keyword">true</span>
+        <span class="ruby-keyword">end</span> 
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-retourMenu" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">retourMenu</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Retourne au menu</p>
+
+          <div class="method-source-code" id="retourMenu-source">
+            <pre><span class="ruby-comment"># File Interface/interfaceClassement.rb, line 122</span>
+        <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">retourMenu</span>() <span class="ruby-comment">#:doc:</span>
+        <span class="ruby-ivar">@fenetre</span>.<span class="ruby-identifier">remove</span>(<span class="ruby-ivar">@boxClassement</span>)
+        <span class="ruby-ivar">@fenetre</span>.<span class="ruby-identifier">add</span>(<span class="ruby-ivar">@boxMenu</span>)
+        <span class="ruby-ivar">@fenetre</span>.<span class="ruby-identifier">set_title</span>(<span class="ruby-ivar">@ancienTitre</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+    </section>
+
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.3.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Editeur - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/navigation.js" defer></script>
+<script src="./js/search.js" defer></script>
+<script src="./js/search_index.js" defer></script>
+<script src="./js/searcher.js" defer></script>
+<script src="./js/darkfish.js" defer></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">Object
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-creer">::creer</a>
+    
+    <li ><a href="#method-i-calculerPontsPotentiels">#calculerPontsPotentiels</a>
+    
+    <li ><a href="#method-i-chargerDepuisFichier">#chargerDepuisFichier</a>
+    
+    <li ><a href="#method-i-creerBoutonGrille">#creerBoutonGrille</a>
+    
+    <li ><a href="#method-i-detruireImage">#detruireImage</a>
+    
+    <li ><a href="#method-i-garbageCollectorConstant">#garbageCollectorConstant</a>
+    
+    <li ><a href="#method-i-majGraphique">#majGraphique</a>
+    
+    <li ><a href="#method-i-majGraphiqueIle">#majGraphiqueIle</a>
+    
+    <li ><a href="#method-i-modifierPont">#modifierPont</a>
+    
+    <li ><a href="#method-i-sauvegarderVersFichier">#sauvegarderVersFichier</a>
+    
+    <li ><a href="#method-i-verifierGrille">#verifierGrille</a>
+    
+    <li ><a href="#method-i-viderGrille">#viderGrille</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Editeur">
+  <h1 id="class-Editeur" class="class">
+    class Editeur
+  </h1>
+
+  <section class="description">
+    
+<p>Classe qui représente un éditeur.</p>
+
+<p>Cette classe contient les variables d&#39;instances suivantes :</p>
+<dl class="rdoc-list note-list"><dt>@grille
+<dd>
+<p>Tableau à deux dimensions de <a href="Case.html"><code>Case</code></a></p>
+</dd><dt>@taille
+<dd>
+<p>Taille de la @grille (carrée). Il existe uniquement des grilles de taille 5, 6, 8, 10 et 15</p>
+</dd><dt>@listIle
+<dd>
+<p>Tableau contenant les îles de la partie</p>
+</dd><dt>@listPont
+<dd>
+<p>Tableau contenant les ponts de la partie</p>
+</dd><dt>@fenetre
+<dd>
+<p>La fenêtre gtk du jeu</p>
+</dd><dt>@grid
+<dd>
+<p>La grille gtk qui permet de contenir les boutons (cases) de l&#39;espace hashi</p>
+</dd><dt>@grilleBT
+<dd>
+<p>Un tableau qui contient les boutons dans l&#39;ordre des cases associées (dans grille)</p>
+</dd><dt>@tailleImg
+<dd>
+<p>La taille en pixel d&#39;une image sur un des boutons de la @grid</p>
+</dd><dt>@mode
+<dd>
+<p>Mode ile ou mode pont de l&#39;éditeur (false = mode ile et true = mode pont)</p>
+</dd><dt>@modeBouton
+<dd>
+<p>Bouton de choix du mode</p>
+</dd><dt>@hbox
+<dd>
+<p>Box qui contient la grille de boutons et les boutons d&#39;interface à droite</p>
+</dd><dt>@vbox
+<dd>
+<p>Box qui contient les boutons d&#39;interface à droite</p>
+</dd><dt>@comboBoxDifficulte
+<dd>
+<p>Combobox de la difficultée</p>
+</dd><dt>@comboBoxTaille
+<dd>
+<p>Combobox de la taille de la grille</p>
+</dd></dl>
+
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      
+      <div id="attribute-i-grille" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">grille</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>La grille du jeu, constituée d&#39;un tableau de <a href="Case.html"><code>Case</code></a></p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-listIle" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">listIle</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>La liste des <a href="Ile.html"><code>Ile</code></a></p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-listPont" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">listPont</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>La liste des <a href="Pont.html"><code>Pont</code></a></p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-taille" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">taille</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>La taille de la grille, entier correspondant au côté du carré représenté par la grille</p>
+        
+        </div>
+      </div>
+      
+    </section>
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-creer" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">creer</span><span
+            class="method-args">(tailleDeLaGrille, difficulte, gtkOK)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Méthode de création de l&#39;éditeur</p>
+<ul><li>
+<p><code>tailleDeLaGrille</code> - La taille de la grille</p>
+</li><li>
+<p><code>difficulte</code> - La difficultée de la grille</p>
+</li><li>
+<p><code>gtkOK</code> - Booléen indiquant si GTK a déjà été initialisé</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="creer-source">
+            <pre><span class="ruby-comment"># File Editeur.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Editeur</span>.<span class="ruby-identifier ruby-title">creer</span>(<span class="ruby-identifier">tailleDeLaGrille</span>, <span class="ruby-identifier">difficulte</span>, <span class="ruby-identifier">gtkOK</span>)
+    <span class="ruby-identifier">new</span>(<span class="ruby-identifier">tailleDeLaGrille</span>, <span class="ruby-identifier">difficulte</span>, <span class="ruby-identifier">gtkOK</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-majGraphique" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">majGraphique</span><span
+            class="method-args">(p)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Méthode appelée pour mettre à jour les graphismes d&#39;un pont. </p>
+<ul><li>
+<p><code>p</code> [Pont] - le pont dont l&#39;image doit être mise à jour</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="majGraphique-source">
+            <pre><span class="ruby-comment"># File Editeur.rb, line 375</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">majGraphique</span>(<span class="ruby-identifier">p</span>)
+    <span class="ruby-keyword">for</span> <span class="ruby-identifier">c</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">tabCases</span>
+        <span class="ruby-identifier">imgP</span> = <span class="ruby-keyword">nil</span>
+        <span class="ruby-keyword">if</span>(<span class="ruby-identifier">p</span>.<span class="ruby-identifier">etatPont</span><span class="ruby-operator">==</span><span class="ruby-value">1</span>)
+            <span class="ruby-keyword">if</span>(<span class="ruby-identifier">p</span>.<span class="ruby-identifier">sens?</span>)
+                <span class="ruby-identifier">imgP</span> = <span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">Image</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:file</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;../res/img/sph.svg&quot;</span>) <span class="ruby-comment"># Image d&#39;un pont simple horizontal</span>
+                
+            <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">imgP</span> = <span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">Image</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:file</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;../res/img/spv.svg&quot;</span>) <span class="ruby-comment"># Image d&#39;un pont simple vertical</span>
+            <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">elsif</span>(<span class="ruby-identifier">p</span>.<span class="ruby-identifier">etatPont</span> <span class="ruby-operator">==</span> <span class="ruby-value">2</span>)
+            <span class="ruby-keyword">if</span>(<span class="ruby-identifier">p</span>.<span class="ruby-identifier">sens?</span>)
+                <span class="ruby-identifier">imgP</span> = <span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">Image</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:file</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;../res/img/dph.svg&quot;</span>) <span class="ruby-comment"># Image d&#39;un pont double horizontal</span>
+            <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">imgP</span> = <span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">Image</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:file</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;../res/img/dpv.svg&quot;</span>) <span class="ruby-comment"># Image d&#39;un pont double vertical</span>
+            <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">if</span>(<span class="ruby-identifier">imgP</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span>) 
+            <span class="ruby-identifier">imgP</span>.<span class="ruby-identifier">pixbuf</span>=<span class="ruby-identifier">imgP</span>.<span class="ruby-identifier">pixbuf</span>.<span class="ruby-identifier">scale_simple</span>(<span class="ruby-ivar">@tailleImg</span>, <span class="ruby-ivar">@tailleImg</span>, <span class="ruby-constant">GdkPixbuf</span><span class="ruby-operator">::</span><span class="ruby-constant">InterpType</span><span class="ruby-operator">::</span><span class="ruby-constant">BILINEAR</span>) 
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-comment"># Destruction de l&#39;image anciennement sur le bouton, s&#39;il y en avait une.</span>
+        <span class="ruby-identifier">detruireImage</span>(<span class="ruby-ivar">@grilleBT</span>[<span class="ruby-identifier">c</span>.<span class="ruby-identifier">positionX</span>][<span class="ruby-identifier">c</span>.<span class="ruby-identifier">positionY</span>].<span class="ruby-identifier">image</span>)
+        <span class="ruby-ivar">@grilleBT</span>[<span class="ruby-identifier">c</span>.<span class="ruby-identifier">positionX</span>][<span class="ruby-identifier">c</span>.<span class="ruby-identifier">positionY</span>].<span class="ruby-identifier">set_image</span>(<span class="ruby-identifier">imgP</span>)
+    <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-majGraphiqueIle" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">majGraphiqueIle</span><span
+            class="method-args">(i)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Méthode qui permet de mettre à jour la couleur des îles en fonction des ponts qui lui sont reliées. </p>
+<ul><li>
+<p><code>i</code> - L&#39;ile qui doit être mise à jour</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="majGraphiqueIle-source">
+            <pre><span class="ruby-comment"># File Editeur.rb, line 403</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">majGraphiqueIle</span>(<span class="ruby-identifier">i</span>)
+    <span class="ruby-identifier">imgIle</span> = <span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">Image</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:file</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-node">&quot;../res/img/#{i.valeur}.svg&quot;</span>)
+    <span class="ruby-identifier">imgIle</span>.<span class="ruby-identifier">pixbuf</span>=<span class="ruby-identifier">imgIle</span>.<span class="ruby-identifier">pixbuf</span>.<span class="ruby-identifier">scale_simple</span>(<span class="ruby-ivar">@tailleImg</span>,<span class="ruby-ivar">@tailleImg</span>, <span class="ruby-constant">GdkPixbuf</span><span class="ruby-operator">::</span><span class="ruby-constant">InterpType</span><span class="ruby-operator">::</span><span class="ruby-constant">BILINEAR</span>)
+    <span class="ruby-identifier">detruireImage</span>(<span class="ruby-ivar">@grilleBT</span>[<span class="ruby-identifier">i</span>.<span class="ruby-identifier">positionX</span>][<span class="ruby-identifier">i</span>.<span class="ruby-identifier">positionY</span>].<span class="ruby-identifier">image</span>)
+    <span class="ruby-ivar">@grilleBT</span>[<span class="ruby-identifier">i</span>.<span class="ruby-identifier">positionX</span>][<span class="ruby-identifier">i</span>.<span class="ruby-identifier">positionY</span>].<span class="ruby-identifier">set_image</span>(<span class="ruby-identifier">imgIle</span>)
+    <span class="ruby-ivar">@grilleBT</span>[<span class="ruby-identifier">i</span>.<span class="ruby-identifier">positionX</span>][<span class="ruby-identifier">i</span>.<span class="ruby-identifier">positionY</span>].<span class="ruby-identifier">set_always_show_image</span>(<span class="ruby-keyword">true</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-modifierPont" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">modifierPont</span><span
+            class="method-args">(p)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Méthode permettant de modifier un <a href="Pont.html"><code>Pont</code></a> (vérifie si c&#39;est autorisé, renvoie le booléen d&#39;autorisation de la création du pont). </p>
+<ul><li>
+<p><code>p</code> [Pont] - Le <a href="Pont.html"><code>Pont</code></a> à modifier</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="modifierPont-source">
+            <pre><span class="ruby-comment"># File Editeur.rb, line 245</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">modifierPont</span>(<span class="ruby-identifier">p</span>)
+    <span class="ruby-identifier">autorise</span> = <span class="ruby-keyword">true</span>
+    <span class="ruby-comment"># Passer en revue les cases changées pour possiblement empêcher le changement :</span>
+    <span class="ruby-keyword">if</span>(<span class="ruby-identifier">p</span>.<span class="ruby-identifier">etatPont</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>) <span class="ruby-comment"># Si le pont que l&#39;on veut changer doit apparaître, on doit tester si aucun autre pont nous gêne.</span>
+        <span class="ruby-comment"># On parcourt toutes les cases de tous les ponts pour voir les cases communes avec d&#39;autres ponts.</span>
+        <span class="ruby-keyword">for</span> <span class="ruby-identifier">c</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">tabCases</span>
+            <span class="ruby-keyword">for</span> <span class="ruby-identifier">autre</span> <span class="ruby-keyword">in</span> <span class="ruby-ivar">@listPont</span>
+                <span class="ruby-keyword">for</span> <span class="ruby-identifier">cautre</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">autre</span>.<span class="ruby-identifier">tabCases</span>
+                    <span class="ruby-keyword">if</span>(<span class="ruby-identifier">autorise</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">autre</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">p</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">autre</span>.<span class="ruby-identifier">etatPont</span> <span class="ruby-operator">!=</span><span class="ruby-value">0</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">positionX</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">cautre</span>.<span class="ruby-identifier">positionX</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">positionY</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">cautre</span>.<span class="ruby-identifier">positionY</span>) <span class="ruby-comment">#Une case est en commun et le pont en question est actif</span>
+                        <span class="ruby-identifier">autorise</span> = <span class="ruby-keyword">false</span>
+                    <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">end</span>
+            <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+    
+    <span class="ruby-keyword">if</span>(<span class="ruby-identifier">autorise</span>)
+        <span class="ruby-comment"># Changement d&#39;état du pont car autorisé :</span>
+        <span class="ruby-identifier">p</span>.<span class="ruby-identifier">prochainEtat</span>()
+        <span class="ruby-comment"># Modifier les boutons correspondant aux cases changées :</span>
+        <span class="ruby-identifier">majGraphique</span>(<span class="ruby-identifier">p</span>)
+        <span class="ruby-comment"># Couleurs des îles</span>
+        <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-ivar">@listIle</span>
+            <span class="ruby-keyword">if</span>(<span class="ruby-identifier">i</span>.<span class="ruby-identifier">verifierNombreDePont</span>)
+                <span class="ruby-ivar">@grilleBT</span>[<span class="ruby-identifier">i</span>.<span class="ruby-identifier">positionX</span>][<span class="ruby-identifier">i</span>.<span class="ruby-identifier">positionY</span>].<span class="ruby-identifier">name</span> = <span class="ruby-string">&quot;btn_grille_valide&quot;</span>
+            <span class="ruby-keyword">elsif</span>(<span class="ruby-identifier">i</span>.<span class="ruby-identifier">getNbPonts</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">i</span>.<span class="ruby-identifier">valeur</span>)
+                <span class="ruby-ivar">@grilleBT</span>[<span class="ruby-identifier">i</span>.<span class="ruby-identifier">positionX</span>][<span class="ruby-identifier">i</span>.<span class="ruby-identifier">positionY</span>].<span class="ruby-identifier">name</span> = <span class="ruby-string">&quot;btn_grille_invalide&quot;</span>
+            <span class="ruby-keyword">else</span>
+                <span class="ruby-ivar">@grilleBT</span>[<span class="ruby-identifier">i</span>.<span class="ruby-identifier">positionX</span>][<span class="ruby-identifier">i</span>.<span class="ruby-identifier">positionY</span>].<span class="ruby-identifier">name</span> = <span class="ruby-string">&quot;btn_grille&quot;</span>
+            <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">end</span>  
+
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">autorise</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-verifierGrille" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">verifierGrille</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Méthode vérifiant la grille.  Retourne vrai si les îles sont connectées au bon nombre de ponts. Faux sinon.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="verifierGrille-source">
+            <pre><span class="ruby-comment"># File Editeur.rb, line 234</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">verifierGrille</span>()
+    <span class="ruby-ivar">@listIle</span>.<span class="ruby-identifier">each</span>() <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+        <span class="ruby-keyword">if</span>(<span class="ruby-operator">!</span><span class="ruby-identifier">i</span>.<span class="ruby-identifier">verifierNombreDePont</span>())
+            <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>
+        <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-viderGrille" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">viderGrille</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Méthode vidant la grille, en retirant tous les ponts</p>
+          
+          
+
+          
+          <div class="method-source-code" id="viderGrille-source">
+            <pre><span class="ruby-comment"># File Editeur.rb, line 220</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">viderGrille</span>()
+    <span class="ruby-ivar">@listPont</span>.<span class="ruby-identifier">each</span>() <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span>
+        <span class="ruby-keyword">if</span>(<span class="ruby-identifier">p</span>.<span class="ruby-identifier">etatPont</span><span class="ruby-operator">&gt;</span><span class="ruby-value">0</span>)
+            <span class="ruby-identifier">p</span>.<span class="ruby-identifier">reset</span>(<span class="ruby-keyword">true</span>)
+            <span class="ruby-identifier">majGraphique</span>(<span class="ruby-identifier">p</span>)
+        <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-ivar">@listIle</span>
+        <span class="ruby-ivar">@grilleBT</span>[<span class="ruby-identifier">i</span>.<span class="ruby-identifier">positionX</span>][<span class="ruby-identifier">i</span>.<span class="ruby-identifier">positionY</span>].<span class="ruby-identifier">name</span> = <span class="ruby-string">&quot;btn_grille&quot;</span>
+    <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="private-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Private Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-calculerPontsPotentiels" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">calculerPontsPotentiels</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Méthode  remplissant les ponts potentiels entre les <a href="Ile.html"><code>Ile</code></a></p>
+          
+          
+
+          
+          <div class="method-source-code" id="calculerPontsPotentiels-source">
+            <pre><span class="ruby-comment"># File Editeur.rb, line 598</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">calculerPontsPotentiels</span>() <span class="ruby-comment">#:doc:</span>
+    <span class="ruby-comment"># On va créer tous les Pont pour remplir la liste de Pont et les listes de Pont potentiels des Iles</span>
+    <span class="ruby-ivar">@listIle</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i1</span><span class="ruby-operator">|</span>
+        <span class="ruby-ivar">@listIle</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i2</span><span class="ruby-operator">|</span>
+            <span class="ruby-comment"># On vérifie qu&#39;un Pont entre deux Ile peut exister</span>
+            <span class="ruby-keyword">if</span>(<span class="ruby-identifier">i1</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">i2</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">i1</span>.<span class="ruby-identifier">peutEtreRelieeA?</span>(<span class="ruby-identifier">i2</span>,<span class="ruby-keyword">false</span>))
+                <span class="ruby-comment"># On crée le Pont</span>
+                <span class="ruby-identifier">tab_cases</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>()
+                <span class="ruby-identifier">x</span> = <span class="ruby-identifier">i1</span>.<span class="ruby-identifier">positionX</span>
+                <span class="ruby-identifier">y</span> = <span class="ruby-identifier">i1</span>.<span class="ruby-identifier">positionY</span>
+                <span class="ruby-comment"># On trace la liste de cases survolées par le pont s&#39;il suit Y</span>
+                <span class="ruby-keyword">if</span>(<span class="ruby-identifier">i1</span>.<span class="ruby-identifier">positionX</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">i2</span>.<span class="ruby-identifier">positionX</span>)
+                    <span class="ruby-identifier">y</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+                    <span class="ruby-keyword">while</span>(<span class="ruby-identifier">y</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">i2</span>.<span class="ruby-identifier">positionY</span>)
+                        <span class="ruby-identifier">tab_cases</span>.<span class="ruby-identifier">push</span>(<span class="ruby-ivar">@grille</span>[<span class="ruby-identifier">x</span>][<span class="ruby-identifier">y</span>])
+                        <span class="ruby-identifier">y</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+                    <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">else</span>
+                    <span class="ruby-comment"># On trace la liste de cases survolées par le pont suivant X</span>
+                    <span class="ruby-identifier">x</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+                    <span class="ruby-keyword">while</span>(<span class="ruby-identifier">x</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">i2</span>.<span class="ruby-identifier">positionX</span>)
+                        <span class="ruby-identifier">tab_cases</span>.<span class="ruby-identifier">push</span>(<span class="ruby-ivar">@grille</span>[<span class="ruby-identifier">x</span>][<span class="ruby-identifier">y</span>])
+                        <span class="ruby-identifier">x</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+                    <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">end</span>
+                
+                <span class="ruby-identifier">p</span> = <span class="ruby-constant">Pont</span>.<span class="ruby-identifier">creer</span>(<span class="ruby-identifier">tab_cases</span>,<span class="ruby-identifier">i1</span>,<span class="ruby-identifier">i2</span>, <span class="ruby-value">0</span>)
+                <span class="ruby-comment"># On vérifie que le Pont n&#39;existe pas déjà, et que son tracé ne survole pas d&#39;Ile</span>
+                <span class="ruby-identifier">deja</span> = <span class="ruby-keyword">false</span>
+                <span class="ruby-keyword">for</span> <span class="ruby-identifier">ps</span> <span class="ruby-keyword">in</span> <span class="ruby-ivar">@listPont</span>
+                    <span class="ruby-keyword">if</span>(<span class="ruby-identifier">p</span>.<span class="ruby-identifier">eql?</span>(<span class="ruby-identifier">ps</span>))
+                        <span class="ruby-identifier">deja</span> = <span class="ruby-keyword">true</span>
+                        <span class="ruby-keyword">break</span>
+                    <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">end</span>    
+                <span class="ruby-keyword">if</span>(<span class="ruby-operator">!</span><span class="ruby-identifier">deja</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">tab_cases</span>.<span class="ruby-identifier">empty?</span>)
+                    <span class="ruby-identifier">ajoutOK</span> = <span class="ruby-keyword">true</span>
+                    <span class="ruby-identifier">tab_cases</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span>
+                        <span class="ruby-keyword">if</span>(<span class="ruby-identifier">c</span>.<span class="ruby-identifier">estIle?</span>)
+                            <span class="ruby-identifier">ajoutOK</span> = <span class="ruby-keyword">false</span>
+                        <span class="ruby-keyword">end</span>
+                    <span class="ruby-keyword">end</span>
+                    <span class="ruby-keyword">if</span>(<span class="ruby-identifier">ajoutOK</span>)
+                        <span class="ruby-identifier">i1</span>.<span class="ruby-identifier">ajouterPont</span>(<span class="ruby-identifier">p</span>)
+                        <span class="ruby-identifier">i2</span>.<span class="ruby-identifier">ajouterPont</span>(<span class="ruby-identifier">p</span>)
+                        <span class="ruby-ivar">@listPont</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">p</span>)
+                    <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">end</span>
+            <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-chargerDepuisFichier" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">chargerDepuisFichier</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Méthode permettant de retravailler une grille existante.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="chargerDepuisFichier-source">
+            <pre><span class="ruby-comment"># File Editeur.rb, line 464</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">chargerDepuisFichier</span>() <span class="ruby-comment">#:doc:</span>
+    <span class="ruby-identifier">nom_fichier</span> = <span class="ruby-string">&quot;&quot;</span>
+    <span class="ruby-identifier">dialog</span> = <span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">FileChooserDialog</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:title</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;Ouvrir un fichier&quot;</span>, <span class="ruby-value">:parent</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">:action</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:open</span>, <span class="ruby-value">:buttons</span> <span class="ruby-operator">=&gt;</span> [[<span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">Stock</span><span class="ruby-operator">::</span><span class="ruby-constant">CANCEL</span>, <span class="ruby-value">:cancel</span>],[<span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">Stock</span><span class="ruby-operator">::</span><span class="ruby-constant">OPEN</span>, <span class="ruby-value">:accept</span>]])
+    <span class="ruby-keyword">if</span> (<span class="ruby-identifier">dialog</span>.<span class="ruby-identifier">run</span> <span class="ruby-operator">==</span> <span class="ruby-value">:accept</span>)
+        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">viderGrille</span>()
+        <span class="ruby-comment"># Créer les listes</span>
+        <span class="ruby-ivar">@listIle</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+        <span class="ruby-ivar">@listPont</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+        <span class="ruby-ivar">@mode</span> = <span class="ruby-keyword">true</span>
+        <span class="ruby-ivar">@modeBouton</span>.<span class="ruby-identifier">label</span> = <span class="ruby-string">&quot;Mode -&gt; Pont&quot;</span>
+        <span class="ruby-identifier">nom_fichier</span> = <span class="ruby-node">&quot;#{dialog.filename}&quot;</span>
+        <span class="ruby-comment"># Remplir la listIle</span>
+        <span class="ruby-comment"># Lire fichier map</span>
+        <span class="ruby-identifier">donnes_map</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">nom_fichier</span>).<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;\n&quot;</span>)
+        <span class="ruby-comment"># On récupère la difficulté de la grille</span>
+        <span class="ruby-identifier">diff</span> = <span class="ruby-identifier">donnes_map</span>.<span class="ruby-identifier">shift</span>().<span class="ruby-identifier">strip</span>()
+        <span class="ruby-keyword">case</span> <span class="ruby-identifier">diff</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;Facile&quot;</span>
+            <span class="ruby-ivar">@comboBoxDifficulte</span>.<span class="ruby-identifier">set_active_id</span>(<span class="ruby-string">&quot;Facile&quot;</span>)
+        <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;Moyenne&quot;</span>
+            <span class="ruby-ivar">@comboBoxDifficulte</span>.<span class="ruby-identifier">set_active_id</span>(<span class="ruby-string">&quot;Moyenne&quot;</span>)
+        <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;Difficile&quot;</span>
+            <span class="ruby-ivar">@comboBoxDifficulte</span>.<span class="ruby-identifier">set_active_id</span>(<span class="ruby-string">&quot;Difficile&quot;</span>)
+        <span class="ruby-keyword">else</span>
+            <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;Erreur : difficultée dans le fichier non admissible&quot;</span>
+        <span class="ruby-keyword">end</span>
+        
+        <span class="ruby-comment"># On récupère la taille dans le fichier, puis le nombre d&#39;Iles</span>
+        <span class="ruby-ivar">@taille</span> = <span class="ruby-identifier">donnes_map</span>.<span class="ruby-identifier">shift</span>().<span class="ruby-identifier">to_i</span> 
+        <span class="ruby-identifier">nbIles</span> = <span class="ruby-identifier">donnes_map</span>.<span class="ruby-identifier">shift</span>().<span class="ruby-identifier">to_i</span> 
+        <span class="ruby-comment"># On crée des Array destinés à contenir les futures Ile et Pont</span>
+        <span class="ruby-identifier">arr_iles</span> = <span class="ruby-identifier">donnes_map</span>.<span class="ruby-identifier">take</span>(<span class="ruby-identifier">nbIles</span>)
+        <span class="ruby-identifier">arr_ponts</span> = <span class="ruby-identifier">donnes_map</span>.<span class="ruby-identifier">drop</span>(<span class="ruby-identifier">nbIles</span>)
+
+        <span class="ruby-ivar">@tailleImg</span> = (<span class="ruby-ivar">@fenetre</span>.<span class="ruby-identifier">size</span>[<span class="ruby-value">1</span>]<span class="ruby-value">-2</span><span class="ruby-operator">*</span><span class="ruby-ivar">@fenetre</span>.<span class="ruby-identifier">border_width</span>)<span class="ruby-operator">/</span><span class="ruby-ivar">@taille</span>
+
+        <span class="ruby-comment"># Initialiser la grille de la taille convenue</span>
+        <span class="ruby-ivar">@grille</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@taille</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">i1</span><span class="ruby-operator">|</span> <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@taille</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">j1</span><span class="ruby-operator">|</span> <span class="ruby-constant">Case</span>.<span class="ruby-identifier">creer</span>(<span class="ruby-identifier">i1</span>,<span class="ruby-identifier">j1</span>)}}
+
+        <span class="ruby-comment">#Grille de boutons GTK :</span>
+        <span class="ruby-ivar">@hbox</span>.<span class="ruby-identifier">remove</span>(<span class="ruby-ivar">@grid</span>)
+        <span class="ruby-ivar">@hbox</span>.<span class="ruby-identifier">remove</span>(<span class="ruby-ivar">@vbox</span>)
+        <span class="ruby-ivar">@grid</span> = <span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">Grid</span>.<span class="ruby-identifier">new</span>()<span class="ruby-comment">#Grid qui va contenir les boutons</span>
+        <span class="ruby-ivar">@grid</span>.<span class="ruby-identifier">column_homogeneous</span>=<span class="ruby-keyword">true</span>
+        <span class="ruby-ivar">@grid</span>.<span class="ruby-identifier">row_homogeneous</span>=<span class="ruby-keyword">true</span>
+
+        <span class="ruby-ivar">@grilleBT</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@taille</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">i2</span><span class="ruby-operator">|</span> <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@taille</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">j2</span><span class="ruby-operator">|</span> <span class="ruby-identifier">creerBoutonGrille</span>(<span class="ruby-identifier">i2</span>,<span class="ruby-identifier">j2</span>)}}
+
+        <span class="ruby-ivar">@hbox</span>.<span class="ruby-identifier">add</span>(<span class="ruby-ivar">@grid</span>)
+        <span class="ruby-ivar">@hbox</span>.<span class="ruby-identifier">add</span>(<span class="ruby-ivar">@vbox</span>)
+
+        <span class="ruby-comment"># On crée les Ile à partir de l&#39;Array du texte provenant du fichier</span>
+        <span class="ruby-identifier">arr_iles</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+            <span class="ruby-identifier">infos_i</span> = <span class="ruby-identifier">i</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot; &quot;</span>)
+            <span class="ruby-identifier">x</span> = <span class="ruby-identifier">infos_i</span>.<span class="ruby-identifier">shift</span>().<span class="ruby-identifier">to_i</span>
+            <span class="ruby-identifier">y</span> = <span class="ruby-identifier">infos_i</span>.<span class="ruby-identifier">shift</span>().<span class="ruby-identifier">to_i</span>
+            <span class="ruby-identifier">val</span> = <span class="ruby-identifier">infos_i</span>.<span class="ruby-identifier">shift</span>().<span class="ruby-identifier">to_i</span>
+            <span class="ruby-identifier">ile</span> = <span class="ruby-constant">Ile</span>.<span class="ruby-identifier">creer</span>(<span class="ruby-identifier">x</span>,<span class="ruby-identifier">y</span>,<span class="ruby-identifier">val</span>,<span class="ruby-ivar">@taille</span>,<span class="ruby-ivar">@grille</span>)
+            <span class="ruby-ivar">@listIle</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">ile</span>)
+            <span class="ruby-ivar">@grille</span>[<span class="ruby-identifier">x</span>][<span class="ruby-identifier">y</span>] = <span class="ruby-identifier">ile</span>
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-comment"># On crée les Pont (solution) à partir de l&#39;Array du texte provenant du fichier</span>
+        <span class="ruby-identifier">arr_ponts</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span>
+            <span class="ruby-identifier">infos_p</span> = <span class="ruby-identifier">p</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot; &quot;</span>)
+            <span class="ruby-identifier">posXD</span> = <span class="ruby-identifier">infos_p</span>.<span class="ruby-identifier">shift</span>().<span class="ruby-identifier">to_i</span>
+            <span class="ruby-identifier">posYD</span> = <span class="ruby-identifier">infos_p</span>.<span class="ruby-identifier">shift</span>().<span class="ruby-identifier">to_i</span>
+            <span class="ruby-identifier">posXA</span> = <span class="ruby-identifier">infos_p</span>.<span class="ruby-identifier">shift</span>().<span class="ruby-identifier">to_i</span>
+            <span class="ruby-identifier">posYA</span> = <span class="ruby-identifier">infos_p</span>.<span class="ruby-identifier">shift</span>().<span class="ruby-identifier">to_i</span>
+            <span class="ruby-identifier">type</span> = <span class="ruby-identifier">infos_p</span>.<span class="ruby-identifier">shift</span>().<span class="ruby-identifier">to_i</span>
+            <span class="ruby-identifier">ileA</span>=<span class="ruby-keyword">nil</span>
+            <span class="ruby-identifier">ileD</span>=<span class="ruby-keyword">nil</span>
+            <span class="ruby-comment"># On retrouve les Ile correspondantes dans la liste d&#39;Ile</span>
+            <span class="ruby-ivar">@listIle</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+                <span class="ruby-keyword">if</span>(<span class="ruby-identifier">i</span>.<span class="ruby-identifier">positionX</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">posXA</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">i</span>.<span class="ruby-identifier">positionY</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">posYA</span>)
+                    <span class="ruby-identifier">ileA</span> = <span class="ruby-identifier">i</span>
+                <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">if</span>(<span class="ruby-identifier">i</span>.<span class="ruby-identifier">positionX</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">posXD</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">i</span>.<span class="ruby-identifier">positionY</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">posYD</span>)
+                    <span class="ruby-identifier">ileD</span> = <span class="ruby-identifier">i</span>
+                <span class="ruby-keyword">end</span>
+            <span class="ruby-keyword">end</span>
+            
+            <span class="ruby-identifier">tab_cases</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>()
+            <span class="ruby-identifier">x</span> = <span class="ruby-identifier">posXD</span>
+            <span class="ruby-identifier">y</span> = <span class="ruby-identifier">posYD</span>
+            <span class="ruby-comment"># On trace la liste de cases survolées par le pont s&#39;il suit Y</span>
+            <span class="ruby-keyword">if</span>(<span class="ruby-identifier">posXD</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">posXA</span>)
+                <span class="ruby-identifier">y</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+                <span class="ruby-keyword">while</span>(<span class="ruby-identifier">y</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">posYA</span>)
+                    <span class="ruby-identifier">tab_cases</span>.<span class="ruby-identifier">push</span>(<span class="ruby-ivar">@grille</span>[<span class="ruby-identifier">x</span>][<span class="ruby-identifier">y</span>])
+                    <span class="ruby-identifier">y</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+                <span class="ruby-keyword">end</span>
+            <span class="ruby-keyword">else</span>
+                <span class="ruby-comment"># On trace la liste de cases survolées par le pont suivant X</span>
+                <span class="ruby-identifier">x</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+                <span class="ruby-keyword">while</span>(<span class="ruby-identifier">x</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">posXA</span>)
+                    <span class="ruby-identifier">tab_cases</span>.<span class="ruby-identifier">push</span>(<span class="ruby-ivar">@grille</span>[<span class="ruby-identifier">x</span>][<span class="ruby-identifier">y</span>])
+                    <span class="ruby-identifier">x</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+                <span class="ruby-keyword">end</span>
+            <span class="ruby-keyword">end</span>
+            <span class="ruby-comment"># On crée l&#39;objet Pont avec le tableau des cases survolées puis on l&#39;ajoute dans les listes correspondantes</span>
+            <span class="ruby-identifier">p</span> = <span class="ruby-constant">Pont</span>.<span class="ruby-identifier">creer</span>(<span class="ruby-identifier">tab_cases</span>,<span class="ruby-identifier">ileD</span>,<span class="ruby-identifier">ileA</span>, <span class="ruby-identifier">type</span>)
+            <span class="ruby-keyword">if</span>(<span class="ruby-identifier">ileD</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Ile</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">ileA</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Ile</span>))
+                <span class="ruby-identifier">ileD</span>.<span class="ruby-identifier">ajouterBonPont</span>(<span class="ruby-identifier">p</span>)
+                <span class="ruby-identifier">ileA</span>.<span class="ruby-identifier">ajouterBonPont</span>(<span class="ruby-identifier">p</span>)
+                <span class="ruby-identifier">ileD</span>.<span class="ruby-identifier">ajouterPont</span>(<span class="ruby-identifier">p</span>)
+                <span class="ruby-identifier">ileA</span>.<span class="ruby-identifier">ajouterPont</span>(<span class="ruby-identifier">p</span>)
+                <span class="ruby-ivar">@listPont</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">p</span>)
+            <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;IllegalABP sur île: pas une île&quot;</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Pont incriminé : &quot;</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-identifier">p</span>
+            <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-keyword">for</span> <span class="ruby-identifier">p</span> <span class="ruby-keyword">in</span> <span class="ruby-ivar">@listPont</span>
+            <span class="ruby-identifier">majGraphique</span>(<span class="ruby-identifier">p</span>)
+        <span class="ruby-keyword">end</span>   
+        
+        <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-ivar">@listIle</span>
+            <span class="ruby-identifier">majGraphiqueIle</span>(<span class="ruby-identifier">i</span>)
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">calculerPontsPotentiels</span>
+
+        <span class="ruby-identifier">puts</span> <span class="ruby-ivar">@listIle</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-ivar">@listPont</span>
+
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">dialog</span>.<span class="ruby-identifier">destroy</span>
+    <span class="ruby-ivar">@fenetre</span>.<span class="ruby-identifier">show_all</span>()
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-creerBoutonGrille" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">creerBoutonGrille</span><span
+            class="method-args">(posx, posy)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Méthode qui crée un bouton en connaissant sa position dans la grille</p>
+<ul><li>
+<p><code>posx</code> [Integer] - la position (future) en x du bouton dans la grille des boutons (@grid)</p>
+</li><li>
+<p><code>posy</code> [Integer] - la position (future) en y du bouton dans la grille des boutons (@grid)</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="creerBoutonGrille-source">
+            <pre><span class="ruby-comment"># File Editeur.rb, line 285</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">creerBoutonGrille</span>(<span class="ruby-identifier">posx</span>, <span class="ruby-identifier">posy</span>) <span class="ruby-comment">#:doc:</span>
+    <span class="ruby-identifier">bouton</span> = <span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">Button</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-identifier">bouton</span>.<span class="ruby-identifier">name</span> = <span class="ruby-string">&quot;btn_grille&quot;</span>
+    <span class="ruby-identifier">bouton</span>.<span class="ruby-identifier">set_can_focus</span>(<span class="ruby-keyword">false</span>)
+    <span class="ruby-identifier">bouton</span>.<span class="ruby-identifier">set_focus_on_click</span>(<span class="ruby-keyword">false</span>)
+    <span class="ruby-identifier">bouton</span>.<span class="ruby-identifier">signal_connect</span>(<span class="ruby-string">&#39;clicked&#39;</span>){
+
+        <span class="ruby-keyword">if</span>(<span class="ruby-operator">!</span><span class="ruby-ivar">@mode</span>) <span class="ruby-comment"># Mode de placement des îles</span>
+            <span class="ruby-identifier">valeurChoix</span> = <span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">Dialog</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:title</span> <span class="ruby-operator">=&gt;</span><span class="ruby-string">&quot;Valeur de l&#39;île ?&quot;</span>, <span class="ruby-value">:parent</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-ivar">@fenetre</span>, <span class="ruby-value">:flags</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:destroy_with_parent</span>, <span class="ruby-value">:buttons</span> <span class="ruby-operator">=&gt;</span> [[<span class="ruby-string">&quot;1&quot;</span>,<span class="ruby-value">1001</span>],[<span class="ruby-string">&quot;2&quot;</span>,<span class="ruby-value">1002</span>],[<span class="ruby-string">&quot;3&quot;</span>,<span class="ruby-value">1003</span>],[<span class="ruby-string">&quot;4&quot;</span>,<span class="ruby-value">1004</span>],[<span class="ruby-string">&quot;5&quot;</span>,<span class="ruby-value">1005</span>],[<span class="ruby-string">&quot;6&quot;</span>,<span class="ruby-value">1006</span>],[<span class="ruby-string">&quot;7&quot;</span>,<span class="ruby-value">1007</span>],[<span class="ruby-string">&quot;8&quot;</span>,<span class="ruby-value">1008</span>],[<span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">Stock</span><span class="ruby-operator">::</span><span class="ruby-constant">DELETE</span>,<span class="ruby-value">1000</span>],[<span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">Stock</span><span class="ruby-operator">::</span><span class="ruby-constant">CANCEL</span>,<span class="ruby-value">:cancel</span>]]) <span class="ruby-comment"># Augmentés de 1000 pour éviter de tomber sur des valeurs prédéfinies</span>
+            <span class="ruby-identifier">valeurChoix</span>.<span class="ruby-identifier">default_response</span>=<span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">ResponseType</span><span class="ruby-operator">::</span><span class="ruby-constant">CANCEL</span>
+            <span class="ruby-identifier">valeurReponse</span> = <span class="ruby-identifier">valeurChoix</span>.<span class="ruby-identifier">run</span>
+            <span class="ruby-identifier">valeurChoix</span>.<span class="ruby-identifier">destroy</span>
+            <span class="ruby-keyword">case</span> <span class="ruby-identifier">valeurReponse</span>
+            <span class="ruby-keyword">when</span> <span class="ruby-value">1001</span><span class="ruby-operator">..</span><span class="ruby-value">1008</span> <span class="ruby-comment"># On met une valeur dans l&#39;île à cette position dans la grille</span>
+               <span class="ruby-identifier">detruireImage</span>(<span class="ruby-identifier">bouton</span>.<span class="ruby-identifier">image</span>)
+               <span class="ruby-identifier">imgIle</span> = <span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">Image</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:file</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-node">&quot;../res/img/#{valeurReponse-1000}.svg&quot;</span>)
+               <span class="ruby-identifier">imgIle</span>.<span class="ruby-identifier">pixbuf</span>=<span class="ruby-identifier">imgIle</span>.<span class="ruby-identifier">pixbuf</span>.<span class="ruby-identifier">scale_simple</span>(<span class="ruby-ivar">@tailleImg</span>,<span class="ruby-ivar">@tailleImg</span>, <span class="ruby-constant">GdkPixbuf</span><span class="ruby-operator">::</span><span class="ruby-constant">InterpType</span><span class="ruby-operator">::</span><span class="ruby-constant">BILINEAR</span>)
+               <span class="ruby-identifier">bouton</span>.<span class="ruby-identifier">set_image</span>(<span class="ruby-identifier">imgIle</span>)
+                <span class="ruby-identifier">bouton</span>.<span class="ruby-identifier">set_always_show_image</span>(<span class="ruby-keyword">true</span>)
+               <span class="ruby-identifier">nouvelleIle</span> = <span class="ruby-constant">Ile</span>.<span class="ruby-identifier">creer</span>(<span class="ruby-identifier">posx</span>, <span class="ruby-identifier">posy</span>, <span class="ruby-identifier">valeurReponse</span><span class="ruby-value">-1000</span>, <span class="ruby-ivar">@taille</span>, <span class="ruby-ivar">@grille</span>)
+               <span class="ruby-identifier">trouve</span> = <span class="ruby-keyword">false</span>
+               <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-ivar">@listIle</span>
+                    <span class="ruby-keyword">if</span>(<span class="ruby-identifier">nouvelleIle</span>.<span class="ruby-identifier">eql?</span>(<span class="ruby-identifier">i</span>))
+                        <span class="ruby-identifier">trouve</span> = <span class="ruby-keyword">true</span>
+                        <span class="ruby-identifier">i</span>.<span class="ruby-identifier">valeur</span> = <span class="ruby-identifier">valeurReponse</span><span class="ruby-value">-1000</span>
+                        <span class="ruby-keyword">break</span>
+                    <span class="ruby-keyword">end</span>    
+               <span class="ruby-keyword">end</span> 
+               <span class="ruby-keyword">if</span>(<span class="ruby-operator">!</span><span class="ruby-identifier">trouve</span>)
+                    <span class="ruby-ivar">@listIle</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">nouvelleIle</span>
+                    <span class="ruby-ivar">@grille</span>[<span class="ruby-identifier">posx</span>][<span class="ruby-identifier">posy</span>] = <span class="ruby-identifier">nouvelleIle</span>
+               <span class="ruby-keyword">end</span> 
+            <span class="ruby-keyword">when</span> <span class="ruby-value">1000</span> <span class="ruby-comment"># On enlève l&#39;île à cette position dans la grille</span>
+                <span class="ruby-identifier">detruireImage</span>(<span class="ruby-identifier">bouton</span>.<span class="ruby-identifier">image</span>)
+                <span class="ruby-identifier">imgIle</span> = <span class="ruby-keyword">nil</span>
+                <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-ivar">@listIle</span>
+                    <span class="ruby-keyword">if</span>(<span class="ruby-identifier">i</span>.<span class="ruby-identifier">positionX</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">posx</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">i</span>.<span class="ruby-identifier">positionY</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">posy</span>)
+                        <span class="ruby-ivar">@listIle</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">i</span>)
+                        <span class="ruby-ivar">@grille</span>[<span class="ruby-identifier">posx</span>][<span class="ruby-identifier">posy</span>] = <span class="ruby-constant">Case</span>.<span class="ruby-identifier">creer</span>(<span class="ruby-identifier">posx</span>, <span class="ruby-identifier">posy</span>)
+                        <span class="ruby-keyword">break</span>
+                    <span class="ruby-keyword">end</span>    
+               <span class="ruby-keyword">end</span>
+                <span class="ruby-identifier">bouton</span>.<span class="ruby-identifier">set_image</span>(<span class="ruby-identifier">imgIle</span>)
+                <span class="ruby-identifier">bouton</span>.<span class="ruby-identifier">set_always_show_image</span>(<span class="ruby-keyword">true</span>) 
+            <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">else</span> <span class="ruby-comment"># Mode de placement des ponts</span>
+            <span class="ruby-comment"># On cherche à récupérer les pont possibles sur cette case dans la liste des ponts (il peut y en avoir un ou deux).</span>
+            <span class="ruby-identifier">ponts</span>=[]
+            <span class="ruby-keyword">for</span> <span class="ruby-identifier">p</span> <span class="ruby-keyword">in</span> <span class="ruby-ivar">@listPont</span>
+                <span class="ruby-keyword">for</span> <span class="ruby-identifier">c</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">tabCases</span>
+                    <span class="ruby-keyword">if</span>(<span class="ruby-identifier">c</span>.<span class="ruby-identifier">positionX</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">posx</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">positionY</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">posy</span>) <span class="ruby-comment"># La case du pont est la case actuellement cliquée.</span>
+                        <span class="ruby-identifier">ponts</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">p</span>
+                    <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">end</span>
+            <span class="ruby-keyword">end</span>
+            <span class="ruby-comment"># On a récupéré dans ponts les ponts contenant la case cliquée.</span>
+            <span class="ruby-comment"># Comment choisir quel pont modifier ? On choisit pour celui qui n&#39;est pas nul, si ils le sont tous, le plus court, si ils sont de la même taille, on s&#39;aide de @choixSens</span>
+            <span class="ruby-keyword">if</span>(<span class="ruby-identifier">ponts</span>.<span class="ruby-identifier">length</span><span class="ruby-operator">==</span><span class="ruby-value">1</span>)
+                <span class="ruby-keyword">self</span>.<span class="ruby-identifier">modifierPont</span>(<span class="ruby-identifier">ponts</span>[<span class="ruby-value">0</span>]) <span class="ruby-comment"># Il n&#39;y a qu&#39;un pont sur la case</span>
+            <span class="ruby-keyword">elsif</span>(<span class="ruby-identifier">ponts</span>.<span class="ruby-identifier">length</span><span class="ruby-operator">==</span><span class="ruby-value">2</span>)
+                <span class="ruby-keyword">if</span>((<span class="ruby-identifier">ponts</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">etatPont</span><span class="ruby-operator">==</span><span class="ruby-value">0</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">ponts</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">etatPont</span><span class="ruby-operator">==</span><span class="ruby-value">0</span>)) <span class="ruby-comment"># Les deux ponts sont à zéro, on modifie le premier | Le premier pont est à 1, on le fait évoluer en remettant bien le deuxième à zéro (au cas où)</span>
+                    <span class="ruby-identifier">change</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">modifierPont</span>(<span class="ruby-identifier">ponts</span>[<span class="ruby-value">0</span>])
+                    <span class="ruby-keyword">if</span>(<span class="ruby-operator">!</span><span class="ruby-identifier">change</span>)
+                        <span class="ruby-identifier">change</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">modifierPont</span>(<span class="ruby-identifier">ponts</span>[<span class="ruby-value">1</span>])
+                    <span class="ruby-keyword">else</span>
+                        <span class="ruby-identifier">ponts</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">reset</span>(<span class="ruby-keyword">false</span>)
+                    <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">elsif</span>(<span class="ruby-identifier">ponts</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">etatPont</span><span class="ruby-operator">==</span><span class="ruby-value">1</span>) <span class="ruby-comment"># Un des deux ponts est affiché, on doit donc s&#39;occuper de lui en priorité.</span>
+                    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">modifierPont</span>(<span class="ruby-identifier">ponts</span>[<span class="ruby-value">0</span>])
+                <span class="ruby-keyword">elsif</span>(<span class="ruby-identifier">ponts</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">etatPont</span><span class="ruby-operator">==</span><span class="ruby-value">1</span>)
+                    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">modifierPont</span>(<span class="ruby-identifier">ponts</span>[<span class="ruby-value">1</span>])
+                <span class="ruby-keyword">elsif</span>(<span class="ruby-identifier">ponts</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">etatPont</span><span class="ruby-operator">==</span><span class="ruby-value">2</span>) <span class="ruby-comment"># Le premier pont est à 2, on le remet à zéro puis on fait évoluer le second pont |</span>
+                        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">modifierPont</span>(<span class="ruby-identifier">ponts</span>[<span class="ruby-value">0</span>])
+                        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">modifierPont</span>(<span class="ruby-identifier">ponts</span>[<span class="ruby-value">1</span>])
+                <span class="ruby-keyword">elsif</span>(<span class="ruby-identifier">ponts</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">etatPont</span><span class="ruby-operator">==</span><span class="ruby-value">2</span>) <span class="ruby-comment"># Le second pont est à 1, on le fait évoluer et on remet l&#39;autre à zéro (au cas où) | Le second pont est à 2, on remet tous les ponts à zéro (le premier avec reset, le second avec modifierPont)</span>
+                        <span class="ruby-identifier">ponts</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">reset</span>(<span class="ruby-keyword">false</span>)
+                        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">modifierPont</span>(<span class="ruby-identifier">ponts</span>[<span class="ruby-value">1</span>])
+                <span class="ruby-keyword">else</span> 
+                        <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;Problème avec les ponts qui se croisent&quot;</span>
+                <span class="ruby-keyword">end</span>
+            <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>    
+    }
+
+    <span class="ruby-ivar">@grid</span>.<span class="ruby-identifier">attach</span>(<span class="ruby-identifier">bouton</span>, <span class="ruby-identifier">posx</span>, <span class="ruby-identifier">posy</span>, <span class="ruby-value">1</span>, <span class="ruby-value">1</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">bouton</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-detruireImage" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">detruireImage</span><span
+            class="method-args">(image)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Méthode appelée chaque fois qu&#39;on se débarrasse d&#39;une image qu&#39;on ne veut plus afficher. Permet de réduire drastiquement la consommation de mémoire vive. </p>
+<ul><li>
+<p><code>image</code> [Gtk::Image] - l&#39;image à détruire</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="detruireImage-source">
+            <pre><span class="ruby-comment"># File Editeur.rb, line 415</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">detruireImage</span>(<span class="ruby-identifier">image</span>) <span class="ruby-comment">#:doc:</span>
+    <span class="ruby-keyword">if</span>(<span class="ruby-identifier">image</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span>)
+        <span class="ruby-identifier">image</span>.<span class="ruby-identifier">clear</span>
+        <span class="ruby-identifier">image</span> = <span class="ruby-keyword">nil</span>
+    <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-garbageCollectorConstant" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">garbageCollectorConstant</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Méthode qui crée un thread, se débarassant toutes les secondes des images inutiles dans la mémoire.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="garbageCollectorConstant-source">
+            <pre><span class="ruby-comment"># File Editeur.rb, line 423</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">garbageCollectorConstant</span>() <span class="ruby-comment">#:doc:</span>
+    <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-keyword">while</span> <span class="ruby-keyword">true</span>
+            <span class="ruby-comment"># On allume le garbage collector toutes les 1 sec pour vider la mémoire des images détruites par image.clear.</span>
+            <span class="ruby-identifier">sleep</span>(<span class="ruby-value">0.5</span>)
+            <span class="ruby-constant">GC</span>.<span class="ruby-identifier">start</span>
+        <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-sauvegarderVersFichier" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">sauvegarderVersFichier</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Méthode permettant de sauvegarder une grille éditée.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="sauvegarderVersFichier-source">
+            <pre><span class="ruby-comment"># File Editeur.rb, line 434</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">sauvegarderVersFichier</span>() <span class="ruby-comment">#:doc:</span>
+    <span class="ruby-keyword">if</span>(<span class="ruby-identifier">verifierGrille</span>)
+        <span class="ruby-identifier">nom_fichier</span> = <span class="ruby-string">&quot;&quot;</span>
+        <span class="ruby-identifier">dialog</span> = <span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">FileChooserDialog</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:title</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;Sauvegarder vers un fichier&quot;</span>, <span class="ruby-value">:parent</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">:action</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:save</span>, <span class="ruby-value">:buttons</span> <span class="ruby-operator">=&gt;</span> [[<span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">Stock</span><span class="ruby-operator">::</span><span class="ruby-constant">CANCEL</span>, <span class="ruby-value">:cancel</span>],[<span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">Stock</span><span class="ruby-operator">::</span><span class="ruby-constant">OPEN</span>, <span class="ruby-value">:accept</span>]])
+        <span class="ruby-keyword">if</span> (<span class="ruby-identifier">dialog</span>.<span class="ruby-identifier">run</span> <span class="ruby-operator">==</span> <span class="ruby-value">:accept</span>)
+            <span class="ruby-identifier">nom_fichier</span> = <span class="ruby-node">&quot;#{dialog.filename}&quot;</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">dialog</span>.<span class="ruby-identifier">destroy</span>
+        <span class="ruby-keyword">if</span>(<span class="ruby-operator">!</span><span class="ruby-identifier">nom_fichier</span>.<span class="ruby-identifier">empty?</span>)
+            <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">nom_fichier</span>,<span class="ruby-string">&quot;w&quot;</span>){
+                <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+                <span class="ruby-identifier">f</span>.<span class="ruby-identifier">write</span>(<span class="ruby-node">&quot;#{@comboBoxDifficulte.active_iter[0]}\n#{@taille}\n#{@listIle.length}\n&quot;</span>)
+                <span class="ruby-ivar">@listIle</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+                    <span class="ruby-identifier">f</span>.<span class="ruby-identifier">write</span>(<span class="ruby-node">&quot;#{i.positionX} #{i.positionY} #{i.valeur}\n&quot;</span>)
+                <span class="ruby-keyword">end</span>
+                <span class="ruby-ivar">@listPont</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span>
+                    <span class="ruby-keyword">if</span>(<span class="ruby-identifier">p</span>.<span class="ruby-identifier">etatPont</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>)
+                        <span class="ruby-identifier">f</span>.<span class="ruby-identifier">write</span>(<span class="ruby-node">&quot;#{p.iD.positionX} #{p.iD.positionY} #{p.iA.positionX} #{p.iA.positionY} #{p.etatPont}\n&quot;</span>)
+                    <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">end</span>
+            }
+        <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">grille_invalide</span> = <span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">MessageDialog</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:parent</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-ivar">@fenetre</span>, <span class="ruby-value">:flags</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:destroy_with_parent</span>, <span class="ruby-value">:type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:info</span>, <span class="ruby-value">:buttons</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:ok</span>, <span class="ruby-value">:message</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;Les ponts ne sont pas bien reliés !&quot;</span>)
+        <span class="ruby-identifier">grille_invalide</span>.<span class="ruby-identifier">run</span>()
+        <span class="ruby-identifier">grille_invalide</span>.<span class="ruby-identifier">destroy</span>()
+    <span class="ruby-keyword">end</span>    
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

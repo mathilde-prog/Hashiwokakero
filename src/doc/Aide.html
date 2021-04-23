@@ -1,0 +1,1597 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Aide - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/navigation.js" defer></script>
+<script src="./js/search.js" defer></script>
+<script src="./js/search_index.js" defer></script>
+<script src="./js/searcher.js" defer></script>
+<script src="./js/darkfish.js" defer></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">Object
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-creer">::creer</a>
+    
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-chercheConseil">#chercheConseil</a>
+    
+    <li ><a href="#method-i-detectionSegmentIsole">#detectionSegmentIsole</a>
+    
+    <li ><a href="#method-i-erreurIlesIndice1Reliees">#erreurIlesIndice1Reliees</a>
+    
+    <li ><a href="#method-i-erreurIlesIndice2RelieesParDoublePont">#erreurIlesIndice2RelieesParDoublePont</a>
+    
+    <li ><a href="#method-i-estIsolee">#estIsolee</a>
+    
+    <li ><a href="#method-i-estIsoleeAvecDesPonts">#estIsoleeAvecDesPonts</a>
+    
+    <li ><a href="#method-i-genereConseil">#genereConseil</a>
+    
+    <li ><a href="#method-i-ile1AvecUneSeuleSolution">#ile1AvecUneSeuleSolution</a>
+    
+    <li ><a href="#method-i-ile1AvecUneSeuleVoisineDifferenteDe1">#ile1AvecUneSeuleVoisineDifferenteDe1</a>
+    
+    <li ><a href="#method-i-ile2AvecDeuxVoisines2">#ile2AvecDeuxVoisines2</a>
+    
+    <li ><a href="#method-i-ile3Avec2Voisines">#ile3Avec2Voisines</a>
+    
+    <li ><a href="#method-i-ile3Avec2VoisinesSpecial">#ile3Avec2VoisinesSpecial</a>
+    
+    <li ><a href="#method-i-ile3DansUnCoin">#ile3DansUnCoin</a>
+    
+    <li ><a href="#method-i-ile3DansUnCoinSpecial">#ile3DansUnCoinSpecial</a>
+    
+    <li ><a href="#method-i-ile4Avec2Voisins">#ile4Avec2Voisins</a>
+    
+    <li ><a href="#method-i-ile4CasSpecial">#ile4CasSpecial</a>
+    
+    <li ><a href="#method-i-ile4DansUnCoin">#ile4DansUnCoin</a>
+    
+    <li ><a href="#method-i-ile5SurLeCote">#ile5SurLeCote</a>
+    
+    <li ><a href="#method-i-ile5SurLeCoteSpecial">#ile5SurLeCoteSpecial</a>
+    
+    <li ><a href="#method-i-ile6Avec3Voisins">#ile6Avec3Voisins</a>
+    
+    <li ><a href="#method-i-ile6SurLeCote">#ile6SurLeCote</a>
+    
+    <li ><a href="#method-i-ile6auMilieuSpecial">#ile6auMilieuSpecial</a>
+    
+    <li ><a href="#method-i-ile7AuMilieu">#ile7AuMilieu</a>
+    
+    <li ><a href="#method-i-ile7AuMilieuSpecial">#ile7AuMilieuSpecial</a>
+    
+    <li ><a href="#method-i-ile8AuMilieu">#ile8AuMilieu</a>
+    
+    <li ><a href="#method-i-ileOuOnPeutAjouterUnPont">#ileOuOnPeutAjouterUnPont</a>
+    
+    <li ><a href="#method-i-uneIleAvecUnSeulVoisin">#uneIleAvecUnSeulVoisin</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Aide">
+  <h1 id="class-Aide" class="class">
+    class Aide
+  </h1>
+
+  <section class="description">
+    
+<p>La classe <a href="Aide.html"><code>Aide</code></a> représente le système de résolution d&#39;aide.  Elle permet de chercher et générer des conseils en détectant les techniques d&#39;aides applicables à un instant T.  Cette classe contient les variables d&#39;instance suivantes : </p>
+<dl class="rdoc-list note-list"><dt>@listeDesConseils
+<dd>
+<p>Liste des conseils correspondant aux aides </p>
+</dd><dt>@partie
+<dd>
+<p><a href="Partie.html"><code>Partie</code></a> qui utilise le système d&#39;aide</p>
+</dd></dl>
+
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      
+      <div id="attribute-i-listeDesConseils" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">listeDesConseils</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Liste des conseils correspondant aux aides</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-partie" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">partie</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p><a href="Partie.html"><code>Partie</code></a> qui utilise le système d&#39;aide</p>
+        
+        </div>
+      </div>
+      
+    </section>
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-creer" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">creer</span><span
+            class="method-args">(unePartie)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Création d&#39;un système d&#39;aide. </p>
+<ul><li>
+<p><code>unePartie</code> - <a href="Partie.html"><code>Partie</code></a> qui utilise le système d&#39;aide</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="creer-source">
+            <pre><span class="ruby-comment"># File Aide.rb, line 26</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Aide</span>.<span class="ruby-identifier ruby-title">creer</span>(<span class="ruby-identifier">unePartie</span>)
+    <span class="ruby-identifier">new</span>(<span class="ruby-identifier">unePartie</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(unePartie)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Méthode d&#39;intialisation du système d&#39;aide.</p>
+<ul><li>
+<p><code>unePartie</code> - <a href="Partie.html"><code>Partie</code></a> qui utilise le système d&#39;aide</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File Aide.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">unePartie</span>) 
+    <span class="ruby-ivar">@partie</span> = <span class="ruby-identifier">unePartie</span> 
+    <span class="ruby-ivar">@listeDesConseils</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-chercheConseil" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">chercheConseil</span><span
+            class="method-args">(ile)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Cherche un conseil en appelant toutes les méthodes de détection d&#39;aides. </p>
+<ul><li>
+<p><code>ile</code> - <a href="Ile.html"><code>Ile</code></a></p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="chercheConseil-source">
+            <pre><span class="ruby-comment"># File Aide.rb, line 493</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">chercheConseil</span>(<span class="ruby-identifier">ile</span>) 
+    <span class="ruby-identifier">ile4DansUnCoin</span>(<span class="ruby-identifier">ile</span>)
+    <span class="ruby-identifier">ile6SurLeCote</span>(<span class="ruby-identifier">ile</span>)
+    <span class="ruby-identifier">ile8AuMilieu</span>(<span class="ruby-identifier">ile</span>)
+    <span class="ruby-identifier">ile4Avec2Voisins</span>(<span class="ruby-identifier">ile</span>)
+    <span class="ruby-identifier">ile6Avec3Voisins</span>(<span class="ruby-identifier">ile</span>)
+    <span class="ruby-identifier">uneIleAvecUnSeulVoisin</span>(<span class="ruby-identifier">ile</span>)
+    <span class="ruby-identifier">ile3DansUnCoin</span>(<span class="ruby-identifier">ile</span>)
+    <span class="ruby-identifier">ile3Avec2Voisines</span>(<span class="ruby-identifier">ile</span>)
+    <span class="ruby-identifier">ile5SurLeCote</span>(<span class="ruby-identifier">ile</span>)
+    <span class="ruby-identifier">ile7AuMilieu</span>(<span class="ruby-identifier">ile</span>)
+    <span class="ruby-identifier">ile3DansUnCoinSpecial</span>(<span class="ruby-identifier">ile</span>)
+    <span class="ruby-identifier">ile3Avec2VoisinesSpecial</span>(<span class="ruby-identifier">ile</span>)
+    <span class="ruby-identifier">ile5SurLeCoteSpecial</span>(<span class="ruby-identifier">ile</span>)
+    <span class="ruby-identifier">ile7AuMilieuSpecial</span>(<span class="ruby-identifier">ile</span>)
+    <span class="ruby-identifier">ile4CasSpecial</span>(<span class="ruby-identifier">ile</span>)
+    <span class="ruby-identifier">ile6auMilieuSpecial</span>(<span class="ruby-identifier">ile</span>)
+    <span class="ruby-identifier">erreurIlesIndice2RelieesParDoublePont</span>(<span class="ruby-identifier">ile</span>)
+    <span class="ruby-identifier">erreurIlesIndice1Reliees</span>(<span class="ruby-identifier">ile</span>)
+    <span class="ruby-identifier">ile1AvecUneSeuleVoisineDifferenteDe1</span>(<span class="ruby-identifier">ile</span>)
+    <span class="ruby-identifier">ile2AvecDeuxVoisines2</span>(<span class="ruby-identifier">ile</span>)
+    <span class="ruby-identifier">estIsoleeAvecDesPonts</span>(<span class="ruby-identifier">ile</span>)
+    <span class="ruby-identifier">ile1AvecUneSeuleSolution</span>(<span class="ruby-identifier">ile</span>)
+    <span class="ruby-identifier">ileOuOnPeutAjouterUnPont</span>(<span class="ruby-identifier">ile</span>)
+    <span class="ruby-identifier">estIsolee</span>(<span class="ruby-identifier">ile</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-genereConseil" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">genereConseil</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Génére un conseil</p>
+          
+          
+
+          
+          <div class="method-source-code" id="genereConseil-source">
+            <pre><span class="ruby-comment"># File Aide.rb, line 521</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">genereConseil</span>() 
+    <span class="ruby-ivar">@listeDesConseils</span>.<span class="ruby-identifier">clear</span>() <span class="ruby-comment"># On &quot;remet à zéro&quot; la liste des conseils</span>
+
+    <span class="ruby-comment"># Parcours de la grille de jeu pour chercher les conseils</span>
+    <span class="ruby-identifier">i</span> = <span class="ruby-value">0</span>
+    <span class="ruby-identifier">j</span> = <span class="ruby-value">0</span> 
+    <span class="ruby-keyword">while</span>(<span class="ruby-identifier">i</span> <span class="ruby-operator">&lt;</span> <span class="ruby-ivar">@partie</span>.<span class="ruby-identifier">taille</span>) <span class="ruby-keyword">do</span>
+        <span class="ruby-keyword">while</span>(<span class="ruby-identifier">j</span> <span class="ruby-operator">&lt;</span> <span class="ruby-ivar">@partie</span>.<span class="ruby-identifier">taille</span>) <span class="ruby-keyword">do</span>
+            <span class="ruby-keyword">if</span>(<span class="ruby-ivar">@partie</span>.<span class="ruby-identifier">grille</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>].<span class="ruby-identifier">estIle?</span>() <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>)
+                <span class="ruby-identifier">chercheConseil</span>(<span class="ruby-ivar">@partie</span>.<span class="ruby-identifier">grille</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>])
+            <span class="ruby-keyword">end</span>
+            <span class="ruby-identifier">j</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">j</span> = <span class="ruby-value">0</span>
+        <span class="ruby-identifier">i</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">detectionSegmentIsole</span>()
+
+    <span class="ruby-comment"># Si des conseils ont été trouvés</span>
+    <span class="ruby-keyword">if</span>(<span class="ruby-ivar">@listeDesConseils</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">false</span>)            
+        <span class="ruby-comment"># Supprime les conseils dupliqués pour en garder un exemplaire et trie les conseils selon leur ordre de priorité</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">listeDesConseils</span>.<span class="ruby-identifier">uniq</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">conseil</span><span class="ruby-operator">|</span> <span class="ruby-identifier">conseil</span>.<span class="ruby-identifier">texte</span> }.<span class="ruby-identifier">sort_by</span>(<span class="ruby-operator">&amp;</span> <span class="ruby-value">:priorite</span>)[<span class="ruby-value">0</span>] <span class="ruby-comment"># Retourne un conseil pour aider le joueur</span>
+    <span class="ruby-keyword">else</span> 
+        <span class="ruby-keyword">return</span> <span class="ruby-constant">Conseil</span>.<span class="ruby-identifier">nouveau</span>(<span class="ruby-string">&quot;Malheureusement, nous n&#39;avons aucun conseil à vous donner.&quot;</span>,<span class="ruby-value">0</span>)
+    <span class="ruby-keyword">end</span> 
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="private-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Private Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-detectionSegmentIsole" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">detectionSegmentIsole</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Ajoute un conseil à la liste si un segment isolé est détecté.  <a href="Conseil.html"><code>Conseil</code></a> à générer : la connexité doit être respectée.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="detectionSegmentIsole-source">
+            <pre><span class="ruby-comment"># File Aide.rb, line 448</span>
+        <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">detectionSegmentIsole</span>  <span class="ruby-comment">#:doc:</span>
+    <span class="ruby-identifier">i</span> = <span class="ruby-value">0</span>
+    <span class="ruby-identifier">j</span> = <span class="ruby-value">0</span> 
+    <span class="ruby-identifier">nbIlesRelieesTotalement</span> = <span class="ruby-value">0</span>
+    <span class="ruby-identifier">nbIles</span> = <span class="ruby-value">0</span>
+
+    <span class="ruby-identifier">ilesRelieesTotalement</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span> 
+
+    <span class="ruby-keyword">while</span>(<span class="ruby-identifier">i</span> <span class="ruby-operator">&lt;</span> <span class="ruby-ivar">@partie</span>.<span class="ruby-identifier">taille</span>) <span class="ruby-keyword">do</span>
+        <span class="ruby-keyword">while</span>(<span class="ruby-identifier">j</span> <span class="ruby-operator">&lt;</span> <span class="ruby-ivar">@partie</span>.<span class="ruby-identifier">taille</span>) <span class="ruby-keyword">do</span>
+            <span class="ruby-keyword">if</span>(<span class="ruby-ivar">@partie</span>.<span class="ruby-identifier">grille</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>].<span class="ruby-identifier">estIle?</span>)
+                <span class="ruby-identifier">ile</span> = <span class="ruby-ivar">@partie</span>.<span class="ruby-identifier">grille</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>]
+                <span class="ruby-identifier">nbIles</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span> 
+                <span class="ruby-keyword">if</span>(<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">valeur</span>() <span class="ruby-operator">==</span> <span class="ruby-identifier">ile</span>.<span class="ruby-identifier">getNbPonts</span>())
+                    <span class="ruby-identifier">ilesRelieesTotalement</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">ile</span>)
+                    <span class="ruby-identifier">nbIlesRelieesTotalement</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+                <span class="ruby-keyword">end</span>
+            <span class="ruby-keyword">end</span> 
+            <span class="ruby-identifier">j</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">j</span> = <span class="ruby-value">0</span>
+        <span class="ruby-identifier">i</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">for</span> <span class="ruby-identifier">k</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">ilesRelieesTotalement</span>
+        <span class="ruby-keyword">for</span> <span class="ruby-identifier">u</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">k</span>.<span class="ruby-identifier">ilesReliees</span>
+            <span class="ruby-keyword">if</span>(<span class="ruby-operator">!</span><span class="ruby-identifier">ilesRelieesTotalement</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">u</span>))   
+                <span class="ruby-keyword">return</span> ; 
+            <span class="ruby-keyword">end</span> 
+        <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span> 
+
+    <span class="ruby-keyword">if</span>((<span class="ruby-identifier">nbIlesRelieesTotalement</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">nbIles</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">nbIlesRelieesTotalement</span> <span class="ruby-operator">!=</span> <span class="ruby-value">0</span>))
+        <span class="ruby-identifier">conseil</span> = <span class="ruby-constant">Conseil</span>.<span class="ruby-identifier">nouveau</span>(<span class="ruby-string">&quot;On détecte un segment isolé. Pour rappel, la connexité doit être respectée.&quot;</span>,<span class="ruby-value">0</span>)
+        <span class="ruby-keyword">for</span> <span class="ruby-identifier">m</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">ilesRelieesTotalement</span>
+            <span class="ruby-identifier">conseil</span>.<span class="ruby-identifier">ajoutIleConcernee</span>(<span class="ruby-identifier">m</span>)
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-ivar">@listeDesConseils</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">conseil</span>) 
+    <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-erreurIlesIndice1Reliees" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">erreurIlesIndice1Reliees</span><span
+            class="method-args">(ile)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Ajoute un conseil à la liste si l&#39;île est une île d&#39;indice 1 reliée à une autre île d&#39;indice 1.  Remarque : Si on connecte des îles d’indice 1 entre elles, elles seront isolées des autres îles et le joueur se trouvera dans une impasse. <a href="Conseil.html"><code>Conseil</code></a> à générer : Il faut éviter l&#39;isolation (connexité). </p>
+<ul><li>
+<p><code>ile</code> - <a href="Ile.html"><code>Ile</code></a></p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="erreurIlesIndice1Reliees-source">
+            <pre><span class="ruby-comment"># File Aide.rb, line 286</span>
+        <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">erreurIlesIndice1Reliees</span>(<span class="ruby-identifier">ile</span>) <span class="ruby-comment">#:doc:</span>
+    <span class="ruby-keyword">if</span>((<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">valeur</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">estCorrectementReliee</span>() <span class="ruby-operator">==</span> <span class="ruby-keyword">false</span>))
+        <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">ile</span>.<span class="ruby-identifier">ilesReliees</span>()
+            <span class="ruby-keyword">if</span>(<span class="ruby-identifier">i</span>.<span class="ruby-identifier">valeur</span>() <span class="ruby-operator">==</span> <span class="ruby-value">1</span>)
+                <span class="ruby-identifier">conseil</span> = <span class="ruby-constant">Conseil</span>.<span class="ruby-identifier">nouveau</span>(<span class="ruby-string">&quot;Pour résoudre le puzzle, toutes les îles doivent être connectées entre elles. Si vous reliez deux îles d&#39;indice 1, vous serez dans une impasse. Ce raisonnement fonctionne également pour deux îles d&#39;indice 2 reliées par un double-pont.&quot;</span>,<span class="ruby-value">0</span>)
+                <span class="ruby-identifier">conseil</span>.<span class="ruby-identifier">ajoutIleConcernee</span>(<span class="ruby-identifier">ile</span>)
+                <span class="ruby-identifier">conseil</span>.<span class="ruby-identifier">ajoutIleConcernee</span>(<span class="ruby-identifier">i</span>)
+                <span class="ruby-ivar">@listeDesConseils</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">conseil</span>) 
+            <span class="ruby-keyword">end</span> 
+        <span class="ruby-keyword">end</span> 
+    <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-erreurIlesIndice2RelieesParDoublePont" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">erreurIlesIndice2RelieesParDoublePont</span><span
+            class="method-args">(ile)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Ajoute un conseil à la liste si l&#39;île est une île d&#39;indice 2 reliée à une autre île d&#39;indice 2.  Remarque : Si on connecte des îles d’indice 2 entre elles, elles seront isolées des autres îles et le joueur se trouvera dans une impasse. <a href="Conseil.html"><code>Conseil</code></a> à générer : Il faut éviter l&#39;isolation (connexité). </p>
+<ul><li>
+<p><code>ile</code> - <a href="Ile.html"><code>Ile</code></a>    </p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="erreurIlesIndice2RelieesParDoublePont-source">
+            <pre><span class="ruby-comment"># File Aide.rb, line 267</span>
+        <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">erreurIlesIndice2RelieesParDoublePont</span>(<span class="ruby-identifier">ile</span>) <span class="ruby-comment">#:doc:</span>
+    <span class="ruby-keyword">if</span>((<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">valeur</span>() <span class="ruby-operator">==</span> <span class="ruby-value">2</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">estCorrectementReliee</span>() <span class="ruby-operator">==</span> <span class="ruby-keyword">false</span>))
+        <span class="ruby-keyword">if</span>((<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">getNbPonts</span>() <span class="ruby-operator">==</span> <span class="ruby-value">2</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">nbIlesReliees</span>() <span class="ruby-operator">==</span> <span class="ruby-value">1</span>))
+            <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">ile</span>.<span class="ruby-identifier">ilesReliees</span>()
+                <span class="ruby-keyword">if</span>(<span class="ruby-identifier">i</span>.<span class="ruby-identifier">valeur</span>() <span class="ruby-operator">==</span> <span class="ruby-value">2</span>)
+                    <span class="ruby-identifier">conseil</span> = <span class="ruby-constant">Conseil</span>.<span class="ruby-identifier">nouveau</span>(<span class="ruby-string">&quot;Pour résoudre le puzzle, toutes les îles doivent être connectées entre elles. Si vous reliez deux îles d&#39;indice 2 par un double-pont, vous serez dans une impasse. Ce raisonnement fonctionne également pour deux îles d&#39;indice 1 reliées.&quot;</span>,<span class="ruby-value">0</span>)
+                    <span class="ruby-identifier">conseil</span>.<span class="ruby-identifier">ajoutIleConcernee</span>(<span class="ruby-identifier">ile</span>)
+                    <span class="ruby-identifier">conseil</span>.<span class="ruby-identifier">ajoutIleConcernee</span>(<span class="ruby-identifier">i</span>)
+                    <span class="ruby-ivar">@listeDesConseils</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">conseil</span>)                     
+                <span class="ruby-keyword">end</span> 
+            <span class="ruby-keyword">end</span> 
+        <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-estIsolee" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">estIsolee</span><span
+            class="method-args">(ile)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Ajoute un conseil à la liste si l&#39;île est isolée du reste de ses îles voisines. <a href="Conseil.html"><code>Conseil</code></a> à générer : Cette île ne peut être reliée à aucune autre île, il faut revoir les ponts de ses îles voisines.</p>
+<ul><li>
+<p><code>ile</code> - <a href="Ile.html"><code>Ile</code></a></p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="estIsolee-source">
+            <pre><span class="ruby-comment"># File Aide.rb, line 401</span>
+        <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">estIsolee</span>(<span class="ruby-identifier">ile</span>) <span class="ruby-comment">#:doc:</span>
+    <span class="ruby-identifier">voisinesBloqueesOuRemplies</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span> 
+  
+    <span class="ruby-keyword">if</span>(<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">getNbPonts</span>() <span class="ruby-operator">==</span> <span class="ruby-value">0</span>) 
+        <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">ile</span>.<span class="ruby-identifier">listeDesVoisins</span>()
+            <span class="ruby-keyword">if</span>(<span class="ruby-identifier">i</span>.<span class="ruby-identifier">getNbPonts</span>() <span class="ruby-operator">==</span> <span class="ruby-identifier">i</span>.<span class="ruby-identifier">valeur</span>())
+                <span class="ruby-identifier">voisinesBloqueesOuRemplies</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">i</span>)
+            <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-keyword">for</span> <span class="ruby-identifier">j</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">ile</span>.<span class="ruby-identifier">listeDesVoisins</span>()
+            <span class="ruby-keyword">if</span>( <span class="ruby-identifier">ile</span>.<span class="ruby-identifier">peutEtreRelieeA?</span>(<span class="ruby-identifier">j</span>,<span class="ruby-keyword">true</span>) <span class="ruby-operator">==</span> <span class="ruby-keyword">false</span> )
+                <span class="ruby-identifier">voisinesBloqueesOuRemplies</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">j</span>)
+            <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-keyword">if</span>(<span class="ruby-identifier">voisinesBloqueesOuRemplies</span>.<span class="ruby-identifier">uniq</span>.<span class="ruby-identifier">length</span>() <span class="ruby-operator">==</span> <span class="ruby-identifier">ile</span>.<span class="ruby-identifier">nbVoisins</span>()) 
+            <span class="ruby-identifier">voisinesBloqueesOuRemplies</span>.<span class="ruby-identifier">clear</span>(); 
+            <span class="ruby-identifier">conseil</span> = <span class="ruby-constant">Conseil</span>.<span class="ruby-identifier">nouveau</span>(<span class="ruby-string">&quot;Cette île ne peut être reliée à aucune autre île, il faut revoir les ponts de ses îles voisines&quot;</span>,<span class="ruby-value">0</span>)
+            <span class="ruby-identifier">conseil</span>.<span class="ruby-identifier">ajoutIleConcernee</span>(<span class="ruby-identifier">ile</span>)
+            <span class="ruby-ivar">@listeDesConseils</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">conseil</span>) 
+        <span class="ruby-keyword">end</span>  
+    <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-estIsoleeAvecDesPonts" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">estIsoleeAvecDesPonts</span><span
+            class="method-args">(ile)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Ajoute un conseil à la liste si l&#39;île est isolée avec des ponts (ne peut être reliée à aucune de ses voisines). </p>
+
+<p><a href="Conseil.html"><code>Conseil</code></a> à générer : la connexité doit être respectée.</p>
+<ul><li>
+<p><code>ile</code> - <a href="Ile.html"><code>Ile</code></a></p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="estIsoleeAvecDesPonts-source">
+            <pre><span class="ruby-comment"># File Aide.rb, line 433</span>
+        <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">estIsoleeAvecDesPonts</span>(<span class="ruby-identifier">ile</span>) <span class="ruby-comment">#:doc:</span>
+    <span class="ruby-keyword">if</span>(<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">getNbPonts</span>() <span class="ruby-operator">==</span> <span class="ruby-value">0</span>) 
+        <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">ile</span>.<span class="ruby-identifier">listeDesVoisins</span>()
+            <span class="ruby-keyword">if</span>(<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">peutEtreRelieeA?</span>(<span class="ruby-identifier">i</span>,<span class="ruby-keyword">true</span>) <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>)
+                <span class="ruby-keyword">return</span> 
+            <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">conseil</span> = <span class="ruby-constant">Conseil</span>.<span class="ruby-identifier">nouveau</span>(<span class="ruby-string">&quot;Attention, il semblerait qu&#39;une des îles soit isolée des autres par un pont. Pour rappel, la connexité doit être respectée. Il est primordial de faire attention aux îles aux alentours avant de placer un pont.&quot;</span>,<span class="ruby-value">0</span>)
+        <span class="ruby-identifier">conseil</span>.<span class="ruby-identifier">ajoutIleConcernee</span>(<span class="ruby-identifier">ile</span>)
+        <span class="ruby-ivar">@listeDesConseils</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">conseil</span>) 
+    <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-ile1AvecUneSeuleSolution" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ile1AvecUneSeuleSolution</span><span
+            class="method-args">(ile)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Ajoute un conseil à la liste si l&#39;île est une île d&#39;indice 1 qui n&#39;a plus qu&#39;une seule île joignable.  <a href="Conseil.html"><code>Conseil</code></a> à générer : Une île d&#39;indice 1 qui n&#39;a plus qu&#39;une seule île voisine joignable doit être reliée par un pont simple à celle-ci.</p>
+<ul><li>
+<p><code>ile</code> - <a href="Ile.html"><code>Ile</code></a></p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="ile1AvecUneSeuleSolution-source">
+            <pre><span class="ruby-comment"># File Aide.rb, line 348</span>
+        <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">ile1AvecUneSeuleSolution</span>(<span class="ruby-identifier">ile</span>) <span class="ruby-comment">#:doc:</span>
+    <span class="ruby-identifier">voisinBienReliee</span> = <span class="ruby-value">0</span>
+    <span class="ruby-identifier">ileQuiPeutEtreReliee</span> = <span class="ruby-value">0</span>
+
+    <span class="ruby-keyword">if</span>((<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">valeur</span>() <span class="ruby-operator">==</span> <span class="ruby-value">1</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">getNbPonts</span>() <span class="ruby-operator">==</span> <span class="ruby-value">0</span>))
+        <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">ile</span>.<span class="ruby-identifier">listeDesVoisins</span>()
+            <span class="ruby-keyword">if</span>((<span class="ruby-identifier">i</span>.<span class="ruby-identifier">getNbPonts</span>() <span class="ruby-operator">==</span> <span class="ruby-identifier">i</span>.<span class="ruby-identifier">valeur</span>()) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">i</span>.<span class="ruby-identifier">estCorrectementReliee</span>() <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>))
+                <span class="ruby-identifier">voisinBienReliee</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+            <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-keyword">for</span> <span class="ruby-identifier">j</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">ile</span>.<span class="ruby-identifier">listeDesVoisins</span>()
+            <span class="ruby-keyword">if</span>(<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">peutEtreRelieeA?</span>(<span class="ruby-identifier">j</span>,<span class="ruby-keyword">true</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">j</span>.<span class="ruby-identifier">getNbPonts</span>() <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">j</span>.<span class="ruby-identifier">valeur</span>()))
+                <span class="ruby-identifier">ileQuiPeutEtreReliee</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+            <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-keyword">if</span>((<span class="ruby-identifier">voisinBienReliee</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">voisinBienReliee</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">ile</span>.<span class="ruby-identifier">nbVoisins</span>()<span class="ruby-value">-1</span>) <span class="ruby-operator">||</span> (<span class="ruby-identifier">ileQuiPeutEtreReliee</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>))
+            <span class="ruby-identifier">conseil</span> = <span class="ruby-constant">Conseil</span>.<span class="ruby-identifier">nouveau</span>(<span class="ruby-string">&quot;Une île d&#39;indice 1 qui n&#39;a plus qu&#39;une seule île voisine joignable doit être reliée par un pont simple à celle-ci.&quot;</span>,<span class="ruby-value">0</span>)
+            <span class="ruby-identifier">conseil</span>.<span class="ruby-identifier">ajoutIleConcernee</span>(<span class="ruby-identifier">ile</span>)
+            <span class="ruby-ivar">@listeDesConseils</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">conseil</span>) 
+        <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-ile1AvecUneSeuleVoisineDifferenteDe1" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ile1AvecUneSeuleVoisineDifferenteDe1</span><span
+            class="method-args">(ile)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Ajoute un conseil à la liste si l&#39;île est une ile d&#39;indice 1 qui a une ou plusieurs îles voisines d&#39;indice 1 et une seule voisine d&#39;indice supérieur à 1. <a href="Conseil.html"><code>Conseil</code></a> à générer : Il faut relier l&#39;île à sa voisine d&#39;indice supérieur à 1 par un pont simple. </p>
+<ul><li>
+<p><code>ile</code> - <a href="Ile.html"><code>Ile</code></a></p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="ile1AvecUneSeuleVoisineDifferenteDe1-source">
+            <pre><span class="ruby-comment"># File Aide.rb, line 302</span>
+        <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">ile1AvecUneSeuleVoisineDifferenteDe1</span>(<span class="ruby-identifier">ile</span>) <span class="ruby-comment">#:doc:</span>
+    <span class="ruby-identifier">nbVoisinesIndice1</span> = <span class="ruby-value">0</span>
+    <span class="ruby-keyword">if</span>((<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">valeur</span>() <span class="ruby-operator">==</span> <span class="ruby-value">1</span>))
+        <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">ile</span>.<span class="ruby-identifier">listeDesVoisins</span>()
+            <span class="ruby-keyword">if</span>(<span class="ruby-identifier">i</span>.<span class="ruby-identifier">valeur</span>() <span class="ruby-operator">==</span> <span class="ruby-value">1</span>)
+                <span class="ruby-identifier">nbVoisinesIndice1</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>  
+            <span class="ruby-keyword">end</span> 
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-keyword">for</span> <span class="ruby-identifier">j</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">ile</span>.<span class="ruby-identifier">ilesReliees</span>()
+            <span class="ruby-keyword">if</span>(<span class="ruby-identifier">j</span>.<span class="ruby-identifier">valeur</span>() <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>)
+                <span class="ruby-keyword">return</span>
+            <span class="ruby-keyword">end</span> 
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-keyword">if</span>(<span class="ruby-identifier">nbVoisinesIndice1</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">1</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">nbVoisinesIndice1</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">ile</span>.<span class="ruby-identifier">nbVoisins</span>()<span class="ruby-value">-1</span> )
+            <span class="ruby-identifier">conseil</span> = <span class="ruby-constant">Conseil</span>.<span class="ruby-identifier">nouveau</span>(<span class="ruby-string">&quot;Quand une île d&#39;indice 1 possède plusieurs voisines dont une ou plusieurs îles d&#39;indice 1 et une autre île d&#39;indice différent de 1, elle doit être reliée à l&#39;île d&#39;indice différent de 1 par un pont simple pour éviter l&#39;isolement de deux îles d&#39;indice 1.&quot;</span>,<span class="ruby-value">1</span>)
+            <span class="ruby-identifier">conseil</span>.<span class="ruby-identifier">ajoutIleConcernee</span>(<span class="ruby-identifier">ile</span>)
+            <span class="ruby-ivar">@listeDesConseils</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">conseil</span>) 
+        <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-ile2AvecDeuxVoisines2" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ile2AvecDeuxVoisines2</span><span
+            class="method-args">(ile)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Ajoute un conseil à la liste si l&#39;île est une île d’indice 2 qui a seulement deux îles voisines d&#39;indice 2.</p>
+
+<p><a href="Conseil.html"><code>Conseil</code></a> à générer : Il faut relier l&#39;île avec un pont simple à chacune de ses îles voisines. </p>
+<ul><li>
+<p><code>ile</code> - <a href="Ile.html"><code>Ile</code></a></p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="ile2AvecDeuxVoisines2-source">
+            <pre><span class="ruby-comment"># File Aide.rb, line 328</span>
+        <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">ile2AvecDeuxVoisines2</span>(<span class="ruby-identifier">ile</span>) <span class="ruby-comment">#:doc:</span>
+    <span class="ruby-identifier">nbVoisinesIndice2</span> = <span class="ruby-value">0</span>
+    <span class="ruby-keyword">if</span>((<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">valeur</span>() <span class="ruby-operator">==</span> <span class="ruby-value">2</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">ile</span>.<span class="ruby-identifier">nbVoisins</span>() <span class="ruby-operator">==</span> <span class="ruby-value">2</span>)
+        <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">ile</span>.<span class="ruby-identifier">listeDesVoisins</span>()
+            <span class="ruby-keyword">if</span>(<span class="ruby-identifier">i</span>.<span class="ruby-identifier">valeur</span>() <span class="ruby-operator">==</span> <span class="ruby-value">2</span>)
+                <span class="ruby-identifier">nbVoisinesIndice2</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>  
+            <span class="ruby-keyword">end</span> 
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-keyword">if</span>((<span class="ruby-identifier">nbVoisinesIndice2</span> <span class="ruby-operator">==</span> <span class="ruby-value">2</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">nbIlesReliees</span>() <span class="ruby-operator">&lt;</span> <span class="ruby-value">2</span>))
+            <span class="ruby-identifier">conseil</span> = <span class="ruby-constant">Conseil</span>.<span class="ruby-identifier">nouveau</span>(<span class="ruby-string">&quot;Si une île d&#39;indice 2 a seulement deux îles voisines d&#39;indice 2, elle doit être reliée à ses voisines par un pont simple.&quot;</span>,<span class="ruby-value">1</span>)
+            <span class="ruby-identifier">conseil</span>.<span class="ruby-identifier">ajoutIleConcernee</span>(<span class="ruby-identifier">ile</span>)
+            <span class="ruby-ivar">@listeDesConseils</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">conseil</span>) 
+        <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-ile3Avec2Voisines" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ile3Avec2Voisines</span><span
+            class="method-args">(ile)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Ajoute un conseil à la liste si l&#39;île a l&#39;indice 3, a 2 voisines et n&#39;a pas 3 ponts.  <a href="Conseil.html"><code>Conseil</code></a> à générer : L&#39;île doit être connectée avec un pont simple à une de ses îles voisines et avec un double-pont à l&#39;autre</p>
+<ul><li>
+<p><code>ile</code> - <a href="Ile.html"><code>Ile</code></a></p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="ile3Avec2Voisines-source">
+            <pre><span class="ruby-comment"># File Aide.rb, line 123</span>
+        <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">ile3Avec2Voisines</span>(<span class="ruby-identifier">ile</span>) <span class="ruby-comment">#:doc:</span>
+    <span class="ruby-keyword">if</span>((<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">valeur</span>() <span class="ruby-operator">==</span> <span class="ruby-value">3</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">nbVoisins</span>() <span class="ruby-operator">==</span> <span class="ruby-value">2</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">getNbPonts</span>() <span class="ruby-operator">!=</span> <span class="ruby-value">3</span>))
+        <span class="ruby-identifier">conseil</span> = <span class="ruby-constant">Conseil</span>.<span class="ruby-identifier">nouveau</span>(<span class="ruby-string">&quot;Si une île d&#39;indice 3 a deux îles voisines, vous devez la relier avec un simple pont à une de ses voisines et la relier à l&#39;autre avec un double-pont. Faites une tentative !&quot;</span>,<span class="ruby-value">4</span>)
+        <span class="ruby-identifier">conseil</span>.<span class="ruby-identifier">ajoutIleConcernee</span>(<span class="ruby-identifier">ile</span>)
+        <span class="ruby-ivar">@listeDesConseils</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">conseil</span>) 
+    <span class="ruby-keyword">end</span> 
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-ile3Avec2VoisinesSpecial" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ile3Avec2VoisinesSpecial</span><span
+            class="method-args">(ile)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Ajoute un conseil à la liste si l&#39;île a l&#39;indice 3, a 2 voisines, n&#39;est pas déjà correctement reliée et a parmi ses îles voisines une île d&#39;indice 1.  <a href="Conseil.html"><code>Conseil</code></a> à générer : L&#39;île doit être connectée avec un pont simple à sa voisine d&#39;indice 1 et avec un double-pont à son autre voisine. </p>
+<ul><li>
+<p><code>ile</code> - <a href="Ile.html"><code>Ile</code></a></p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="ile3Avec2VoisinesSpecial-source">
+            <pre><span class="ruby-comment"># File Aide.rb, line 171</span>
+        <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">ile3Avec2VoisinesSpecial</span>(<span class="ruby-identifier">ile</span>) <span class="ruby-comment">#:doc:</span>
+    <span class="ruby-keyword">if</span> ((<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">valeur</span>() <span class="ruby-operator">==</span> <span class="ruby-value">3</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">nbVoisins</span>() <span class="ruby-operator">==</span> <span class="ruby-value">2</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">estCorrectementReliee</span>() <span class="ruby-operator">==</span> <span class="ruby-keyword">false</span>))
+        <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">ile</span>.<span class="ruby-identifier">listeDesVoisins</span>()
+            <span class="ruby-keyword">if</span>(<span class="ruby-identifier">i</span>.<span class="ruby-identifier">valeur</span>() <span class="ruby-operator">==</span> <span class="ruby-value">1</span>)
+                <span class="ruby-identifier">conseil</span> = <span class="ruby-constant">Conseil</span>.<span class="ruby-identifier">nouveau</span>(<span class="ruby-string">&quot;Quand une île d&#39;indice 3 a deux îles voisines. Dans le cas où une de ses voisines est une île d&#39;indice 1, vous devez les relier avec un pont simple. Il ne vous reste plus qu&#39;à relier l&#39;île d&#39;indice 3 avec un double-pont à son autre voisine.&quot;</span>,<span class="ruby-value">2</span>)
+                <span class="ruby-identifier">conseil</span>.<span class="ruby-identifier">ajoutIleConcernee</span>(<span class="ruby-identifier">ile</span>)
+                <span class="ruby-ivar">@listeDesConseils</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">conseil</span>) 
+            <span class="ruby-keyword">end</span> 
+        <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span> 
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-ile3DansUnCoin" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ile3DansUnCoin</span><span
+            class="method-args">(ile)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Ajoute un conseil à la liste si l&#39;île a l&#39;indice 3, est dans un coin et n&#39;a pas 3 ponts.  <a href="Conseil.html"><code>Conseil</code></a> à générer : L&#39;île doit être connectée avec un pont simple à une de ses îles voisines et avec un double-pont à l&#39;autre</p>
+<ul><li>
+<p><code>ile</code> - <a href="Ile.html"><code>Ile</code></a></p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="ile3DansUnCoin-source">
+            <pre><span class="ruby-comment"># File Aide.rb, line 112</span>
+        <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">ile3DansUnCoin</span>(<span class="ruby-identifier">ile</span>) <span class="ruby-comment">#:doc:</span>
+    <span class="ruby-keyword">if</span>((<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">valeur</span>() <span class="ruby-operator">==</span> <span class="ruby-value">3</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">estDansUnCoin</span>() <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">getNbPonts</span>() <span class="ruby-operator">!=</span> <span class="ruby-value">3</span>))
+        <span class="ruby-identifier">conseil</span> = <span class="ruby-constant">Conseil</span>.<span class="ruby-identifier">nouveau</span>(<span class="ruby-string">&quot;Quand une île d&#39;indice 3 se situe dans un coin, elle a obligatoirement deux îles voisines. Vous devez la relier avec un simple pont à une de ses voisines et la relier à l&#39;autre avec un double-pont. Faites une tentative !&quot;</span>,<span class="ruby-value">3</span>)
+        <span class="ruby-identifier">conseil</span>.<span class="ruby-identifier">ajoutIleConcernee</span>(<span class="ruby-identifier">ile</span>)
+        <span class="ruby-ivar">@listeDesConseils</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">conseil</span>) 
+    <span class="ruby-keyword">end</span> 
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-ile3DansUnCoinSpecial" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ile3DansUnCoinSpecial</span><span
+            class="method-args">(ile)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Ajoute un conseil à la liste si l&#39;île a l&#39;indice 3, est dans un coin, n&#39;est pas déjà correctement reliée et a parmi ses îles voisines une île d&#39;indice 1.  <a href="Conseil.html"><code>Conseil</code></a> à générer : L&#39;île doit être connectée avec un pont simple à sa voisine d&#39;indice 1 et avec un double-pont à son autre voisine. </p>
+<ul><li>
+<p><code>ile</code> - <a href="Ile.html"><code>Ile</code></a></p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="ile3DansUnCoinSpecial-source">
+            <pre><span class="ruby-comment"># File Aide.rb, line 156</span>
+        <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">ile3DansUnCoinSpecial</span>(<span class="ruby-identifier">ile</span>) <span class="ruby-comment">#:doc:</span>
+    <span class="ruby-keyword">if</span> ((<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">valeur</span>() <span class="ruby-operator">==</span> <span class="ruby-value">3</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">estDansUnCoin</span>() <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">estCorrectementReliee</span>() <span class="ruby-operator">==</span> <span class="ruby-keyword">false</span>))
+        <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">ile</span>.<span class="ruby-identifier">listeDesVoisins</span>()
+            <span class="ruby-keyword">if</span>(<span class="ruby-identifier">i</span>.<span class="ruby-identifier">valeur</span>() <span class="ruby-operator">==</span> <span class="ruby-value">1</span>)
+                <span class="ruby-identifier">conseil</span> = <span class="ruby-constant">Conseil</span>.<span class="ruby-identifier">nouveau</span>(<span class="ruby-string">&quot;Quand une île d&#39;indice 3 se situe dans un coin, elle a obligatoirement deux îles voisines. Dans le cas où une de ses voisines est une île d&#39;indice 1, vous devez les relier avec un pont simple. Il ne vous reste plus qu&#39;à relier l&#39;île d&#39;indice 3 avec un double-pont à son autre voisine.&quot;</span>,<span class="ruby-value">1</span>)
+                <span class="ruby-identifier">conseil</span>.<span class="ruby-identifier">ajoutIleConcernee</span>(<span class="ruby-identifier">ile</span>)
+                <span class="ruby-ivar">@listeDesConseils</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">conseil</span>) 
+            <span class="ruby-keyword">end</span> 
+        <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span> 
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-ile4Avec2Voisins" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ile4Avec2Voisins</span><span
+            class="method-args">(ile)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Ajoute un conseil à la liste si l&#39;île a l&#39;indice 4, a 2 voisins et n&#39;est pas déjà correctement reliée. <a href="Conseil.html"><code>Conseil</code></a> à générer : On en déduit que l&#39;île doit être connectée avec un double-pont à chacune de ses îles voisines.</p>
+<ul><li>
+<p><code>ile</code> - <a href="Ile.html"><code>Ile</code></a></p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="ile4Avec2Voisins-source">
+            <pre><span class="ruby-comment"># File Aide.rb, line 75</span>
+        <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">ile4Avec2Voisins</span>(<span class="ruby-identifier">ile</span>) <span class="ruby-comment">#:doc:</span>
+    <span class="ruby-keyword">if</span> ((<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">valeur</span>() <span class="ruby-operator">==</span> <span class="ruby-value">4</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">nbVoisins</span>() <span class="ruby-operator">==</span> <span class="ruby-value">2</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">estCorrectementReliee</span>() <span class="ruby-operator">==</span> <span class="ruby-keyword">false</span>))
+        <span class="ruby-identifier">conseil</span> = <span class="ruby-constant">Conseil</span>.<span class="ruby-identifier">nouveau</span>(<span class="ruby-string">&quot;Si une île d&#39;indice 4 a deux îles voisines, une seule solution s&#39;offre à vous : vous devez la relier avec un double-pont à ses voisines.&quot;</span>,<span class="ruby-value">2</span>)
+        <span class="ruby-identifier">conseil</span>.<span class="ruby-identifier">ajoutIleConcernee</span>(<span class="ruby-identifier">ile</span>)
+        <span class="ruby-ivar">@listeDesConseils</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">conseil</span>) 
+    <span class="ruby-keyword">end</span>  
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-ile4CasSpecial" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ile4CasSpecial</span><span
+            class="method-args">(ile)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Ajoute un conseil à la liste si l&#39;île a l&#39;indice 4, a 3 voisins, n&#39;est pas déjà correctement reliée et a parmi ses îles voisines deux îles avec l&#39;indice 1.  <a href="Conseil.html"><code>Conseil</code></a> à générer : L&#39;île doit être connectée avec un pont simple à ses voisines d&#39;indice 1 et avec un double-pont à son autre voisine. </p>
+<ul><li>
+<p><code>ile</code> - <a href="Ile.html"><code>Ile</code></a></p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="ile4CasSpecial-source">
+            <pre><span class="ruby-comment"># File Aide.rb, line 216</span>
+        <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">ile4CasSpecial</span>(<span class="ruby-identifier">ile</span>) <span class="ruby-comment">#:doc:</span>
+    <span class="ruby-identifier">nbVoisinesIndice1</span> = <span class="ruby-value">0</span>
+
+    <span class="ruby-keyword">if</span> ((<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">valeur</span>() <span class="ruby-operator">==</span> <span class="ruby-value">4</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">nbVoisins</span>() <span class="ruby-operator">==</span> <span class="ruby-value">3</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">getNbPonts</span>() <span class="ruby-operator">&lt;</span> <span class="ruby-value">4</span>)) 
+        <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">ile</span>.<span class="ruby-identifier">listeDesVoisins</span>()
+            <span class="ruby-keyword">if</span>(<span class="ruby-identifier">i</span>.<span class="ruby-identifier">valeur</span>() <span class="ruby-operator">==</span> <span class="ruby-value">1</span>)
+                <span class="ruby-identifier">nbVoisinesIndice1</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>  
+            <span class="ruby-keyword">end</span> 
+        <span class="ruby-keyword">end</span>
+        
+        <span class="ruby-keyword">if</span>(<span class="ruby-identifier">nbVoisinesIndice1</span> <span class="ruby-operator">==</span> <span class="ruby-value">2</span>)
+            <span class="ruby-identifier">conseil</span> = <span class="ruby-constant">Conseil</span>.<span class="ruby-identifier">nouveau</span>(<span class="ruby-string">&quot;Quand une île d&#39;indice 4 a exactement trois îles voisines dont deux d&#39;entres elles ont pour indice 1, vous devez relier l&#39;île à ses deux voisines d&#39;indice 1 avec un simple pont et la relier à sa troisième voisine avec un double-pont.&quot;</span>,<span class="ruby-value">1</span>)
+            <span class="ruby-identifier">conseil</span>.<span class="ruby-identifier">ajoutIleConcernee</span>(<span class="ruby-identifier">ile</span>)
+            <span class="ruby-ivar">@listeDesConseils</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">conseil</span>) 
+        <span class="ruby-keyword">end</span> 
+    <span class="ruby-keyword">end</span> 
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-ile4DansUnCoin" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ile4DansUnCoin</span><span
+            class="method-args">(ile)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Ajoute un conseil à la liste si l&#39;île a l&#39;indice 4, est dans un coin et n&#39;est pas déjà correctement reliée. <a href="Conseil.html"><code>Conseil</code></a> à générer : On en déduit que l&#39;île doit être connectée avec un double-pont à chacune de ses îles voisines. </p>
+<ul><li>
+<p><code>ile</code> - <a href="Ile.html"><code>Ile</code></a></p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="ile4DansUnCoin-source">
+            <pre><span class="ruby-comment"># File Aide.rb, line 42</span>
+        <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">ile4DansUnCoin</span>(<span class="ruby-identifier">ile</span>) <span class="ruby-comment">#:doc:</span>
+    <span class="ruby-keyword">if</span>((<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">estDansUnCoin</span>() <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">valeur</span>() <span class="ruby-operator">==</span> <span class="ruby-value">4</span>) <span class="ruby-operator">&amp;&amp;</span> ((<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">estCorrectementReliee</span>() <span class="ruby-operator">==</span> <span class="ruby-keyword">false</span>)))
+        <span class="ruby-identifier">conseil</span> = <span class="ruby-constant">Conseil</span>.<span class="ruby-identifier">nouveau</span>(<span class="ruby-string">&quot;Quand une île d&#39;indice 4 se situe dans un coin, elle a obligatoirement deux îles voisines. Sachant que le nombre de ponts pour relier deux îles ne peut dépasser deux, il y a naturellement deux double-ponts connectés avec chacune de ses îles voisines.&quot;</span>,<span class="ruby-value">1</span>)
+        <span class="ruby-identifier">conseil</span>.<span class="ruby-identifier">ajoutIleConcernee</span>(<span class="ruby-identifier">ile</span>)
+        <span class="ruby-ivar">@listeDesConseils</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">conseil</span>) 
+    <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-ile5SurLeCote" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ile5SurLeCote</span><span
+            class="method-args">(ile)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Ajoute un conseil à la liste si l&#39;île a l&#39;indice 5, a 3 voisins, est sur le côté et n&#39;est pas reliée au minimum avec un pont simple à chacune de ses voisines. <a href="Conseil.html"><code>Conseil</code></a> à générer : L&#39;île doit avoir au minimum un pont simple connecté à chacune de ses trois îles voisines. </p>
+<ul><li>
+<p><code>ile</code> - <a href="Ile.html"><code>Ile</code></a></p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="ile5SurLeCote-source">
+            <pre><span class="ruby-comment"># File Aide.rb, line 134</span>
+        <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">ile5SurLeCote</span>(<span class="ruby-identifier">ile</span>) <span class="ruby-comment">#:doc:</span>
+    <span class="ruby-keyword">if</span>((<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">valeur</span>() <span class="ruby-operator">==</span> <span class="ruby-value">5</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">estSurLeCote</span>() <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">nbVoisins</span>() <span class="ruby-operator">==</span> <span class="ruby-value">3</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">nbIlesReliees</span>() <span class="ruby-operator">&lt;</span> <span class="ruby-value">3</span>))
+        <span class="ruby-identifier">conseil</span> = <span class="ruby-constant">Conseil</span>.<span class="ruby-identifier">nouveau</span>(<span class="ruby-string">&quot;Quand une île d&#39;indice 5 se situe sur le côté, elle doit avoir au minimum un pont simple connecté à chacune de ses trois îles voisines.&quot;</span>,<span class="ruby-value">2</span>)
+        <span class="ruby-identifier">conseil</span>.<span class="ruby-identifier">ajoutIleConcernee</span>(<span class="ruby-identifier">ile</span>)
+        <span class="ruby-ivar">@listeDesConseils</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">conseil</span>) 
+    <span class="ruby-keyword">end</span> 
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-ile5SurLeCoteSpecial" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ile5SurLeCoteSpecial</span><span
+            class="method-args">(ile)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Ajoute un conseil à la liste si l&#39;île a l&#39;indice 5, est sur le côté, a parmi ses îles voisines une île d&#39;indice 1 et n&#39;est pas reliée au minimum avec un pont simple à chacune de ses voisines.  <a href="Conseil.html"><code>Conseil</code></a> à générer : L&#39;île doit être connectée avec un pont simple à sa voisine d&#39;indice 1 et avec un double-pont à ses autres voisines. </p>
+<ul><li>
+<p><code>ile</code> - <a href="Ile.html"><code>Ile</code></a>  </p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="ile5SurLeCoteSpecial-source">
+            <pre><span class="ruby-comment"># File Aide.rb, line 186</span>
+        <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">ile5SurLeCoteSpecial</span>(<span class="ruby-identifier">ile</span>) <span class="ruby-comment">#:doc:</span>
+    <span class="ruby-keyword">if</span> ((<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">valeur</span>() <span class="ruby-operator">==</span> <span class="ruby-value">5</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">estSurLeCote</span>() <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>)  <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">nbVoisins</span>() <span class="ruby-operator">==</span> <span class="ruby-value">3</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">nbIlesReliees</span>() <span class="ruby-operator">&lt;</span> <span class="ruby-value">3</span>))
+        <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">ile</span>.<span class="ruby-identifier">listeDesVoisins</span>()
+            <span class="ruby-keyword">if</span>(<span class="ruby-identifier">i</span>.<span class="ruby-identifier">valeur</span>() <span class="ruby-operator">==</span> <span class="ruby-value">1</span>)
+                <span class="ruby-identifier">conseil</span> = <span class="ruby-constant">Conseil</span>.<span class="ruby-identifier">nouveau</span>(<span class="ruby-string">&quot;Quand une île d&#39;indice 5 se situe sur le côté, elle a obligatoirement trois îles voisines. Dans le cas où une de ses voisines est une île d&#39;indice 1, vous devez les relier avec un pont simple. Il ne vous reste plus qu&#39;à relier l&#39;île d&#39;indice 5 avec des double-ponts à ses autres voisines.&quot;</span>,<span class="ruby-value">1</span>)
+                <span class="ruby-identifier">conseil</span>.<span class="ruby-identifier">ajoutIleConcernee</span>(<span class="ruby-identifier">ile</span>)
+                <span class="ruby-ivar">@listeDesConseils</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">conseil</span>) 
+            <span class="ruby-keyword">end</span> 
+        <span class="ruby-keyword">end</span> 
+    <span class="ruby-keyword">end</span> 
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-ile6Avec3Voisins" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ile6Avec3Voisins</span><span
+            class="method-args">(ile)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Ajoute un conseil à la liste si l&#39;île a l&#39;indice 6, a 3 voisins et n&#39;est pas déjà correctement reliée. <a href="Conseil.html"><code>Conseil</code></a> à générer : On en déduit que l&#39;île doit être connectée avec un double-pont à chacune de ses îles voisines.</p>
+<ul><li>
+<p><code>ile</code> - <a href="Ile.html"><code>Ile</code></a></p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="ile6Avec3Voisins-source">
+            <pre><span class="ruby-comment"># File Aide.rb, line 86</span>
+        <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">ile6Avec3Voisins</span>(<span class="ruby-identifier">ile</span>) <span class="ruby-comment">#:doc:</span>
+    <span class="ruby-keyword">if</span> ((<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">valeur</span>() <span class="ruby-operator">==</span> <span class="ruby-value">6</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">nbVoisins</span>() <span class="ruby-operator">==</span> <span class="ruby-value">3</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">estCorrectementReliee</span>() <span class="ruby-operator">==</span> <span class="ruby-keyword">false</span>))
+        <span class="ruby-identifier">conseil</span> = <span class="ruby-constant">Conseil</span>.<span class="ruby-identifier">nouveau</span>(<span class="ruby-string">&quot;Si une île d&#39;indice 6 a trois îles voisines, une seule solution s&#39;offre à vous : vous devez la relier avec un double-pont à chacune de ses voisines.&quot;</span>,<span class="ruby-value">2</span>)
+        <span class="ruby-identifier">conseil</span>.<span class="ruby-identifier">ajoutIleConcernee</span>(<span class="ruby-identifier">ile</span>)
+        <span class="ruby-ivar">@listeDesConseils</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">conseil</span>) 
+    <span class="ruby-keyword">end</span> 
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-ile6SurLeCote" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ile6SurLeCote</span><span
+            class="method-args">(ile)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Ajoute un conseil à la liste si l&#39;île a l&#39;indice 6, est sur le côté, a 3 voisins et n&#39;est pas déjà correctement reliée.  <a href="Conseil.html"><code>Conseil</code></a> à générer : On en déduit que l&#39;île doit être connectée avec un double-pont à chacune de ses îles voisines. </p>
+<ul><li>
+<p><code>ile</code> - <a href="Ile.html"><code>Ile</code></a></p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="ile6SurLeCote-source">
+            <pre><span class="ruby-comment"># File Aide.rb, line 53</span>
+        <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">ile6SurLeCote</span>(<span class="ruby-identifier">ile</span>) <span class="ruby-comment">#:doc:</span>
+    <span class="ruby-keyword">if</span> ((<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">valeur</span>() <span class="ruby-operator">==</span> <span class="ruby-value">6</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">estSurLeCote</span>() <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">nbVoisins</span>() <span class="ruby-operator">==</span>  <span class="ruby-value">3</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">estCorrectementReliee</span>() <span class="ruby-operator">==</span> <span class="ruby-keyword">false</span>))
+        <span class="ruby-identifier">conseil</span> = <span class="ruby-constant">Conseil</span>.<span class="ruby-identifier">nouveau</span>(<span class="ruby-string">&quot;Quand une île d&#39;indice 6 se situe sur le côté, elle a obligatoirement trois voisins. Vous devez la connecter avec un double-pont à chacune de ses îles voisines.&quot;</span>,<span class="ruby-value">1</span>)
+        <span class="ruby-identifier">conseil</span>.<span class="ruby-identifier">ajoutIleConcernee</span>(<span class="ruby-identifier">ile</span>)
+        <span class="ruby-ivar">@listeDesConseils</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">conseil</span>) 
+    <span class="ruby-keyword">end</span>  
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-ile6auMilieuSpecial" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ile6auMilieuSpecial</span><span
+            class="method-args">(ile)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Ajoute un conseil à la liste si l&#39;île a l&#39;indice 6, est au milieu, a 4 voisins (dont une île d&#39;indice 1) et n&#39;est pas déjà reliée à ses trois autres voisins par un simple pont. <a href="Conseil.html"><code>Conseil</code></a> à générer : L&#39;île doit avoir au minimum un pont connecté à chacune de ses 3 autres îles voisines (celles qui ne sont pas d&#39;indice 1).</p>
+<ul><li>
+<p><code>ile</code> - <a href="Ile.html"><code>Ile</code></a></p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="ile6auMilieuSpecial-source">
+            <pre><span class="ruby-comment"># File Aide.rb, line 237</span>
+        <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">ile6auMilieuSpecial</span>(<span class="ruby-identifier">ile</span>) <span class="ruby-comment">#:doc:</span>
+    <span class="ruby-identifier">nbVoisinesIndice1</span> = <span class="ruby-value">0</span>
+    <span class="ruby-identifier">nbVoisinesIndiceDifferentDe1Reliees</span> = <span class="ruby-value">0</span>
+
+    <span class="ruby-keyword">if</span>((<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">valeur</span>() <span class="ruby-operator">==</span> <span class="ruby-value">6</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">estAuMilieu</span>() <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">nbVoisins</span>() <span class="ruby-operator">==</span> <span class="ruby-value">4</span>))
+
+        <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">ile</span>.<span class="ruby-identifier">listeDesVoisins</span>()
+            <span class="ruby-keyword">if</span>(<span class="ruby-identifier">i</span>.<span class="ruby-identifier">valeur</span>() <span class="ruby-operator">==</span> <span class="ruby-value">1</span>)
+                <span class="ruby-identifier">nbVoisinesIndice1</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>  
+            <span class="ruby-keyword">end</span> 
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-keyword">for</span> <span class="ruby-identifier">j</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">ile</span>.<span class="ruby-identifier">ilesReliees</span>()
+            <span class="ruby-keyword">if</span>(<span class="ruby-identifier">j</span>.<span class="ruby-identifier">valeur</span>() <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>)
+                <span class="ruby-identifier">nbVoisinesIndiceDifferentDe1Reliees</span> <span class="ruby-operator">+=</span><span class="ruby-value">1</span>
+            <span class="ruby-keyword">end</span> 
+        <span class="ruby-keyword">end</span>
+            
+        <span class="ruby-keyword">if</span>((<span class="ruby-identifier">nbVoisinesIndice1</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">nbIlesReliees</span>() <span class="ruby-operator">&lt;=</span> <span class="ruby-value">3</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">nbVoisinesIndiceDifferentDe1Reliees</span> <span class="ruby-operator">!=</span> <span class="ruby-value">3</span>))
+            <span class="ruby-identifier">conseil</span> = <span class="ruby-constant">Conseil</span>.<span class="ruby-identifier">nouveau</span>(<span class="ruby-string">&quot;Si une île d&#39;indice 6 dans le centre de la grille a quatre îles voisines, peu importe si cette île est connectée ou non à sa voisine d&#39;indice 1, elle doit avoir au minimum un simple pont connecté à ses trois autres îles voisines.&quot;</span>,<span class="ruby-value">1</span>)
+            <span class="ruby-identifier">conseil</span>.<span class="ruby-identifier">ajoutIleConcernee</span>(<span class="ruby-identifier">ile</span>)
+            <span class="ruby-ivar">@listeDesConseils</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">conseil</span>) 
+        <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-ile7AuMilieu" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ile7AuMilieu</span><span
+            class="method-args">(ile)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Ajoute un conseil à la liste si l&#39;île a l&#39;indice 7, a 4 voisins, est au milieu et n&#39;est pas reliée au minimum avec un pont simple à chacune de ses voisines. <a href="Conseil.html"><code>Conseil</code></a> à générer : L&#39;île doit avoir au minimum un pont simple connecté à chacune de ses quatres îles voisines. </p>
+<ul><li>
+<p><code>ile</code> - <a href="Ile.html"><code>Ile</code></a></p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="ile7AuMilieu-source">
+            <pre><span class="ruby-comment"># File Aide.rb, line 145</span>
+        <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">ile7AuMilieu</span>(<span class="ruby-identifier">ile</span>) <span class="ruby-comment">#:doc:</span>
+    <span class="ruby-keyword">if</span>((<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">valeur</span>() <span class="ruby-operator">==</span> <span class="ruby-value">7</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">estAuMilieu</span>() <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">nbVoisins</span> <span class="ruby-operator">==</span> <span class="ruby-value">4</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">nbIlesReliees</span>() <span class="ruby-operator">&lt;</span> <span class="ruby-value">4</span>))
+        <span class="ruby-identifier">conseil</span> = <span class="ruby-constant">Conseil</span>.<span class="ruby-identifier">nouveau</span>(<span class="ruby-string">&quot;Quand une île d&#39;indice 7 se situe au milieu de la grille, elle doit avoir au minimum un pont simple connecté à chacune de ses quatre îles voisines.&quot;</span>,<span class="ruby-value">2</span>)
+        <span class="ruby-identifier">conseil</span>.<span class="ruby-identifier">ajoutIleConcernee</span>(<span class="ruby-identifier">ile</span>)
+        <span class="ruby-ivar">@listeDesConseils</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">conseil</span>) 
+    <span class="ruby-keyword">end</span> 
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-ile7AuMilieuSpecial" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ile7AuMilieuSpecial</span><span
+            class="method-args">(ile)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Ajoute un conseil à la liste si l&#39;île a l&#39;indice 7, est au milieu, n&#39;est pas déjà correctement reliée et a parmi ses îles voisines une île avec l&#39;indice 1. <a href="Conseil.html"><code>Conseil</code></a> à générer : L&#39;île doit être connectée avec un pont simple à sa voisine d&#39;indice 1 et avec un double-pont à ses autres voisines. </p>
+<ul><li>
+<p><code>ile</code> - <a href="Ile.html"><code>Ile</code></a>    </p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="ile7AuMilieuSpecial-source">
+            <pre><span class="ruby-comment"># File Aide.rb, line 201</span>
+        <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">ile7AuMilieuSpecial</span>(<span class="ruby-identifier">ile</span>) <span class="ruby-comment">#:doc:</span>
+    <span class="ruby-keyword">if</span> ((<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">valeur</span>() <span class="ruby-operator">==</span> <span class="ruby-value">7</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">estAuMilieu</span>() <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">estCorrectementReliee</span>() <span class="ruby-operator">==</span> <span class="ruby-keyword">false</span>))
+        <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">ile</span>.<span class="ruby-identifier">listeDesVoisins</span>()
+            <span class="ruby-keyword">if</span>(<span class="ruby-identifier">i</span>.<span class="ruby-identifier">valeur</span>() <span class="ruby-operator">==</span> <span class="ruby-value">1</span>)
+                <span class="ruby-identifier">conseil</span> = <span class="ruby-constant">Conseil</span>.<span class="ruby-identifier">nouveau</span>(<span class="ruby-string">&quot;Quand une île d&#39;indice 7 se situe au milieu de la grille, elle a obligatoirement quatre îles voisines. Dans le cas où une de ses voisines est une île d&#39;indice 1, vous devez les relier avec un pont simple. Il ne vous reste plus qu&#39;à relier l&#39;île d&#39;indice 7 avec des double-ponts à ses autres voisines.&quot;</span>,<span class="ruby-value">1</span>)
+                <span class="ruby-identifier">conseil</span>.<span class="ruby-identifier">ajoutIleConcernee</span>(<span class="ruby-identifier">ile</span>)
+                <span class="ruby-ivar">@listeDesConseils</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">conseil</span>) 
+            <span class="ruby-keyword">end</span> 
+        <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-ile8AuMilieu" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ile8AuMilieu</span><span
+            class="method-args">(ile)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Ajoute un conseil à la liste si l&#39;île a l&#39;indice 8, est au milieu et n&#39;est pas déjà correctement reliée.</p>
+
+<p><a href="Conseil.html"><code>Conseil</code></a> à générer : On en déduit que l&#39;île doit être connectée avec un double-pont à chacune de ses îles voisines.</p>
+<ul><li>
+<p><code>ile</code> - <a href="Ile.html"><code>Ile</code></a></p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="ile8AuMilieu-source">
+            <pre><span class="ruby-comment"># File Aide.rb, line 64</span>
+        <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">ile8AuMilieu</span>(<span class="ruby-identifier">ile</span>) <span class="ruby-comment">#:doc:</span>
+    <span class="ruby-keyword">if</span>((<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">valeur</span>() <span class="ruby-operator">==</span> <span class="ruby-value">8</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">estAuMilieu</span>() <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">getNbPonts</span>() <span class="ruby-operator">!=</span> <span class="ruby-value">8</span>))
+        <span class="ruby-identifier">conseil</span> = <span class="ruby-constant">Conseil</span>.<span class="ruby-identifier">nouveau</span>(<span class="ruby-string">&quot;Quand une île d&#39;indice 8 se situe au milieu de la grille, elle a obligatoirement quatre îles voisines. Pour que le nombre de ponts connectés soit valide, vous devez relier l&#39;île à chacune de ses voisines avec un double-pont.&quot;</span>,<span class="ruby-value">1</span>)
+        <span class="ruby-identifier">conseil</span>.<span class="ruby-identifier">ajoutIleConcernee</span>(<span class="ruby-identifier">ile</span>)
+        <span class="ruby-ivar">@listeDesConseils</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">conseil</span>) 
+    <span class="ruby-keyword">end</span> 
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-ileOuOnPeutAjouterUnPont" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ileOuOnPeutAjouterUnPont</span><span
+            class="method-args">(ile)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Ajoute un conseil à la liste si un pont peut être mis entre deux îles (il sera forcément bon) et n&#39;aura aucune incidence sur le reste de la grille. <a href="Conseil.html"><code>Conseil</code></a> à générer : Cette île peut être reliée avec son ile voisine par un pont simple supplémentaire sans problème</p>
+<ul><li>
+<p><code>ile</code> - <a href="Ile.html"><code>Ile</code></a></p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="ileOuOnPeutAjouterUnPont-source">
+            <pre><span class="ruby-comment"># File Aide.rb, line 376</span>
+        <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">ileOuOnPeutAjouterUnPont</span>(<span class="ruby-identifier">ile</span>) <span class="ruby-comment">#:doc:</span>
+    <span class="ruby-identifier">voisinesCorrectementReliee</span> = <span class="ruby-value">0</span>
+    <span class="ruby-identifier">ileVoisineQuiManque1Pont</span> = <span class="ruby-value">0</span>
+
+    <span class="ruby-keyword">if</span>((<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">valeur</span>() <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">getNbPonts</span>() <span class="ruby-operator">==</span> <span class="ruby-identifier">ile</span>.<span class="ruby-identifier">valeur</span>()<span class="ruby-value">-1</span>))
+
+        <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">ile</span>.<span class="ruby-identifier">listeDesVoisins</span>()
+            <span class="ruby-keyword">if</span>(<span class="ruby-identifier">i</span>.<span class="ruby-identifier">getNbPonts</span>() <span class="ruby-operator">==</span> <span class="ruby-identifier">i</span>.<span class="ruby-identifier">valeur</span>()<span class="ruby-value">-1</span>)
+                <span class="ruby-identifier">ileVoisineQuiManque1Pont</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span> 
+            <span class="ruby-keyword">elsif</span>(<span class="ruby-identifier">i</span>.<span class="ruby-identifier">estCorrectementReliee</span>() <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>)
+                <span class="ruby-identifier">voisinesCorrectementReliee</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+            <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-keyword">if</span>((<span class="ruby-identifier">ileVoisineQuiManque1Pont</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">voisinesCorrectementReliee</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">ile</span>.<span class="ruby-identifier">nbVoisins</span>()<span class="ruby-value">-1</span>))
+            <span class="ruby-identifier">conseil</span> = <span class="ruby-constant">Conseil</span>.<span class="ruby-identifier">nouveau</span>(<span class="ruby-string">&quot;Cette île peut être reliée avec son île voisine par un pont simple supplémentaire sans problème&quot;</span>,<span class="ruby-value">3</span>)
+            <span class="ruby-identifier">conseil</span>.<span class="ruby-identifier">ajoutIleConcernee</span>(<span class="ruby-identifier">ile</span>)
+            <span class="ruby-ivar">@listeDesConseils</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">conseil</span>) 
+        <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-uneIleAvecUnSeulVoisin" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">uneIleAvecUnSeulVoisin</span><span
+            class="method-args">(ile)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Ajoute un conseil à la liste si l&#39;île a un seul voisin et n&#39;est pas déjà correctement reliée. <a href="Conseil.html"><code>Conseil</code></a> à générer : On en déduit facilement que l&#39;île doit être reliée à son unique voisine.</p>
+<ul><li>
+<p><code>ile</code> - <a href="Ile.html"><code>Ile</code></a></p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="uneIleAvecUnSeulVoisin-source">
+            <pre><span class="ruby-comment"># File Aide.rb, line 101</span>
+        <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">uneIleAvecUnSeulVoisin</span>(<span class="ruby-identifier">ile</span>) <span class="ruby-comment">#:doc:</span>
+    <span class="ruby-keyword">if</span>((<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">nbVoisins</span>() <span class="ruby-operator">==</span> <span class="ruby-value">1</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">ile</span>.<span class="ruby-identifier">estCorrectementReliee</span>() <span class="ruby-operator">==</span> <span class="ruby-keyword">false</span>))
+        <span class="ruby-identifier">conseil</span> = <span class="ruby-constant">Conseil</span>.<span class="ruby-identifier">nouveau</span>(<span class="ruby-string">&quot;Il est possible qu&#39;une île avec un indice inférieur à 3 ne possède qu&#39;une seule et unique île voisine. On peut ainsi les relier sans difficulté.&quot;</span>,<span class="ruby-value">1</span>)
+        <span class="ruby-identifier">conseil</span>.<span class="ruby-identifier">ajoutIleConcernee</span>(<span class="ruby-identifier">ile</span>)
+        <span class="ruby-ivar">@listeDesConseils</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">conseil</span>) 
+    <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

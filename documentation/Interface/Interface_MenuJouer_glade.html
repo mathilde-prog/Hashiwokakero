@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>Interface_MenuJouer.glade - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script src="../js/navigation.js" defer></script>
+<script src="../js/search.js" defer></script>
+<script src="../js/search_index.js" defer></script>
+<script src="../js/searcher.js" defer></script>
+<script src="../js/darkfish.js" defer></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    
+<div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+    <li><a href="../Interface/InterfaceAccueilJeu_glade.html">InterfaceAccueilJeu.glade</a>
+    <li><a href="../Interface/InterfaceMenuJouerChargerPartie_glade.html">InterfaceMenuJouerChargerPartie.glade</a>
+    <li><a href="../Interface/InterfaceMenuJouerNouvellePartie_glade.html">InterfaceMenuJouerNouvellePartie.glade</a>
+    <li><a href="../Interface/Interface_Choix_mode_de_jeux_glade.html">Interface_Choix_mode_de_jeux.glade</a>
+    <li><a href="../Interface/Interface_MenuJouer_glade.html">Interface_MenuJouer.glade</a>
+    <li><a href="../Interface/interfaceClassement_glade.html">interfaceClassement.glade</a>
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page Interface/Interface_MenuJouer.glade">
+
+<p>&lt;?xml version=“1.0” encoding=“UTF-8”?&gt; &lt;!– Generated with glade 3.22.2 –&gt; &lt;interface&gt;</p>
+
+<pre>&lt;requires lib=&quot;gtk+&quot; version=&quot;3.24&quot;/&gt;
+&lt;object class=&quot;GtkImage&quot; id=&quot;imgTheme&quot;&gt;
+  &lt;property name=&quot;visible&quot;&gt;True&lt;/property&gt;
+  &lt;property name=&quot;can_focus&quot;&gt;False&lt;/property&gt;
+  &lt;property name=&quot;halign&quot;&gt;end&lt;/property&gt;
+  &lt;property name=&quot;valign&quot;&gt;end&lt;/property&gt;
+  &lt;property name=&quot;pixbuf&quot;&gt;darkmode.svg&lt;/property&gt;
+&lt;/object&gt;
+&lt;object class=&quot;GtkBox&quot; id=&quot;boxMenuJouer&quot;&gt;
+  &lt;property name=&quot;visible&quot;&gt;True&lt;/property&gt;
+  &lt;property name=&quot;can_focus&quot;&gt;False&lt;/property&gt;
+  &lt;property name=&quot;homogeneous&quot;&gt;True&lt;/property&gt;
+  &lt;child&gt;
+    &lt;object class=&quot;GtkBox&quot;&gt;
+      &lt;property name=&quot;visible&quot;&gt;True&lt;/property&gt;
+      &lt;property name=&quot;can_focus&quot;&gt;False&lt;/property&gt;
+      &lt;property name=&quot;orientation&quot;&gt;vertical&lt;/property&gt;
+      &lt;child&gt;
+        &lt;placeholder/&gt;
+      &lt;/child&gt;
+      &lt;child&gt;
+        &lt;placeholder/&gt;
+      &lt;/child&gt;
+      &lt;child&gt;
+        &lt;placeholder/&gt;
+      &lt;/child&gt;
+    &lt;/object&gt;
+    &lt;packing&gt;
+      &lt;property name=&quot;expand&quot;&gt;False&lt;/property&gt;
+      &lt;property name=&quot;fill&quot;&gt;True&lt;/property&gt;
+      &lt;property name=&quot;position&quot;&gt;0&lt;/property&gt;
+    &lt;/packing&gt;
+  &lt;/child&gt;
+  &lt;child&gt;
+    &lt;object class=&quot;GtkBox&quot; id=&quot;boxBouton&quot;&gt;
+      &lt;property name=&quot;visible&quot;&gt;True&lt;/property&gt;
+      &lt;property name=&quot;can_focus&quot;&gt;False&lt;/property&gt;
+      &lt;property name=&quot;margin_top&quot;&gt;45&lt;/property&gt;
+      &lt;property name=&quot;margin_bottom&quot;&gt;45&lt;/property&gt;
+      &lt;property name=&quot;orientation&quot;&gt;vertical&lt;/property&gt;
+      &lt;property name=&quot;spacing&quot;&gt;20&lt;/property&gt;
+      &lt;child&gt;
+        &lt;object class=&quot;GtkButton&quot; id=&quot;btnNouvellePartie&quot;&gt;
+          &lt;property name=&quot;label&quot; translatable=&quot;yes&quot;&gt;Nouvelle Partie&lt;/property&gt;
+          &lt;property name=&quot;name&quot;&gt;Nouvelle Partie&lt;/property&gt;
+          &lt;property name=&quot;visible&quot;&gt;True&lt;/property&gt;
+          &lt;property name=&quot;can_focus&quot;&gt;True&lt;/property&gt;
+          &lt;property name=&quot;receives_default&quot;&gt;True&lt;/property&gt;
+          &lt;signal name=&quot;clicked&quot; handler=&quot;nouvellePartie&quot; swapped=&quot;no&quot;/&gt;
+        &lt;/object&gt;
+        &lt;packing&gt;
+          &lt;property name=&quot;expand&quot;&gt;True&lt;/property&gt;
+          &lt;property name=&quot;fill&quot;&gt;True&lt;/property&gt;
+          &lt;property name=&quot;position&quot;&gt;0&lt;/property&gt;
+        &lt;/packing&gt;
+      &lt;/child&gt;
+      &lt;child&gt;
+        &lt;object class=&quot;GtkButton&quot; id=&quot;btnChargerPartie&quot;&gt;
+          &lt;property name=&quot;label&quot; translatable=&quot;yes&quot;&gt;Charger Partie&lt;/property&gt;
+          &lt;property name=&quot;name&quot;&gt;Charger Partie&lt;/property&gt;
+          &lt;property name=&quot;visible&quot;&gt;True&lt;/property&gt;
+          &lt;property name=&quot;can_focus&quot;&gt;True&lt;/property&gt;
+          &lt;property name=&quot;receives_default&quot;&gt;True&lt;/property&gt;
+          &lt;signal name=&quot;clicked&quot; handler=&quot;chargerPartie&quot; swapped=&quot;no&quot;/&gt;
+        &lt;/object&gt;
+        &lt;packing&gt;
+          &lt;property name=&quot;expand&quot;&gt;True&lt;/property&gt;
+          &lt;property name=&quot;fill&quot;&gt;True&lt;/property&gt;
+          &lt;property name=&quot;position&quot;&gt;1&lt;/property&gt;
+        &lt;/packing&gt;
+      &lt;/child&gt;
+      &lt;child&gt;
+        &lt;object class=&quot;GtkButton&quot; id=&quot;btnRetour&quot;&gt;
+          &lt;property name=&quot;label&quot; translatable=&quot;yes&quot;&gt;Retour&lt;/property&gt;
+          &lt;property name=&quot;visible&quot;&gt;True&lt;/property&gt;
+          &lt;property name=&quot;can_focus&quot;&gt;True&lt;/property&gt;
+          &lt;property name=&quot;receives_default&quot;&gt;True&lt;/property&gt;
+          &lt;signal name=&quot;clicked&quot; handler=&quot;gestionRetour&quot; swapped=&quot;no&quot;/&gt;
+        &lt;/object&gt;
+        &lt;packing&gt;
+          &lt;property name=&quot;expand&quot;&gt;True&lt;/property&gt;
+          &lt;property name=&quot;fill&quot;&gt;True&lt;/property&gt;
+          &lt;property name=&quot;position&quot;&gt;2&lt;/property&gt;
+        &lt;/packing&gt;
+      &lt;/child&gt;
+    &lt;/object&gt;
+    &lt;packing&gt;
+      &lt;property name=&quot;expand&quot;&gt;True&lt;/property&gt;
+      &lt;property name=&quot;fill&quot;&gt;True&lt;/property&gt;
+      &lt;property name=&quot;position&quot;&gt;1&lt;/property&gt;
+    &lt;/packing&gt;
+  &lt;/child&gt;
+  &lt;child&gt;
+    &lt;object class=&quot;GtkBox&quot; id=&quot;boxTheme&quot;&gt;
+      &lt;property name=&quot;visible&quot;&gt;True&lt;/property&gt;
+      &lt;property name=&quot;can_focus&quot;&gt;False&lt;/property&gt;
+      &lt;property name=&quot;orientation&quot;&gt;vertical&lt;/property&gt;
+      &lt;property name=&quot;homogeneous&quot;&gt;True&lt;/property&gt;
+      &lt;child&gt;
+        &lt;object class=&quot;GtkBox&quot;&gt;
+          &lt;property name=&quot;visible&quot;&gt;True&lt;/property&gt;
+          &lt;property name=&quot;can_focus&quot;&gt;False&lt;/property&gt;
+          &lt;property name=&quot;orientation&quot;&gt;vertical&lt;/property&gt;
+          &lt;child&gt;
+            &lt;placeholder/&gt;
+          &lt;/child&gt;
+          &lt;child&gt;
+            &lt;placeholder/&gt;
+          &lt;/child&gt;
+          &lt;child&gt;
+            &lt;placeholder/&gt;
+          &lt;/child&gt;
+        &lt;/object&gt;
+        &lt;packing&gt;
+          &lt;property name=&quot;expand&quot;&gt;False&lt;/property&gt;
+          &lt;property name=&quot;fill&quot;&gt;True&lt;/property&gt;
+          &lt;property name=&quot;position&quot;&gt;0&lt;/property&gt;
+        &lt;/packing&gt;
+      &lt;/child&gt;
+      &lt;child&gt;
+        &lt;object class=&quot;GtkButton&quot; id=&quot;BtnTheme&quot;&gt;
+          &lt;property name=&quot;label&quot; translatable=&quot;yes&quot;&gt; &lt;/property&gt;
+          &lt;property name=&quot;visible&quot;&gt;True&lt;/property&gt;
+          &lt;property name=&quot;can_focus&quot;&gt;True&lt;/property&gt;
+          &lt;property name=&quot;receives_default&quot;&gt;True&lt;/property&gt;
+          &lt;property name=&quot;halign&quot;&gt;end&lt;/property&gt;
+          &lt;property name=&quot;valign&quot;&gt;end&lt;/property&gt;
+          &lt;property name=&quot;image&quot;&gt;imgTheme&lt;/property&gt;
+          &lt;property name=&quot;relief&quot;&gt;none&lt;/property&gt;
+          &lt;property name=&quot;always_show_image&quot;&gt;True&lt;/property&gt;
+          &lt;signal name=&quot;clicked&quot; handler=&quot;theme&quot; swapped=&quot;no&quot;/&gt;
+        &lt;/object&gt;
+        &lt;packing&gt;
+          &lt;property name=&quot;expand&quot;&gt;False&lt;/property&gt;
+          &lt;property name=&quot;fill&quot;&gt;True&lt;/property&gt;
+          &lt;property name=&quot;position&quot;&gt;1&lt;/property&gt;
+        &lt;/packing&gt;
+      &lt;/child&gt;
+    &lt;/object&gt;
+    &lt;packing&gt;
+      &lt;property name=&quot;expand&quot;&gt;False&lt;/property&gt;
+      &lt;property name=&quot;fill&quot;&gt;True&lt;/property&gt;
+      &lt;property name=&quot;position&quot;&gt;2&lt;/property&gt;
+    &lt;/packing&gt;
+  &lt;/child&gt;
+  &lt;style&gt;
+    &lt;class name=&quot;mainBox&quot;/&gt;
+  &lt;/style&gt;
+&lt;/object&gt;</pre>
+
+<p>&lt;/interface&gt;</p>
+
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.3.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class PartieProgressif - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/navigation.js" defer></script>
+<script src="./js/search.js" defer></script>
+<script src="./js/search_index.js" defer></script>
+<script src="./js/searcher.js" defer></script>
+<script src="./js/darkfish.js" defer></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+<div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  <p class="link"><a href="Partie.html">Partie</a>
+</div>
+
+    
+    
+    
+<!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    <li ><a href="#method-c-creer">::creer</a>
+    <li class="calls-super" ><a href="#method-c-new">::new</a>
+    <li class="calls-super" ><a href="#method-i-afficherAide">#afficherAide</a>
+    <li ><a href="#method-i-afficherChrono">#afficherChrono</a>
+    <li ><a href="#method-i-calculDuScore">#calculDuScore</a>
+    <li class="calls-super" ><a href="#method-i-creationFenetre">#creationFenetre</a>
+    <li ><a href="#method-i-creerChrono">#creerChrono</a>
+    <li ><a href="#method-i-finDePartie">#finDePartie</a>
+    <li class="calls-super" ><a href="#method-i-genererAide">#genererAide</a>
+    <li ><a href="#method-i-getMode">#getMode</a>
+    <li ><a href="#method-i-partieTerminee">#partieTerminee</a>
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-PartieProgressif">
+  <h1 id="class-PartieProgressif" class="class">
+    class PartieProgressif
+  </h1>
+
+  <section class="description">
+    
+<p>Classe représentant une partie de Hashi en mode progressif.  Cette classe contient la variable d&#39;instance suivante (en plus de celles de la classe mère)</p>
+<dl class="rdoc-list note-list"><dt>@tempsEcoule
+<dd>
+<p>Temps restant en secondes</p>
+</dd></dl>
+
+  </section>
+
+  <section id="5Buntitled-5D" class="documentation-section">
+
+
+
+
+
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+      <div id="method-c-creer" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">creer</span><span
+            class="method-args">(fenetre, difficulte, taille, pseudo, tempsEcoule, nbGrilles,cheminSAV)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Constructeur de la classe <a href="PartieProgressif.html"><code>PartieProgressif</code></a></p>
+<ul><li>
+<p><code>fenetre</code> [Gtk::Window] - Fenêtre où se trouve la partie</p>
+</li><li>
+<p><code>difficulte</code> [String] - Difficulté de la grille générée (facile, moyenne, difficile)</p>
+</li><li>
+<p><code>taille</code> [Integer/String] - Taille de la grille générée</p>
+</li><li>
+<p><code>pseudo</code> [String] - Pseudo du joueur (donné par le menu)</p>
+</li><li>
+<p><code>tempsEcoule</code> [Integer] - Temps restant en secondes</p>
+</li><li>
+<p><code>nbGrilles</code> [Integer] - Nombre de grilles actuel</p>
+</li><li>
+<p><code>cheminSAV</code> [String] - Emplacement de la sauvegarde, sinon “”</p>
+</li></ul>
+
+          <div class="method-source-code" id="creer-source">
+            <pre><span class="ruby-comment"># File PartieProgressif.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">PartieProgressif</span>.<span class="ruby-identifier ruby-title">creer</span>(<span class="ruby-identifier">fenetre</span>, <span class="ruby-identifier">difficulte</span>, <span class="ruby-identifier">taille</span>, <span class="ruby-identifier">pseudo</span>, <span class="ruby-identifier">tempsEcoule</span>, <span class="ruby-identifier">nbGrilles</span>,<span class="ruby-identifier">cheminSAV</span>)
+    <span class="ruby-identifier">new</span>(<span class="ruby-identifier">fenetre</span>, <span class="ruby-identifier">difficulte</span>, <span class="ruby-identifier">taille</span>, <span class="ruby-identifier">pseudo</span>, <span class="ruby-identifier">tempsEcoule</span>, <span class="ruby-identifier">nbGrilles</span>, <span class="ruby-identifier">cheminSAV</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-c-new" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(fenetre, difficulte, taille, pseudo, tempsEcoule, nbGrilles,cheminSAV)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Méthode d&#39;intialisation de <a href="Partie.html"><code>Partie</code></a></p>
+<ul><li>
+<p><code>fenetre</code> [Gtk::Window] - Fenêtre où se trouve la partie</p>
+</li><li>
+<p><code>difficulte</code> [String] - Difficult“ de la grille générée (facile, moyenne, difficile)</p>
+</li><li>
+<p><code>taille</code> [Integer/String] - Taille de la grille générée</p>
+</li><li>
+<p><code>pseudo</code> [String] - Pseudo du joueur (donné par le menu)</p>
+</li><li>
+<p><code>tempsEcoule</code> [Integer] - Temps restant en secondes</p>
+</li><li>
+<p><code>nbGrilles</code> [Integer] - Nombre de grilles actuel</p>
+</li><li>
+<p><code>cheminSAV</code> [String] - Emplacement de la sauvegarde, sinon “”</p>
+</li></ul>
+            <div class="method-calls-super">
+              Calls superclass method
+              <a href="Partie.html#method-c-new"><code>Partie::new</code></a>
+            </div>
+
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File PartieProgressif.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">fenetre</span>, <span class="ruby-identifier">difficulte</span>, <span class="ruby-identifier">taille</span>, <span class="ruby-identifier">pseudo</span>, <span class="ruby-identifier">tempsEcoule</span>, <span class="ruby-identifier">nbGrilles</span>,<span class="ruby-identifier">cheminSAV</span>)
+    <span class="ruby-ivar">@tempsEcoule</span> = <span class="ruby-identifier">tempsEcoule</span>
+    <span class="ruby-ivar">@nbGrilles</span> = <span class="ruby-identifier">nbGrilles</span>
+    <span class="ruby-keyword">super</span>(<span class="ruby-identifier">fenetre</span>, <span class="ruby-identifier">difficulte</span>, <span class="ruby-identifier">taille</span>, <span class="ruby-identifier">pseudo</span>,<span class="ruby-identifier">cheminSAV</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+    </section>
+
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+      <div id="method-i-afficherAide" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">afficherAide</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Méthode provoquant l&#39;affichage d&#39;une aide préalablement générée</p>
+            <div class="method-calls-super">
+              Calls superclass method
+              <a href="Partie.html#method-i-afficherAide"><code>Partie#afficherAide</code></a>
+            </div>
+
+          <div class="method-source-code" id="afficherAide-source">
+            <pre><span class="ruby-comment"># File PartieProgressif.rb, line 76</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">afficherAide</span>()
+    <span class="ruby-keyword">super</span>()
+    <span class="ruby-keyword">if</span>(<span class="ruby-ivar">@conseilAffiche</span>)
+        <span class="ruby-ivar">@timer</span>.<span class="ruby-identifier">malusAide</span>()
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-afficherChrono" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">afficherChrono</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Méthode qui permet de créer un thread qui va modifier toutes les secondes l&#39;affichage du chrono (gère les cas dépendants de la modification du chrono)</p>
+
+          <div class="method-source-code" id="afficherChrono-source">
+            <pre><span class="ruby-comment"># File PartieProgressif.rb, line 85</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">afficherChrono</span>()
+    <span class="ruby-ivar">@threadAffichageChrono</span> = <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">new</span>{
+        <span class="ruby-keyword">while</span> <span class="ruby-ivar">@timer</span>.<span class="ruby-identifier">getEnExec</span>
+            <span class="ruby-ivar">@chronoText</span>.<span class="ruby-identifier">text</span> = <span class="ruby-ivar">@timer</span>.<span class="ruby-identifier">afficher</span>()
+            <span class="ruby-comment"># On met à jour le label du timer toutes les 1 secondes</span>
+            <span class="ruby-identifier">sleep</span>(<span class="ruby-value">0.5</span>)
+        <span class="ruby-keyword">end</span>
+    }
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-calculDuScore" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">calculDuScore</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Méthode permettant de calculer le score actuel du joueur</p>
+
+          <div class="method-source-code" id="calculDuScore-source">
+            <pre><span class="ruby-comment"># File PartieProgressif.rb, line 142</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">calculDuScore</span>()
+    <span class="ruby-identifier">time</span> = <span class="ruby-ivar">@timer</span>.<span class="ruby-identifier">valeur</span>()
+    <span class="ruby-identifier">score</span> = <span class="ruby-value">1.0</span><span class="ruby-operator">/</span><span class="ruby-identifier">time</span> <span class="ruby-operator">*</span> <span class="ruby-value">100000</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@nbGrilles</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">score</span>.<span class="ruby-identifier">to_i</span>()
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-creationFenetre" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">creationFenetre</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Méthode de création de la fenêtre (modifiée pour ne pas créer la fenêtre)</p>
+            <div class="method-calls-super">
+              Calls superclass method
+              <a href="Partie.html#method-i-creationFenetre"><code>Partie#creationFenetre</code></a>
+            </div>
+
+          <div class="method-source-code" id="creationFenetre-source">
+            <pre><span class="ruby-comment"># File PartieProgressif.rb, line 63</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">creationFenetre</span>()
+    <span class="ruby-keyword">super</span>()
+    <span class="ruby-ivar">@fenetre</span>.<span class="ruby-identifier">set_title</span>(<span class="ruby-node">&quot;Hashi - Progressif - #{@pseudo}&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-creerChrono" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">creerChrono</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Méthode qui permet d&#39;initialiser et de lancer le chrono et son affichage</p>
+
+          <div class="method-source-code" id="creerChrono-source">
+            <pre><span class="ruby-comment"># File PartieProgressif.rb, line 55</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">creerChrono</span>()
+    <span class="ruby-ivar">@timer</span> = <span class="ruby-constant">Chrono</span>.<span class="ruby-identifier">creer</span>(<span class="ruby-ivar">@tempsEcoule</span>) <span class="ruby-comment"># Un chrono qui décrémente sa valeur toutes les secondes et commence à partir de la valeur donnée et s&#39;arrête à zéro</span>
+    <span class="ruby-comment"># Démarre le chrono</span>
+    <span class="ruby-ivar">@timer</span>.<span class="ruby-identifier">startChrono</span> 
+    <span class="ruby-identifier">afficherChrono</span>()
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-finDePartie" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">finDePartie</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Méthode appelée quand la partie se termine (grille résolue)</p>
+
+          <div class="method-source-code" id="finDePartie-source">
+            <pre><span class="ruby-comment"># File PartieProgressif.rb, line 97</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">finDePartie</span>()
+    <span class="ruby-ivar">@timer</span>.<span class="ruby-identifier">stopChrono</span>
+    <span class="ruby-identifier">tempsEcoule</span> = <span class="ruby-ivar">@timer</span>.<span class="ruby-identifier">valeur</span>
+    <span class="ruby-ivar">@fenetre</span>.<span class="ruby-identifier">remove</span>(<span class="ruby-ivar">@hbox</span>)
+    <span class="ruby-keyword">case</span> <span class="ruby-ivar">@difficulte</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;Facile&quot;</span>
+        <span class="ruby-constant">PartieProgressif</span>.<span class="ruby-identifier">creer</span>(<span class="ruby-ivar">@fenetre</span>, <span class="ruby-string">&quot;moyenne&quot;</span>, <span class="ruby-ivar">@taille</span>, <span class="ruby-ivar">@pseudo</span>, <span class="ruby-identifier">tempsEcoule</span>, <span class="ruby-ivar">@nbGrilles</span><span class="ruby-value">+1</span>, <span class="ruby-string">&quot;&quot;</span>)
+    <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;Moyenne&quot;</span>
+        <span class="ruby-constant">PartieProgressif</span>.<span class="ruby-identifier">creer</span>(<span class="ruby-ivar">@fenetre</span>, <span class="ruby-string">&quot;difficile&quot;</span>, <span class="ruby-ivar">@taille</span>, <span class="ruby-ivar">@pseudo</span>, <span class="ruby-identifier">tempsEcoule</span>, <span class="ruby-ivar">@nbGrilles</span><span class="ruby-value">+1</span>, <span class="ruby-string">&quot;&quot;</span>)
+    <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;Difficile&quot;</span>
+        <span class="ruby-comment"># Passage à la taille suivante</span>
+        <span class="ruby-keyword">case</span> <span class="ruby-ivar">@taille</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-value">5</span>
+            <span class="ruby-constant">PartieProgressif</span>.<span class="ruby-identifier">creer</span>(<span class="ruby-ivar">@fenetre</span>, <span class="ruby-string">&quot;facile&quot;</span>, <span class="ruby-value">6</span>, <span class="ruby-ivar">@pseudo</span>, <span class="ruby-identifier">tempsEcoule</span>, <span class="ruby-ivar">@nbGrilles</span><span class="ruby-value">+1</span>, <span class="ruby-string">&quot;&quot;</span>)
+        <span class="ruby-keyword">when</span> <span class="ruby-value">6</span>
+            <span class="ruby-constant">PartieProgressif</span>.<span class="ruby-identifier">creer</span>(<span class="ruby-ivar">@fenetre</span>, <span class="ruby-string">&quot;facile&quot;</span>, <span class="ruby-value">8</span>, <span class="ruby-ivar">@pseudo</span>, <span class="ruby-identifier">tempsEcoule</span>, <span class="ruby-ivar">@nbGrilles</span><span class="ruby-value">+1</span>, <span class="ruby-string">&quot;&quot;</span>)
+        <span class="ruby-keyword">when</span> <span class="ruby-value">8</span>
+            <span class="ruby-constant">PartieProgressif</span>.<span class="ruby-identifier">creer</span>(<span class="ruby-ivar">@fenetre</span>, <span class="ruby-string">&quot;facile&quot;</span>, <span class="ruby-value">10</span>, <span class="ruby-ivar">@pseudo</span>, <span class="ruby-identifier">tempsEcoule</span>, <span class="ruby-ivar">@nbGrilles</span><span class="ruby-value">+1</span>, <span class="ruby-string">&quot;&quot;</span>)
+        <span class="ruby-keyword">when</span> <span class="ruby-value">10</span>
+            <span class="ruby-constant">PartieProgressif</span>.<span class="ruby-identifier">creer</span>(<span class="ruby-ivar">@fenetre</span>, <span class="ruby-string">&quot;facile&quot;</span>, <span class="ruby-value">15</span>, <span class="ruby-ivar">@pseudo</span>, <span class="ruby-identifier">tempsEcoule</span>, <span class="ruby-ivar">@nbGrilles</span><span class="ruby-value">+1</span>, <span class="ruby-string">&quot;&quot;</span>)
+        <span class="ruby-keyword">else</span>
+            <span class="ruby-ivar">@nbGrilles</span><span class="ruby-operator">+=</span><span class="ruby-value">1</span>
+            <span class="ruby-identifier">partieTerminee</span>()
+        <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;Mauvaise difficulté&quot;</span>
+    <span class="ruby-keyword">end</span>
+    
+    
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-genererAide" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">genererAide</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Méthode générant une aide</p>
+            <div class="method-calls-super">
+              Calls superclass method
+              <a href="Partie.html#method-i-genererAide"><code>Partie#genererAide</code></a>
+            </div>
+
+          <div class="method-source-code" id="genererAide-source">
+            <pre><span class="ruby-comment"># File PartieProgressif.rb, line 69</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">genererAide</span>()
+    <span class="ruby-keyword">super</span>()
+    <span class="ruby-ivar">@timer</span>.<span class="ruby-identifier">malusAstuce</span>()
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-getMode" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">getMode</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Retourne le mode de jeu de la partie</p>
+
+          <div class="method-source-code" id="getMode-source">
+            <pre><span class="ruby-comment"># File PartieProgressif.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">getMode</span>()
+    <span class="ruby-keyword">return</span> <span class="ruby-value">2</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+    </section>
+
+     <section id="private-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Private Instance Methods</h3>
+       </header>
+
+      <div id="method-i-partieTerminee" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">partieTerminee</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Méthode permettant de terminer la partie (retour au menu)</p>
+
+          <div class="method-source-code" id="partieTerminee-source">
+            <pre><span class="ruby-comment"># File PartieProgressif.rb, line 129</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">partieTerminee</span>() <span class="ruby-comment">#:doc:</span>
+    <span class="ruby-identifier">scoreFinal</span> = <span class="ruby-identifier">calculDuScore</span>()
+    <span class="ruby-identifier">info_verif_grille</span> = <span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">MessageDialog</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:parent</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-ivar">@fenetre</span>, <span class="ruby-value">:flags</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:destroy_with_parent</span>, <span class="ruby-value">:type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:info</span>, <span class="ruby-value">:buttons</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:close</span>, <span class="ruby-value">:message</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;Grille validée&quot;</span>)
+    <span class="ruby-identifier">info_verif_grille</span>.<span class="ruby-identifier">secondary_text</span>=<span class="ruby-node">&quot;Votre partie est terminée, votre score est : #{scoreFinal}&quot;</span>
+    <span class="ruby-identifier">info_verif_grille</span>.<span class="ruby-identifier">run</span>()
+    <span class="ruby-identifier">info_verif_grille</span>.<span class="ruby-identifier">destroy</span>()
+    <span class="ruby-constant">ClassementProgressif</span>.<span class="ruby-identifier">ajoutDansLaBDD</span>(<span class="ruby-ivar">@pseudo</span>, <span class="ruby-identifier">scoreFinal</span>)
+    <span class="ruby-ivar">@timer</span>.<span class="ruby-identifier">stopChrono</span>
+    <span class="ruby-comment">#Retour au menu</span>
+    <span class="ruby-constant">InterfaceAccueilJeu</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@fenetre</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+    </section>
+
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.3.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

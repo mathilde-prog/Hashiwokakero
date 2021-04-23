@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class ClassementLibre - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/navigation.js" defer></script>
+<script src="./js/search.js" defer></script>
+<script src="./js/search_index.js" defer></script>
+<script src="./js/searcher.js" defer></script>
+<script src="./js/darkfish.js" defer></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">ActiveRecord::Base
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-ajoutDansLaBDD">::ajoutDansLaBDD</a>
+    
+    <li ><a href="#method-c-effaceNiveau">::effaceNiveau</a>
+    
+    <li ><a href="#method-c-recupereTableauPseudos">::recupereTableauPseudos</a>
+    
+    <li ><a href="#method-c-recupereTableauScores">::recupereTableauScores</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-ClassementLibre">
+  <h1 id="class-ClassementLibre" class="class">
+    class ClassementLibre
+  </h1>
+
+  <section class="description">
+    
+<p>La classe <a href="ClassementLibre.html"><code>ClassementLibre</code></a> modélise le classement libre.  Remarque : Le mode libre du jeu est un mode où l&#39;utilisateur sera libre de choisir la taille de la grille et la difficulté.</p>
+
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-ajoutDansLaBDD" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ajoutDansLaBDD</span><span
+            class="method-args">(pseudo, score, difficulte)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Ajoute une ligne de score dans la table du classement libre si le pseudo du joueur n&#39;y figure pas déjà ou si le joueur a amélioré son score. </p>
+<ul><li>
+<p><code>pseudo</code> - Pseudo du joueur (chaine de caractères) </p>
+</li><li>
+<p><code>score</code> - Score du joueur (entier)</p>
+</li><li>
+<p><code>difficulte</code> - Niveau de difficulté du mode libre (entier)</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="ajoutDansLaBDD-source">
+            <pre><span class="ruby-comment"># File ClassementLibre.rb, line 93</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">ClassementLibre</span>.<span class="ruby-identifier ruby-title">ajoutDansLaBDD</span>(<span class="ruby-identifier">pseudo</span>, <span class="ruby-identifier">score</span>, <span class="ruby-identifier">difficulte</span>)
+  <span class="ruby-keyword">begin</span> 
+  <span class="ruby-comment"># Ouverture de la base de données &quot;classement.db&quot;</span>
+  <span class="ruby-identifier">db</span> = <span class="ruby-constant">SQLite3</span><span class="ruby-operator">::</span><span class="ruby-constant">Database</span>.<span class="ruby-identifier">open</span> <span class="ruby-string">&quot;../res/database/classement.db&quot;</span>
+
+  <span class="ruby-comment"># Préparation et exécution de la requête pour savoir si le joueur apparait déjà dans le classement pour un niveau de difficulté en particulier</span>
+  <span class="ruby-identifier">stmPresence</span> = <span class="ruby-identifier">db</span>.<span class="ruby-identifier">prepare</span> <span class="ruby-node">&quot;SELECT * FROM classement_libres WHERE difficulte = &#39;#{difficulte}&#39; AND pseudo = &#39;#{pseudo}&#39;&quot;</span>
+  <span class="ruby-identifier">nb</span> = <span class="ruby-identifier">stmPresence</span>.<span class="ruby-identifier">execute</span>.<span class="ruby-identifier">count</span> 
+
+  <span class="ruby-keyword">if</span> (<span class="ruby-identifier">nb</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>) <span class="ruby-comment"># Cas pseudo non présent dans la table pour le niveau de difficulté choisi</span>
+    <span class="ruby-comment"># Ajout du nouveau score dans le classement (+ sauvegarde)</span>
+    <span class="ruby-identifier">new</span>(<span class="ruby-value">:pseudo</span><span class="ruby-operator">=&gt;</span><span class="ruby-identifier">pseudo</span>, <span class="ruby-value">:score</span><span class="ruby-operator">=&gt;</span><span class="ruby-identifier">score</span>, <span class="ruby-value">:difficulte</span><span class="ruby-operator">=&gt;</span><span class="ruby-identifier">difficulte</span>).<span class="ruby-identifier">save</span> 
+  <span class="ruby-keyword">else</span> <span class="ruby-comment"># Cas pseudo a déjà un classement pour le niveau de difficulté choisi</span>
+    <span class="ruby-comment"># Préparation et exécution de la requête pour sélectionner le score actuel du joueur pour le niveau de difficulté choisi</span>
+    <span class="ruby-identifier">stmScore</span> = <span class="ruby-identifier">db</span>.<span class="ruby-identifier">prepare</span> <span class="ruby-node">&quot;SELECT score FROM classement_libres WHERE difficulte = &#39;#{difficulte}&#39; AND pseudo = &#39;#{pseudo}&#39;&quot;</span>
+    <span class="ruby-identifier">rs</span> = <span class="ruby-identifier">stmScore</span>.<span class="ruby-identifier">execute</span> 
+    <span class="ruby-comment"># Récupération du score actuel</span>
+    <span class="ruby-identifier">scoreActuel</span> = <span class="ruby-identifier">rs</span>.<span class="ruby-identifier">next</span>[<span class="ruby-value">0</span>] 
+    
+    <span class="ruby-comment"># Si le joueur a amélioré son score</span>
+    <span class="ruby-keyword">if</span>(<span class="ruby-identifier">scoreActuel</span>.<span class="ruby-identifier">to_i</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">score</span>)
+      <span class="ruby-identifier">print</span> <span class="ruby-node">&quot;Bravo #{pseudo}, vous avez amélioré votre score pour la difficulté &quot;</span>
+      <span class="ruby-keyword">case</span> <span class="ruby-identifier">difficulte</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-value">1</span> <span class="ruby-comment"># Niveau facile</span>
+        <span class="ruby-identifier">print</span> <span class="ruby-string">&quot;facile !\n&quot;</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-value">2</span> <span class="ruby-comment"># Niveau moyen</span>
+        <span class="ruby-identifier">print</span> <span class="ruby-string">&quot;moyen !\n&quot;</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-value">3</span> <span class="ruby-comment"># Niveau difficile</span>
+        <span class="ruby-identifier">print</span> <span class="ruby-string">&quot;difficile !\n&quot;</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">print</span> <span class="ruby-string">&quot;Erreur: difficulte a une valeur invalide.&quot;</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-comment"># Mise à jour du classement - La ligne dans la table est actualisée.</span>
+      <span class="ruby-identifier">db</span>.<span class="ruby-identifier">execute</span> <span class="ruby-node">&quot;UPDATE classement_libres SET score = &#39;#{score}&#39; WHERE difficulte = &#39;#{difficulte}&#39; AND pseudo = &#39;#{pseudo}&#39;&quot;</span>
+      <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Le classement est mis à jour.\n\n&quot;</span>
+    <span class="ruby-keyword">end</span> 
+  <span class="ruby-keyword">end</span> 
+
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">SQLite3</span><span class="ruby-operator">::</span><span class="ruby-constant">Exception</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Exception occurred&quot;</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">e</span>
+
+  <span class="ruby-keyword">ensure</span>
+      <span class="ruby-identifier">stmPresence</span>.<span class="ruby-identifier">close</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">stmPresence</span>
+      <span class="ruby-identifier">stmScore</span>.<span class="ruby-identifier">close</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">stmScore</span>
+      <span class="ruby-identifier">db</span>.<span class="ruby-identifier">close</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">db</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-effaceNiveau" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">effaceNiveau</span><span
+            class="method-args">(niveauDifficulte)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Efface le classement libre du niveau de difficulté passé en paramètre</p>
+<ul><li>
+<p><code>niveauDifficulte</code> - Niveau de difficulté du mode libre (entier)</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="effaceNiveau-source">
+            <pre><span class="ruby-comment"># File ClassementLibre.rb, line 71</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">ClassementLibre</span>.<span class="ruby-identifier ruby-title">effaceNiveau</span>(<span class="ruby-identifier">niveauDifficulte</span>)
+  <span class="ruby-keyword">begin</span> 
+    <span class="ruby-comment"># Ouverture de la base de données &quot;classement.db&quot;</span>
+    <span class="ruby-identifier">db</span> = <span class="ruby-constant">SQLite3</span><span class="ruby-operator">::</span><span class="ruby-constant">Database</span>.<span class="ruby-identifier">open</span> <span class="ruby-string">&quot;../res/database/classement.db&quot;</span>
+
+    <span class="ruby-comment"># On efface le contenu de la table classement_libres pour le niveau de difficulté choisi</span>
+    <span class="ruby-identifier">db</span>.<span class="ruby-identifier">execute</span>(<span class="ruby-node">&quot;delete from classement_libres WHERE difficulte = &#39;#{niveauDifficulte}&#39;&quot;</span>)
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;\n# Le classement libre niveau #{niveauDifficulte} est effacé avec succès !&quot;</span>
+
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">SQLite3</span><span class="ruby-operator">::</span><span class="ruby-constant">Exception</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Exception occurred&quot;</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">e</span>
+
+  <span class="ruby-keyword">ensure</span> 
+      <span class="ruby-identifier">db</span>.<span class="ruby-identifier">close</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">db</span>
+  <span class="ruby-keyword">end</span> 
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-recupereTableauPseudos" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">recupereTableauPseudos</span><span
+            class="method-args">(niveauDifficulte)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Retourne un tableau contenant les pseudos des joueurs</p>
+<ul><li>
+<p><code>niveauDifficulte</code> - Niveau de difficulté du mode libre (entier)</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="recupereTableauPseudos-source">
+            <pre><span class="ruby-comment"># File ClassementLibre.rb, line 11</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">ClassementLibre</span>.<span class="ruby-identifier ruby-title">recupereTableauPseudos</span>(<span class="ruby-identifier">niveauDifficulte</span>)
+  <span class="ruby-keyword">begin</span> 
+    <span class="ruby-identifier">pseudo</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>() <span class="ruby-comment"># Tableau pour les pseudos des joueurs</span>
+
+    <span class="ruby-comment"># Ouverture de la base de données &quot;classement.db&quot;</span>
+    <span class="ruby-identifier">db</span> = <span class="ruby-constant">SQLite3</span><span class="ruby-operator">::</span><span class="ruby-constant">Database</span>.<span class="ruby-identifier">open</span> <span class="ruby-string">&quot;../res/database/classement.db&quot;</span>
+
+    <span class="ruby-comment"># Préparation et exécution de la requête pour sélectionner les pseudos des joueurs</span>
+    <span class="ruby-identifier">stmPseudo</span> = <span class="ruby-identifier">db</span>.<span class="ruby-identifier">prepare</span> <span class="ruby-node">&quot;SELECT pseudo FROM classement_libres WHERE difficulte = &#39;#{niveauDifficulte}&#39; ORDER BY score DESC&quot;</span> <span class="ruby-comment"># tri par score</span>
+    <span class="ruby-identifier">rsPseudo</span> = <span class="ruby-identifier">stmPseudo</span>.<span class="ruby-identifier">execute</span> 
+
+    <span class="ruby-comment"># Récupération des pseudos dans le tableau pseudo</span>
+    <span class="ruby-keyword">while</span> (<span class="ruby-identifier">rowPseudo</span> = <span class="ruby-identifier">rsPseudo</span>.<span class="ruby-identifier">next</span>) <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">pseudo</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">rowPseudo</span>.<span class="ruby-identifier">join</span> <span class="ruby-string">&quot;\s&quot;</span>)
+    <span class="ruby-keyword">end</span>
+    
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">pseudo</span>
+
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">SQLite3</span><span class="ruby-operator">::</span><span class="ruby-constant">Exception</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Exception occurred&quot;</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">e</span>
+
+  <span class="ruby-keyword">ensure</span>
+      <span class="ruby-identifier">stmPseudo</span>.<span class="ruby-identifier">close</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">stmPseudo</span>
+      <span class="ruby-identifier">db</span>.<span class="ruby-identifier">close</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">db</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-recupereTableauScores" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">recupereTableauScores</span><span
+            class="method-args">(niveauDifficulte)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Retourne un tableau contenant les scores des joueurs</p>
+<ul><li>
+<p><code>niveauDifficulte</code> - Niveau de difficulté du mode libre (entier)</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="recupereTableauScores-source">
+            <pre><span class="ruby-comment"># File ClassementLibre.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">ClassementLibre</span>.<span class="ruby-identifier ruby-title">recupereTableauScores</span>(<span class="ruby-identifier">niveauDifficulte</span>)
+  <span class="ruby-keyword">begin</span> 
+    <span class="ruby-identifier">score</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>()  <span class="ruby-comment"># Tableau pour les scores des joueurs</span>
+
+    <span class="ruby-comment"># Ouverture de la base de données &quot;classement.db&quot;</span>
+    <span class="ruby-identifier">db</span> = <span class="ruby-constant">SQLite3</span><span class="ruby-operator">::</span><span class="ruby-constant">Database</span>.<span class="ruby-identifier">open</span> <span class="ruby-string">&quot;../res/database/classement.db&quot;</span>
+
+    <span class="ruby-comment"># Préparation et exécution de la requête pour sélectionner les scores des joueurs</span>
+    <span class="ruby-identifier">stmScore</span> = <span class="ruby-identifier">db</span>.<span class="ruby-identifier">prepare</span> <span class="ruby-node">&quot;SELECT score FROM classement_libres WHERE difficulte = &#39;#{niveauDifficulte}&#39; ORDER BY score DESC&quot;</span> <span class="ruby-comment"># tri par score</span>
+    <span class="ruby-identifier">rsScore</span> = <span class="ruby-identifier">stmScore</span>.<span class="ruby-identifier">execute</span> 
+
+    <span class="ruby-comment"># Récupération des scores dans le tableau score</span>
+    <span class="ruby-keyword">while</span> (<span class="ruby-identifier">rowScore</span> = <span class="ruby-identifier">rsScore</span>.<span class="ruby-identifier">next</span>) <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">score</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">rowScore</span>.<span class="ruby-identifier">join</span> <span class="ruby-string">&quot;\s&quot;</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">score</span>
+
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">SQLite3</span><span class="ruby-operator">::</span><span class="ruby-constant">Exception</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Exception occurred&quot;</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">e</span>
+
+  <span class="ruby-keyword">ensure</span>
+      <span class="ruby-identifier">stmScore</span>.<span class="ruby-identifier">close</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">stmScore</span>
+      <span class="ruby-identifier">db</span>.<span class="ruby-identifier">close</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">db</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class InterfaceMenuJouerChargerPartie - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/navigation.js" defer></script>
+<script src="./js/search.js" defer></script>
+<script src="./js/search_index.js" defer></script>
+<script src="./js/searcher.js" defer></script>
+<script src="./js/darkfish.js" defer></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+<div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  <p class="link">Gtk::Builder
+</div>
+
+    
+    
+    
+<!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    <li class="calls-super" ><a href="#method-c-new">::new</a>
+    <li ><a href="#method-i-effacerSauvegarde">#effacerSauvegarde</a>
+    <li ><a href="#method-i-gestionRetour">#gestionRetour</a>
+    <li ><a href="#method-i-home">#home</a>
+    <li ><a href="#method-i-jouerPartie">#jouerPartie</a>
+    <li ><a href="#method-i-theme">#theme</a>
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-InterfaceMenuJouerChargerPartie">
+  <h1 id="class-InterfaceMenuJouerChargerPartie" class="class">
+    class InterfaceMenuJouerChargerPartie
+  </h1>
+
+  <section class="description">
+    
+<p>Classe représentant l&#39;interface de chargement d&#39;une partie sauvegardée.  Cette classe contient les variables d&#39;instances suivantes :</p>
+<dl class="rdoc-list note-list"><dt>@BtnTheme
+<dd>
+<p>Bouton pour changer le thème </p>
+</dd><dt>@BtnHome
+<dd>
+<p>Bouton pour retourner à l&#39;accueil </p>
+</dd><dt>@fenetre
+<dd>
+<p>Fenêtre pour intégrer l&#39;interface permettant de charger une partie sauvegardée</p>
+</dd><dt>@boxChargerPartie
+<dd>
+<p>Box qui contient l&#39;interface permettant de charger une partie sauvegardée</p>
+</dd><dt>@BtnCharger
+<dd>
+<p>Bouton permettant de charger une partie </p>
+</dd><dt>@BtnRetour
+<dd>
+<p>Bouton permettant de retourner au menu précédent </p>
+</dd><dt>@BtnEffacer
+<dd>
+<p>Bouton permettant d&#39;effacer une sauvegarde </p>
+</dd><dt>@listeSauvegardes
+<dd>
+<p>Liste pour stocker les données sur les parties sauvegardées </p>
+</dd><dt>@zoneDonneesSauvegardes
+<dd>
+<p>Zone d&#39;affichage des données sur les parties sauvegardées </p>
+</dd><dt>@scrolledWindow
+<dd>
+<p>Fenêtre défilable pour les données sur les parties sauvegardées </p>
+</dd><dt>@choixPartie
+<dd>
+<p>Données concernant la partie sauvegardée sélectionnée par le joueur</p>
+</dd></dl>
+
+  </section>
+
+  <section id="5Buntitled-5D" class="documentation-section">
+
+
+
+
+
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+      <div id="method-c-new" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(fenetre)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Initialisation de l&#39;interface de chargement d&#39;une partie sauvegardée</p>
+<ul><li>
+<p><code>fenetre</code> [Gtk::Window] - la fenêtre du parent</p>
+</li></ul>
+            <div class="method-calls-super">
+              Calls superclass method
+              
+            </div>
+
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File Interface/InterfaceMenuJouerChargerPartie.rb, line 27</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">fenetre</span>)
+    <span class="ruby-keyword">super</span>()
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">add_from_file</span>(<span class="ruby-keyword">__FILE__</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-string">&quot;.rb&quot;</span>,<span class="ruby-string">&quot;.glade&quot;</span>))
+    <span class="ruby-comment"># Création d&#39;une variable d&#39;instance par composant identifié dans glade</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Création des variables d&#39;instances&quot;</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">objects</span>.<span class="ruby-identifier">each</span>() { <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">unless</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">builder_name</span>.<span class="ruby-identifier">start_with?</span>(<span class="ruby-string">&quot;___object&quot;</span>)
+        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;\tCreation de la variable d&#39;instance @#{p.builder_name}&quot;</span>
+        <span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-node">&quot;@#{p.builder_name}&quot;</span>.<span class="ruby-identifier">intern</span>, <span class="ruby-keyword">self</span>[<span class="ruby-identifier">p</span>.<span class="ruby-identifier">builder_name</span>])
+      <span class="ruby-keyword">end</span>
+    }
+
+    <span class="ruby-comment"># Création d&#39;une variable d&#39;instance par composant glade</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">objects</span>.<span class="ruby-identifier">each</span>() { <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Création d&#39;une variable d&#39;instance : &#39;@#{p.builder_name}&#39;&quot;</span>
+      <span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-node">&quot;@#{p.builder_name}&quot;</span>.<span class="ruby-identifier">intern</span>, <span class="ruby-keyword">self</span>[<span class="ruby-identifier">p</span>.<span class="ruby-identifier">builder_name</span>])
+    }
+
+    <span class="ruby-comment"># Permet d&#39;ajuster la taille des boutons + lancer la page en thème clair</span>
+    <span class="ruby-constant">Theme</span>.<span class="ruby-identifier">comportementBtn</span>([<span class="ruby-ivar">@BtnTheme</span>, <span class="ruby-ivar">@BtnHome</span>])
+
+    <span class="ruby-comment"># Variable d&#39;instance</span>
+    <span class="ruby-ivar">@BtnTheme</span>.<span class="ruby-identifier">name</span> = <span class="ruby-string">&quot;btnTheme&quot;</span>
+    <span class="ruby-ivar">@BtnHome</span>.<span class="ruby-identifier">name</span> = <span class="ruby-string">&quot;btnHome&quot;</span>
+    <span class="ruby-ivar">@BtnCharger</span>.<span class="ruby-identifier">name</span>=<span class="ruby-string">&quot;Bouton_Charger&quot;</span>
+    <span class="ruby-ivar">@BtnRetour</span>.<span class="ruby-identifier">name</span>=<span class="ruby-string">&quot;Bouton_Retour&quot;</span>
+    <span class="ruby-ivar">@BtnEffacer</span>.<span class="ruby-identifier">name</span>=<span class="ruby-string">&quot;Bouton_Effacer&quot;</span>
+    <span class="ruby-identifier">provider</span> = <span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">CssProvider</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">provider</span>.<span class="ruby-identifier">load</span>(<span class="ruby-value">data:</span> <span class="ruby-identifier">&lt;&lt;-CSS</span>)
+<span class="ruby-value">    #btnTheme,#btnHome:hover {all: unset;}
+    #btnTheme:hover {box-shadow: none;text-shadow: none;border:0px;min-width:0px;margin-bottom:5px;}
+    #btnHome:hover {box-shadow: none;text-shadow: none;border:0px;min-width:0px;padding:6px;}
+
+    /* Changement bordure ronde */
+    #Bouton_Charger,#Bouton_Retour,#Bouton_Effacer{
+            border-top-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            border-top-right-radius: 50px;
+            border-bottom-left-radius: 50px;
+        }
+
+    /* Changement de couleur au survol */
+    #Bouton_Charger:hover{
+        background :#BDFF95;
+    }
+
+    #Bouton_Effacer:hover,#Bouton_Retour:hover{
+        background :#FE9595;
+    }
+</span><span class="ruby-identifier">    CSS</span>
+    <span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">StyleContext</span>.<span class="ruby-identifier">add_provider_for_screen</span>(<span class="ruby-constant">Gdk</span><span class="ruby-operator">::</span><span class="ruby-constant">Screen</span>.<span class="ruby-identifier">default</span>, <span class="ruby-identifier">provider</span>, <span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">StyleProvider</span><span class="ruby-operator">::</span><span class="ruby-constant">PRIORITY_APPLICATION</span>)
+
+    <span class="ruby-comment"># Configuration globale de la fenêtre</span>
+    <span class="ruby-ivar">@fenetre</span> = <span class="ruby-identifier">fenetre</span>
+    <span class="ruby-ivar">@fenetre</span>.<span class="ruby-identifier">add</span>(<span class="ruby-ivar">@boxChargerPartie</span>)
+    <span class="ruby-ivar">@fenetre</span>.<span class="ruby-identifier">set_title</span>(<span class="ruby-string">&quot;Hashi - Charger une partie&quot;</span>)
+
+    <span class="ruby-comment"># Parcours du dossier de sauvegarde (nbLigne = nombre de fichier à afficher)</span>
+    <span class="ruby-identifier">nbLigne</span> = <span class="ruby-value">0</span>
+    <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">each_child</span>(<span class="ruby-string">&quot;./../res/sauvegardes&quot;</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">nbLigne</span><span class="ruby-operator">+=</span><span class="ruby-value">1</span> }
+    <span class="ruby-comment"># On retire le gitIgnore</span>
+    <span class="ruby-identifier">nbLigne</span> <span class="ruby-operator">-=</span> <span class="ruby-value">1</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Nombre de fichiers : #{nbLigne} &quot;</span>
+
+    <span class="ruby-comment"># Liste pour stocker les données des parties sauvegardées</span>
+    <span class="ruby-ivar">@listeSauvegardes</span> = <span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">ListStore</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">String</span>, <span class="ruby-constant">String</span>, <span class="ruby-constant">String</span>, <span class="ruby-constant">String</span>, <span class="ruby-constant">String</span>, <span class="ruby-constant">String</span>, <span class="ruby-constant">String</span>)
+    <span class="ruby-comment"># Zone d&#39;affichage des données des parties sauvegardées</span>
+    <span class="ruby-ivar">@zoneDonneesSauvegardes</span> = <span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">TreeView</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@listeSauvegardes</span>)
+                <span class="ruby-identifier">renderer</span> = <span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">CellRendererText</span>.<span class="ruby-identifier">new</span>
+
+    <span class="ruby-comment"># Colonne Nom de la partie</span>
+                <span class="ruby-identifier">column</span> = <span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">TreeViewColumn</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Nom de la partie&quot;</span>,<span class="ruby-identifier">renderer</span>, <span class="ruby-value">:text</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">0</span>)
+                <span class="ruby-identifier">column</span>.<span class="ruby-identifier">resizable</span> = <span class="ruby-keyword">false</span>
+                <span class="ruby-identifier">column</span>.<span class="ruby-identifier">expand</span> = <span class="ruby-keyword">true</span>
+                <span class="ruby-ivar">@zoneDonneesSauvegardes</span>.<span class="ruby-identifier">append_column</span>(<span class="ruby-identifier">column</span>)
+
+    <span class="ruby-comment"># Colonne Pseudo du joueur</span>
+    <span class="ruby-identifier">column</span> = <span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">TreeViewColumn</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Pseudo du joueur&quot;</span>,<span class="ruby-identifier">renderer</span>, <span class="ruby-value">:text</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">1</span>)
+                <span class="ruby-identifier">column</span>.<span class="ruby-identifier">resizable</span> = <span class="ruby-keyword">false</span>
+                <span class="ruby-identifier">column</span>.<span class="ruby-identifier">expand</span> = <span class="ruby-keyword">true</span>
+                <span class="ruby-ivar">@zoneDonneesSauvegardes</span>.<span class="ruby-identifier">append_column</span>(<span class="ruby-identifier">column</span>)
+
+    <span class="ruby-comment"># Colonne Mode de jeu</span>
+                <span class="ruby-identifier">column</span> = <span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">TreeViewColumn</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Mode de jeu&quot;</span>,<span class="ruby-identifier">renderer</span>, <span class="ruby-value">:text</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">2</span>)
+                <span class="ruby-identifier">column</span>.<span class="ruby-identifier">resizable</span> = <span class="ruby-keyword">false</span>
+                <span class="ruby-identifier">column</span>.<span class="ruby-identifier">expand</span> = <span class="ruby-keyword">true</span>
+                <span class="ruby-ivar">@zoneDonneesSauvegardes</span>.<span class="ruby-identifier">append_column</span>(<span class="ruby-identifier">column</span>)
+
+    <span class="ruby-comment"># Colonne Taille</span>
+                <span class="ruby-identifier">column</span> = <span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">TreeViewColumn</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Taille&quot;</span>,<span class="ruby-identifier">renderer</span>, <span class="ruby-value">:text</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">3</span>)
+                <span class="ruby-identifier">column</span>.<span class="ruby-identifier">resizable</span> = <span class="ruby-keyword">false</span>
+                <span class="ruby-identifier">column</span>.<span class="ruby-identifier">expand</span> = <span class="ruby-keyword">true</span>
+                <span class="ruby-ivar">@zoneDonneesSauvegardes</span>.<span class="ruby-identifier">append_column</span>(<span class="ruby-identifier">column</span>)
+
+    <span class="ruby-comment"># Colonne Difficulté</span>
+    <span class="ruby-identifier">column</span> = <span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">TreeViewColumn</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Difficulté&quot;</span>,<span class="ruby-identifier">renderer</span>, <span class="ruby-value">:text</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">4</span>)
+                <span class="ruby-identifier">column</span>.<span class="ruby-identifier">resizable</span> = <span class="ruby-keyword">false</span>
+                <span class="ruby-identifier">column</span>.<span class="ruby-identifier">expand</span> = <span class="ruby-keyword">true</span>
+                <span class="ruby-ivar">@zoneDonneesSauvegardes</span>.<span class="ruby-identifier">append_column</span>(<span class="ruby-identifier">column</span>)
+
+    <span class="ruby-comment"># Colonne Timer</span>
+    <span class="ruby-identifier">column</span> = <span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">TreeViewColumn</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Timer&quot;</span>,<span class="ruby-identifier">renderer</span>, <span class="ruby-value">:text</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">5</span>)
+                <span class="ruby-identifier">column</span>.<span class="ruby-identifier">resizable</span> = <span class="ruby-keyword">false</span>
+                <span class="ruby-identifier">column</span>.<span class="ruby-identifier">expand</span> = <span class="ruby-keyword">true</span>
+                <span class="ruby-ivar">@zoneDonneesSauvegardes</span>.<span class="ruby-identifier">append_column</span>(<span class="ruby-identifier">column</span>)
+
+    <span class="ruby-comment"># Colonne Nombre de grilles résolues</span>
+    <span class="ruby-identifier">column</span> = <span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">TreeViewColumn</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Nombre de grilles résolues&quot;</span>,<span class="ruby-identifier">renderer</span>, <span class="ruby-value">:text</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">6</span>)
+                <span class="ruby-identifier">column</span>.<span class="ruby-identifier">resizable</span> = <span class="ruby-keyword">false</span>
+                <span class="ruby-identifier">column</span>.<span class="ruby-identifier">expand</span> = <span class="ruby-keyword">true</span>
+                <span class="ruby-ivar">@zoneDonneesSauvegardes</span>.<span class="ruby-identifier">append_column</span>(<span class="ruby-identifier">column</span>)
+
+    <span class="ruby-comment"># Fenêtre défilante</span>
+                <span class="ruby-ivar">@scrolledWindow</span>.<span class="ruby-identifier">add_with_viewport</span>(<span class="ruby-ivar">@zoneDonneesSauvegardes</span>)
+                <span class="ruby-ivar">@zoneDonneesSauvegardes</span>.<span class="ruby-identifier">show_all</span>
+
+    <span class="ruby-comment"># Parcours du répertoire sauvegardes</span>
+    <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">each_child</span>(<span class="ruby-string">&quot;./../res/sauvegardes&quot;</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span>
+      <span class="ruby-comment"># On ignore le gitIgnore</span>
+      <span class="ruby-keyword">if</span>( <span class="ruby-identifier">x</span> <span class="ruby-operator">!=</span> <span class="ruby-string">&quot;.gitignore&quot;</span>) <span class="ruby-keyword">then</span>
+        <span class="ruby-comment"># Ouverture du fichier</span>
+        <span class="ruby-identifier">file</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-string">&quot;./../res/sauvegardes/&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">x</span>)
+        <span class="ruby-comment"># On récupère le fichier ligne par ligne</span>
+        <span class="ruby-identifier">file_data</span> = <span class="ruby-identifier">file</span>.<span class="ruby-identifier">readlines</span>.<span class="ruby-identifier">map</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:chomp</span>)
+
+              <span class="ruby-identifier">iter</span> = <span class="ruby-ivar">@listeSauvegardes</span>.<span class="ruby-identifier">append</span>
+
+              <span class="ruby-identifier">nomFichier</span> = <span class="ruby-identifier">file_data</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;/&quot;</span>); <span class="ruby-comment"># Récupération du nom du fichier pour connaitre la taille et la difficulté</span>
+              <span class="ruby-identifier">pseudo</span> = <span class="ruby-identifier">file_data</span>[<span class="ruby-value">1</span>] <span class="ruby-comment"># Récupération du pseudo du joueur</span>
+              <span class="ruby-identifier">mode</span> = <span class="ruby-identifier">file_data</span>[<span class="ruby-value">2</span>] <span class="ruby-comment"># Récupération du mode de jeu</span>
+              <span class="ruby-identifier">taille</span> = <span class="ruby-identifier">nomFichier</span>[<span class="ruby-value">4</span>] <span class="ruby-comment"># Récupération de la taille de la grille</span>
+              <span class="ruby-identifier">difficulte</span> = <span class="ruby-identifier">nomFichier</span>[<span class="ruby-value">3</span>] <span class="ruby-comment"># Récupération de la difficulté</span>
+              <span class="ruby-identifier">timer</span> = <span class="ruby-identifier">file_data</span>[<span class="ruby-value">3</span>] <span class="ruby-comment"># Récupération du timer (pour Progressif et Puzzle Rush)</span>
+              <span class="ruby-identifier">nbGrillesResolues</span> = <span class="ruby-identifier">file_data</span>[<span class="ruby-value">4</span>] <span class="ruby-comment"># Récupération du nombre de grilles résolues (pour Progressif et Puzzle Rush)</span>
+
+              <span class="ruby-identifier">nomTemp</span> = <span class="ruby-identifier">x</span>.<span class="ruby-identifier">delete_suffix!</span>(<span class="ruby-string">&quot;.sav&quot;</span>) <span class="ruby-comment"># Récupère le nom de la partie (sans le suffixe &quot;.sav&quot;)</span>
+              <span class="ruby-identifier">tab</span> = <span class="ruby-identifier">nomTemp</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;_&quot;</span>)
+              <span class="ruby-identifier">str1</span> = <span class="ruby-identifier">tab</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;-&quot;</span>).<span class="ruby-identifier">reverse</span>().<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;/&quot;</span>)
+              <span class="ruby-identifier">str2</span> = <span class="ruby-identifier">tab</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">gsub</span>(<span class="ruby-string">&quot;-&quot;</span>,<span class="ruby-string">&quot;:&quot;</span>)
+              <span class="ruby-identifier">str1</span>.<span class="ruby-identifier">concat</span>(<span class="ruby-string">&quot; &quot;</span>).<span class="ruby-identifier">concat</span>(<span class="ruby-identifier">str2</span>)
+              <span class="ruby-identifier">iter</span>[<span class="ruby-value">0</span>] = <span class="ruby-identifier">str1</span> <span class="ruby-comment"># Ajout du nom de la partie à l&#39;affichage</span>
+              <span class="ruby-identifier">iter</span>[<span class="ruby-value">1</span>] = <span class="ruby-identifier">pseudo</span> <span class="ruby-comment"># Ajout du pseudo à l&#39;affichage</span>
+              <span class="ruby-keyword">case</span> <span class="ruby-identifier">mode</span> <span class="ruby-comment"># Ajout du mode à l&#39;affichage</span>
+              <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;0&quot;</span>
+                <span class="ruby-identifier">iter</span>[<span class="ruby-value">2</span>] = <span class="ruby-string">&quot;Libre&quot;</span>
+                <span class="ruby-identifier">iter</span>[<span class="ruby-value">4</span>] = <span class="ruby-identifier">difficulte</span>.<span class="ruby-identifier">capitalize</span> <span class="ruby-comment"># Ajout de la difficulté à l&#39;affichage uniquement pour le mode &quot;Libre&quot;</span>
+              <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;1&quot;</span>
+                <span class="ruby-identifier">iter</span>[<span class="ruby-value">2</span>] = <span class="ruby-string">&quot;Puzzle Rush&quot;</span>
+                <span class="ruby-identifier">iter</span>[<span class="ruby-value">6</span>] = <span class="ruby-identifier">nbGrillesResolues</span> <span class="ruby-comment"># Ajout du nombre de grilles résolues à l&#39;affichage (pour progressif &amp; puzzle rush)</span>
+              <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;2&quot;</span>
+                <span class="ruby-identifier">iter</span>[<span class="ruby-value">2</span>] = <span class="ruby-string">&quot;Progressif&quot;</span>
+                <span class="ruby-identifier">iter</span>[<span class="ruby-value">6</span>] = <span class="ruby-identifier">nbGrillesResolues</span> <span class="ruby-comment"># Ajout du nombre de grilles résolues  à l&#39;affichage (pour progressif &amp; puzzle rush)</span>
+              <span class="ruby-keyword">end</span>
+              <span class="ruby-identifier">iter</span>[<span class="ruby-value">3</span>] = <span class="ruby-identifier">taille</span> <span class="ruby-comment"># Ajout de la taille de la grille à l&#39;affichage</span>
+              <span class="ruby-identifier">iter</span>[<span class="ruby-value">5</span>] =  <span class="ruby-identifier">timer</span> <span class="ruby-comment"># Ajout du timer à l&#39;affichage</span>
+
+              <span class="ruby-comment"># Fermeture du fichier</span>
+              <span class="ruby-identifier">file</span>.<span class="ruby-identifier">close</span>
+          <span class="ruby-keyword">end</span>
+        }
+
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Nombre de fichier : #{nbLigne} &quot;</span>
+
+    <span class="ruby-comment"># Le treeselection permet de savoir sur quelle ligne le joueur a cliqué.</span>
+    <span class="ruby-identifier">treeselection</span> = <span class="ruby-ivar">@zoneDonneesSauvegardes</span>.<span class="ruby-identifier">selection</span>()
+    <span class="ruby-identifier">treeselection</span>.<span class="ruby-identifier">set_mode</span>(<span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">SelectionMode</span><span class="ruby-operator">::</span><span class="ruby-constant">SINGLE</span>)
+    <span class="ruby-identifier">treeselection</span>.<span class="ruby-identifier">signal_connect</span>(<span class="ruby-string">&#39;changed&#39;</span>){
+      <span class="ruby-ivar">@choixPartie</span> = <span class="ruby-identifier">treeselection</span>.<span class="ruby-identifier">selected</span>() <span class="ruby-comment"># On récupère la partie sélectionnée par le joueur.</span>
+    }
+
+    <span class="ruby-comment"># Méthode liée au bouton @BtnCharger pour jouer à la partie sélectionnée.</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">jouerPartie</span>
+      <span class="ruby-comment"># Le joueur doit avoir sélectionné une ligne.</span>
+      <span class="ruby-keyword">if</span>(<span class="ruby-ivar">@choixPartie</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span>)
+        <span class="ruby-comment"># Récupération des différents paramètres de la partie sélectionnée par le joueur.</span>
+        <span class="ruby-identifier">difficulte</span> = <span class="ruby-ivar">@choixPartie</span>[<span class="ruby-value">4</span>]
+        <span class="ruby-identifier">taille</span> = <span class="ruby-ivar">@choixPartie</span>[<span class="ruby-value">3</span>]
+        <span class="ruby-identifier">pseudo</span> = <span class="ruby-ivar">@choixPartie</span>[<span class="ruby-value">1</span>]
+        <span class="ruby-identifier">temps</span> = <span class="ruby-ivar">@choixPartie</span>[<span class="ruby-value">5</span>]
+        <span class="ruby-identifier">nbGrillesResolues</span> = <span class="ruby-ivar">@choixPartie</span>[<span class="ruby-value">6</span>]
+        <span class="ruby-identifier">temp</span> = <span class="ruby-ivar">@choixPartie</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot; &quot;</span>)
+        <span class="ruby-identifier">str1</span> = <span class="ruby-identifier">temp</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;/&quot;</span>).<span class="ruby-identifier">reverse</span>().<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;-&quot;</span>)
+        <span class="ruby-identifier">str2</span>  = <span class="ruby-identifier">temp</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">gsub</span>(<span class="ruby-string">&quot;:&quot;</span>,<span class="ruby-string">&quot;-&quot;</span>)
+        <span class="ruby-identifier">str1</span>.<span class="ruby-identifier">concat</span>(<span class="ruby-string">&quot;_&quot;</span>).<span class="ruby-identifier">concat</span>(<span class="ruby-identifier">str2</span>)
+        <span class="ruby-identifier">cheminSAV</span> = <span class="ruby-string">&quot;./../res/sauvegardes/&quot;</span><span class="ruby-operator">+</span> <span class="ruby-identifier">str1</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;.sav&quot;</span>
+
+        <span class="ruby-ivar">@fenetre</span>.<span class="ruby-identifier">remove</span>(<span class="ruby-ivar">@boxChargerPartie</span>)
+
+        <span class="ruby-comment"># Lancement de la partie</span>
+        <span class="ruby-keyword">case</span> <span class="ruby-ivar">@choixPartie</span>[<span class="ruby-value">2</span>]
+        <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;Libre&quot;</span>
+          <span class="ruby-constant">Partie</span>.<span class="ruby-identifier">creer</span>(<span class="ruby-ivar">@fenetre</span>,<span class="ruby-identifier">difficulte</span>, <span class="ruby-identifier">taille</span>, <span class="ruby-identifier">pseudo</span>, <span class="ruby-identifier">cheminSAV</span>);
+        <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;Progressif&quot;</span>
+          <span class="ruby-constant">PartieProgressif</span>.<span class="ruby-identifier">creer</span>(<span class="ruby-ivar">@fenetre</span>, <span class="ruby-identifier">difficulte</span>, <span class="ruby-identifier">taille</span>, <span class="ruby-identifier">pseudo</span>, <span class="ruby-identifier">temps</span>.<span class="ruby-identifier">to_i</span>, <span class="ruby-identifier">nbGrillesResolues</span>.<span class="ruby-identifier">to_i</span>, <span class="ruby-identifier">cheminSAV</span>)
+        <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;Puzzle Rush&quot;</span>
+          <span class="ruby-constant">PartiePuzzleRush</span>.<span class="ruby-identifier">creer</span>(<span class="ruby-ivar">@fenetre</span>, <span class="ruby-identifier">difficulte</span>, <span class="ruby-identifier">taille</span>, <span class="ruby-identifier">pseudo</span>, <span class="ruby-identifier">temps</span>.<span class="ruby-identifier">to_i</span>, <span class="ruby-identifier">nbGrillesResolues</span>.<span class="ruby-identifier">to_i</span>, <span class="ruby-identifier">cheminSAV</span>)
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span> 
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># Méthode liée au bouton @BtnEffacer pour effacer la partie sélectionnée par le joueur.</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">effacerSauvegarde</span>
+        <span class="ruby-comment"># Le joueur doit avoir sélectionné une ligne.</span>
+        <span class="ruby-keyword">if</span>(<span class="ruby-ivar">@choixPartie</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span>) <span class="ruby-keyword">then</span>
+            <span class="ruby-identifier">temp</span> = <span class="ruby-ivar">@choixPartie</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot; &quot;</span>)
+            <span class="ruby-identifier">str1</span> = <span class="ruby-identifier">temp</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;/&quot;</span>).<span class="ruby-identifier">reverse</span>().<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;-&quot;</span>)
+            <span class="ruby-identifier">str2</span>  = <span class="ruby-identifier">temp</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">gsub</span>(<span class="ruby-string">&quot;:&quot;</span>,<span class="ruby-string">&quot;-&quot;</span>)
+            <span class="ruby-identifier">str1</span>.<span class="ruby-identifier">concat</span>(<span class="ruby-string">&quot;_&quot;</span>).<span class="ruby-identifier">concat</span>(<span class="ruby-identifier">str2</span>)
+            <span class="ruby-identifier">cheminSAV</span> = <span class="ruby-string">&quot;./../res/sauvegardes/&quot;</span><span class="ruby-operator">+</span> <span class="ruby-identifier">str1</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;.sav&quot;</span>
+           
+            <span class="ruby-comment"># On efface la ligne du tableau à l&#39;affichage.</span>
+            <span class="ruby-ivar">@listeSauvegardes</span>.<span class="ruby-identifier">remove</span>(<span class="ruby-ivar">@choixPartie</span>)
+
+            <span class="ruby-comment"># On supprime le fichier de sauvegarde</span>
+            <span class="ruby-constant">File</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">cheminSAV</span>)
+        <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># Méthode liée au bouton @BtnHome pour retourner à l&#39;accueil.</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">home</span>
+      <span class="ruby-ivar">@fenetre</span>.<span class="ruby-identifier">remove</span>(<span class="ruby-ivar">@boxChargerPartie</span>)
+      <span class="ruby-constant">InterfaceAccueilJeu</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@fenetre</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># Méthode liée au bouton @BtnRetour pour retourner à la page précédente.</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">gestionRetour</span>
+      <span class="ruby-ivar">@fenetre</span>.<span class="ruby-identifier">remove</span>(<span class="ruby-ivar">@boxChargerPartie</span>)
+      <span class="ruby-constant">Interface_MenuJouer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@fenetre</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># Méthode liée au bouton @BtnTheme.</span>
+    <span class="ruby-comment"># Appelle la méthode theme de la classe Theme pour modifier le thème.</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">theme</span>
+        <span class="ruby-constant">Theme</span>.<span class="ruby-identifier">theme</span>([<span class="ruby-ivar">@BtnTheme</span>, <span class="ruby-ivar">@BtnHome</span>])
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># On connecte les signaux aux méthodes (qui doivent exister)</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;\nConnexion des signaux&quot;</span>
+                <span class="ruby-keyword">self</span>.<span class="ruby-identifier">connect_signals</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">handler</span><span class="ruby-operator">|</span>
+                                <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;\tConnection du signal #{handler}&quot;</span>
+                                <span class="ruby-keyword">begin</span>
+                                        <span class="ruby-identifier">method</span>(<span class="ruby-identifier">handler</span>)
+                                <span class="ruby-keyword">rescue</span>
+                                        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;\t\t[Attention] Vous devez definir la methode #{handler} :\n\t\t\tdef #{handler}\n\t\t\t\t....\n\t\t\tend\n&quot;</span>
+                                        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">send</span>( <span class="ruby-value">:define_method</span>, <span class="ruby-identifier">handler</span>.<span class="ruby-identifier">intern</span>) {
+                                                <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;La methode #{handler} n&#39;est pas encore définie.. Arrêt&quot;</span>
+                                                <span class="ruby-constant">Gtk</span>.<span class="ruby-identifier">main_quit</span>
+                                        }
+                                        <span class="ruby-keyword">retry</span>
+                                <span class="ruby-keyword">end</span>
+                }
+
+  <span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+    </section>
+
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+      <div id="method-i-effacerSauvegarde" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">effacerSauvegarde</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Méthode liée au bouton @BtnEffacer pour effacer la partie sélectionnée par le joueur.</p>
+
+          <div class="method-source-code" id="effacerSauvegarde-source">
+            <pre><span class="ruby-comment"># File Interface/InterfaceMenuJouerChargerPartie.rb, line 228</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">effacerSauvegarde</span>
+    <span class="ruby-comment"># Le joueur doit avoir sélectionné une ligne.</span>
+    <span class="ruby-keyword">if</span>(<span class="ruby-ivar">@choixPartie</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span>) <span class="ruby-keyword">then</span>
+        <span class="ruby-identifier">temp</span> = <span class="ruby-ivar">@choixPartie</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot; &quot;</span>)
+        <span class="ruby-identifier">str1</span> = <span class="ruby-identifier">temp</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;/&quot;</span>).<span class="ruby-identifier">reverse</span>().<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;-&quot;</span>)
+        <span class="ruby-identifier">str2</span>  = <span class="ruby-identifier">temp</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">gsub</span>(<span class="ruby-string">&quot;:&quot;</span>,<span class="ruby-string">&quot;-&quot;</span>)
+        <span class="ruby-identifier">str1</span>.<span class="ruby-identifier">concat</span>(<span class="ruby-string">&quot;_&quot;</span>).<span class="ruby-identifier">concat</span>(<span class="ruby-identifier">str2</span>)
+        <span class="ruby-identifier">cheminSAV</span> = <span class="ruby-string">&quot;./../res/sauvegardes/&quot;</span><span class="ruby-operator">+</span> <span class="ruby-identifier">str1</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;.sav&quot;</span>
+       
+        <span class="ruby-comment"># On efface la ligne du tableau à l&#39;affichage.</span>
+        <span class="ruby-ivar">@listeSauvegardes</span>.<span class="ruby-identifier">remove</span>(<span class="ruby-ivar">@choixPartie</span>)
+
+        <span class="ruby-comment"># On supprime le fichier de sauvegarde</span>
+        <span class="ruby-constant">File</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">cheminSAV</span>)
+    <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-gestionRetour" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">gestionRetour</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Méthode liée au bouton @BtnRetour pour retourner à la page précédente.</p>
+
+          <div class="method-source-code" id="gestionRetour-source">
+            <pre><span class="ruby-comment"># File Interface/InterfaceMenuJouerChargerPartie.rb, line 252</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">gestionRetour</span>
+  <span class="ruby-ivar">@fenetre</span>.<span class="ruby-identifier">remove</span>(<span class="ruby-ivar">@boxChargerPartie</span>)
+  <span class="ruby-constant">Interface_MenuJouer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@fenetre</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-home" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">home</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Méthode liée au bouton @BtnHome pour retourner à l&#39;accueil.</p>
+
+          <div class="method-source-code" id="home-source">
+            <pre><span class="ruby-comment"># File Interface/InterfaceMenuJouerChargerPartie.rb, line 246</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">home</span>
+  <span class="ruby-ivar">@fenetre</span>.<span class="ruby-identifier">remove</span>(<span class="ruby-ivar">@boxChargerPartie</span>)
+  <span class="ruby-constant">InterfaceAccueilJeu</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@fenetre</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-jouerPartie" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">jouerPartie</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Méthode liée au bouton @BtnCharger pour jouer à la partie sélectionnée.</p>
+
+          <div class="method-source-code" id="jouerPartie-source">
+            <pre><span class="ruby-comment"># File Interface/InterfaceMenuJouerChargerPartie.rb, line 198</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">jouerPartie</span>
+  <span class="ruby-comment"># Le joueur doit avoir sélectionné une ligne.</span>
+  <span class="ruby-keyword">if</span>(<span class="ruby-ivar">@choixPartie</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span>)
+    <span class="ruby-comment"># Récupération des différents paramètres de la partie sélectionnée par le joueur.</span>
+    <span class="ruby-identifier">difficulte</span> = <span class="ruby-ivar">@choixPartie</span>[<span class="ruby-value">4</span>]
+    <span class="ruby-identifier">taille</span> = <span class="ruby-ivar">@choixPartie</span>[<span class="ruby-value">3</span>]
+    <span class="ruby-identifier">pseudo</span> = <span class="ruby-ivar">@choixPartie</span>[<span class="ruby-value">1</span>]
+    <span class="ruby-identifier">temps</span> = <span class="ruby-ivar">@choixPartie</span>[<span class="ruby-value">5</span>]
+    <span class="ruby-identifier">nbGrillesResolues</span> = <span class="ruby-ivar">@choixPartie</span>[<span class="ruby-value">6</span>]
+    <span class="ruby-identifier">temp</span> = <span class="ruby-ivar">@choixPartie</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot; &quot;</span>)
+    <span class="ruby-identifier">str1</span> = <span class="ruby-identifier">temp</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;/&quot;</span>).<span class="ruby-identifier">reverse</span>().<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;-&quot;</span>)
+    <span class="ruby-identifier">str2</span>  = <span class="ruby-identifier">temp</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">gsub</span>(<span class="ruby-string">&quot;:&quot;</span>,<span class="ruby-string">&quot;-&quot;</span>)
+    <span class="ruby-identifier">str1</span>.<span class="ruby-identifier">concat</span>(<span class="ruby-string">&quot;_&quot;</span>).<span class="ruby-identifier">concat</span>(<span class="ruby-identifier">str2</span>)
+    <span class="ruby-identifier">cheminSAV</span> = <span class="ruby-string">&quot;./../res/sauvegardes/&quot;</span><span class="ruby-operator">+</span> <span class="ruby-identifier">str1</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;.sav&quot;</span>
+
+    <span class="ruby-ivar">@fenetre</span>.<span class="ruby-identifier">remove</span>(<span class="ruby-ivar">@boxChargerPartie</span>)
+
+    <span class="ruby-comment"># Lancement de la partie</span>
+    <span class="ruby-keyword">case</span> <span class="ruby-ivar">@choixPartie</span>[<span class="ruby-value">2</span>]
+    <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;Libre&quot;</span>
+      <span class="ruby-constant">Partie</span>.<span class="ruby-identifier">creer</span>(<span class="ruby-ivar">@fenetre</span>,<span class="ruby-identifier">difficulte</span>, <span class="ruby-identifier">taille</span>, <span class="ruby-identifier">pseudo</span>, <span class="ruby-identifier">cheminSAV</span>);
+    <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;Progressif&quot;</span>
+      <span class="ruby-constant">PartieProgressif</span>.<span class="ruby-identifier">creer</span>(<span class="ruby-ivar">@fenetre</span>, <span class="ruby-identifier">difficulte</span>, <span class="ruby-identifier">taille</span>, <span class="ruby-identifier">pseudo</span>, <span class="ruby-identifier">temps</span>.<span class="ruby-identifier">to_i</span>, <span class="ruby-identifier">nbGrillesResolues</span>.<span class="ruby-identifier">to_i</span>, <span class="ruby-identifier">cheminSAV</span>)
+    <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;Puzzle Rush&quot;</span>
+      <span class="ruby-constant">PartiePuzzleRush</span>.<span class="ruby-identifier">creer</span>(<span class="ruby-ivar">@fenetre</span>, <span class="ruby-identifier">difficulte</span>, <span class="ruby-identifier">taille</span>, <span class="ruby-identifier">pseudo</span>, <span class="ruby-identifier">temps</span>.<span class="ruby-identifier">to_i</span>, <span class="ruby-identifier">nbGrillesResolues</span>.<span class="ruby-identifier">to_i</span>, <span class="ruby-identifier">cheminSAV</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span> 
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-theme" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">theme</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Méthode liée au bouton @BtnTheme.  Appelle la méthode theme de la classe <a href="Theme.html"><code>Theme</code></a> pour modifier le thème.</p>
+
+          <div class="method-source-code" id="theme-source">
+            <pre><span class="ruby-comment"># File Interface/InterfaceMenuJouerChargerPartie.rb, line 259</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">theme</span>
+    <span class="ruby-constant">Theme</span>.<span class="ruby-identifier">theme</span>([<span class="ruby-ivar">@BtnTheme</span>, <span class="ruby-ivar">@BtnHome</span>])
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+    </section>
+
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.3.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

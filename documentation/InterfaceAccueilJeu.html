@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class InterfaceAccueilJeu - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/navigation.js" defer></script>
+<script src="./js/search.js" defer></script>
+<script src="./js/search_index.js" defer></script>
+<script src="./js/searcher.js" defer></script>
+<script src="./js/darkfish.js" defer></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+<div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  <p class="link">Gtk::Builder
+</div>
+
+    
+    
+    
+<!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    <li class="calls-super" ><a href="#method-c-new">::new</a>
+    <li ><a href="#method-i-btnJouerHover">#btnJouerHover</a>
+    <li ><a href="#method-i-classement">#classement</a>
+    <li ><a href="#method-i-close">#close</a>
+    <li ><a href="#method-i-jouer">#jouer</a>
+    <li ><a href="#method-i-theme">#theme</a>
+    <li ><a href="#method-i-valider">#valider</a>
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-InterfaceAccueilJeu">
+  <h1 id="class-InterfaceAccueilJeu" class="class">
+    class InterfaceAccueilJeu
+  </h1>
+
+  <section class="description">
+    
+<p>Classe représentant l&#39;interface d&#39;accueil Cette classe contient les variables suivantes :</p>
+<dl class="rdoc-list note-list"><dt>@@lancement
+<dd>
+<p>Indicateur booléen du premier lancement de l&#39;accueil </p>
+</dd><dt>$pseudoJoueur
+<dd>
+<p>Pseudo du joueur </p>
+</dd><dt>@fenetre
+<dd>
+<p>Fenêtre pour intégrer l&#39;interface d&#39;accueil</p>
+</dd><dt>@box1
+<dd>
+<p>Box qui contient l&#39;interface d&#39;accueil</p>
+</dd><dt>@BtnJouer
+<dd>
+<p>Bouton pour accéder à l&#39;interface du menu pour jouer</p>
+</dd><dt>@BtnClassement
+<dd>
+<p>Bouton pour accéder au classement </p>
+</dd><dt>@BtnQuitter
+<dd>
+<p>Bouton pour quitter le jeu</p>
+</dd><dt>@BtnTheme
+<dd>
+<p>Bouton pour changer le thème </p>
+</dd><dt>@popupPseudo
+<dd>
+<p>Pop-up pour demander le pseudo du joueur </p>
+</dd><dt>@entryPseudo
+<dd>
+<p>Champ de saisie du pseudo du joueur</p>
+</dd></dl>
+
+  </section>
+
+  <section id="5Buntitled-5D" class="documentation-section">
+
+
+
+
+
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+      <div id="method-c-new" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(fenetre)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Initialisation de l&#39;interface d&#39;accueil</p>
+<ul><li>
+<p><code>fenetre</code> [Gtk::Window] - La fenêtre du parent</p>
+</li></ul>
+            <div class="method-calls-super">
+              Calls superclass method
+              
+            </div>
+
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File Interface/InterfaceAccueilJeu.rb, line 33</span>
+        <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">fenetre</span>)
+            <span class="ruby-keyword">super</span>()
+            <span class="ruby-keyword">self</span>.<span class="ruby-identifier">add_from_file</span>(<span class="ruby-keyword">__FILE__</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-string">&quot;.rb&quot;</span>,<span class="ruby-string">&quot;.glade&quot;</span>))
+                <span class="ruby-comment"># Création d&#39;une variable d&#39;instance par composant identifié dans glade</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Création des variables d&#39;instances&quot;</span>
+                <span class="ruby-keyword">self</span>.<span class="ruby-identifier">objects</span>.<span class="ruby-identifier">each</span>() { <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span>
+                                <span class="ruby-keyword">unless</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">builder_name</span>.<span class="ruby-identifier">start_with?</span>(<span class="ruby-string">&quot;___object&quot;</span>)
+                                        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;\tCreation de la variable d&#39;instance @#{p.builder_name}&quot;</span>
+                                        <span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-node">&quot;@#{p.builder_name}&quot;</span>.<span class="ruby-identifier">intern</span>, <span class="ruby-keyword">self</span>[<span class="ruby-identifier">p</span>.<span class="ruby-identifier">builder_name</span>])
+                                <span class="ruby-keyword">end</span>
+                }
+                
+                <span class="ruby-comment"># Configuration globale de la fenêtre</span>
+                <span class="ruby-ivar">@fenetre</span> = <span class="ruby-identifier">fenetre</span>
+                <span class="ruby-ivar">@fenetre</span>.<span class="ruby-identifier">add</span>(<span class="ruby-ivar">@box1</span>)
+
+                <span class="ruby-ivar">@fenetre</span>.<span class="ruby-identifier">set_resizable</span>(<span class="ruby-keyword">false</span>)
+        <span class="ruby-ivar">@fenetre</span>.<span class="ruby-identifier">set_default_size</span>(<span class="ruby-value">900</span>,<span class="ruby-value">400</span>)
+                <span class="ruby-ivar">@fenetre</span>.<span class="ruby-identifier">set_title</span>(<span class="ruby-string">&quot;Hashi - Accueil&quot;</span>)
+                <span class="ruby-ivar">@fenetre</span>.<span class="ruby-identifier">show_all</span>
+                <span class="ruby-ivar">@fenetre</span>.<span class="ruby-identifier">set_window_position</span> <span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">WindowPosition</span><span class="ruby-operator">::</span><span class="ruby-constant">CENTER_ALWAYS</span>
+
+                <span class="ruby-comment"># Ajout d&#39;un id à nos variables pour les utiliser dans le CSS</span>
+                <span class="ruby-ivar">@BtnJouer</span>.<span class="ruby-identifier">name</span>=<span class="ruby-string">&quot;Bouton_Jouer&quot;</span>
+                <span class="ruby-ivar">@BtnClassement</span>.<span class="ruby-identifier">name</span>=<span class="ruby-string">&quot;Bouton_Classement&quot;</span>
+                <span class="ruby-ivar">@BtnQuitter</span>.<span class="ruby-identifier">name</span>=<span class="ruby-string">&quot;Bouton_Quitter&quot;</span>
+
+                <span class="ruby-comment"># CSS (mise en forme des boutons)</span>
+                <span class="ruby-identifier">provider</span> = <span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">CssProvider</span>.<span class="ruby-identifier">new</span>
+                <span class="ruby-identifier">provider</span>.<span class="ruby-identifier">load</span>(<span class="ruby-value">data:</span> <span class="ruby-identifier">&lt;&lt;-CSS</span>)
+<span class="ruby-value">                /* Arrondir les bords */
+                #Bouton_Jouer,#Bouton_Classement,#Bouton_Quitter{
+                        border-top-left-radius: 50px;
+                        border-bottom-right-radius: 50px;
+                        border-top-right-radius: 50px;
+                        border-bottom-left-radius: 50px;
+                }
+                /* Changement couleur au survol */
+                #Bouton_Jouer:hover{
+                        background :#BDFF95;
+                }
+                #Bouton_Classement:hover{
+                        background : #FFEA85;
+                }
+                #Bouton_Quitter:hover{
+                        background :#FE9595;
+                }
+
+</span><span class="ruby-identifier">                CSS</span>
+                <span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">StyleContext</span>.<span class="ruby-identifier">add_provider_for_screen</span>(<span class="ruby-constant">Gdk</span><span class="ruby-operator">::</span><span class="ruby-constant">Screen</span>.<span class="ruby-identifier">default</span>, <span class="ruby-identifier">provider</span>, <span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">StyleProvider</span><span class="ruby-operator">::</span><span class="ruby-constant">PRIORITY_APPLICATION</span>)
+
+                <span class="ruby-comment"># Permet de lancer la page en thème clair pour la première fois et d&#39;afficher le pop-up pseudo</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-identifier">@@lancement</span> <span class="ruby-keyword">then</span>
+                        <span class="ruby-constant">Theme</span>.<span class="ruby-identifier">themeLancement</span>(<span class="ruby-ivar">@BtnTheme</span>)
+                        <span class="ruby-comment"># Création de la fenêtre POP-UP</span>
+                        <span class="ruby-ivar">@popupPseudo</span>.<span class="ruby-identifier">set_resizable</span>(<span class="ruby-keyword">false</span>)
+                        <span class="ruby-ivar">@popupPseudo</span>.<span class="ruby-identifier">set_default_size</span>(<span class="ruby-value">400</span>,<span class="ruby-value">100</span>)
+                        <span class="ruby-ivar">@popupPseudo</span>.<span class="ruby-identifier">set_icon</span>(<span class="ruby-string">&quot;../res/img/ico.ico&quot;</span>)
+                        <span class="ruby-ivar">@popupPseudo</span>.<span class="ruby-identifier">set_title</span>(<span class="ruby-string">&quot;Hashi - Choix du pseudo&quot;</span>)
+                        <span class="ruby-ivar">@popupPseudo</span>.<span class="ruby-identifier">show_all</span>
+                        <span class="ruby-ivar">@popupPseudo</span>.<span class="ruby-identifier">signal_connect</span>(<span class="ruby-string">&#39;destroy&#39;</span>) {
+                                <span class="ruby-ivar">@fenetre</span>.<span class="ruby-identifier">set_sensitive</span>(<span class="ruby-keyword">true</span>)
+                        }
+
+                        <span class="ruby-identifier">@@lancement</span> = <span class="ruby-keyword">false</span>
+                <span class="ruby-comment"># On modifie le comportement des boutons pour qu&#39;ils correspondent au thème choisi.</span>
+                <span class="ruby-keyword">else</span>
+                        <span class="ruby-constant">Theme</span>.<span class="ruby-identifier">comportementBtn</span>([<span class="ruby-ivar">@BtnTheme</span>])
+                <span class="ruby-keyword">end</span>
+
+                <span class="ruby-comment"># On connecte les signaux aux méthodes (qui doivent exister)</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;\nConnexion des signaux&quot;</span>
+                <span class="ruby-keyword">self</span>.<span class="ruby-identifier">connect_signals</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">handler</span><span class="ruby-operator">|</span>
+                                <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;\tConnection du signal #{handler}&quot;</span>
+                                <span class="ruby-keyword">begin</span>
+                                        <span class="ruby-identifier">method</span>(<span class="ruby-identifier">handler</span>)
+                                <span class="ruby-keyword">rescue</span>
+                                        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;\t\t[Attention] Vous devez definir la methode #{handler} :\n\t\t\tdef #{handler}\n\t\t\t\t....\n\t\t\tend\n&quot;</span>
+                                        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">send</span>( <span class="ruby-value">:define_method</span>, <span class="ruby-identifier">handler</span>.<span class="ruby-identifier">intern</span>) {
+                                                <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;La methode #{handler} n&#39;est pas encore définie.. Arrêt&quot;</span>
+                                                <span class="ruby-constant">Gtk</span>.<span class="ruby-identifier">main_quit</span>
+                                        }
+                                        <span class="ruby-keyword">retry</span>
+                                <span class="ruby-keyword">end</span>
+                }
+        <span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+    </section>
+
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+      <div id="method-i-btnJouerHover" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">btnJouerHover</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Méthode de survol du bouton pour qu&#39;il change de couleur</p>
+
+          <div class="method-source-code" id="btnJouerHover-source">
+            <pre><span class="ruby-comment"># File Interface/InterfaceAccueilJeu.rb, line 153</span>
+        <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">btnJouerHover</span>
+                <span class="ruby-identifier">provider</span> = <span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">CssProvider</span>.<span class="ruby-identifier">new</span>
+                <span class="ruby-identifier">provider</span>.<span class="ruby-identifier">load</span>(<span class="ruby-value">data:</span> <span class="ruby-identifier">&lt;&lt;-CSS</span>)
+<span class="ruby-value">                #Bouton_Jouer:active{
+                        background-color: #6DE172;
+                }
+</span><span class="ruby-identifier">                CSS</span>
+                <span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">StyleContext</span>.<span class="ruby-identifier">add_provider_for_screen</span>(<span class="ruby-constant">Gdk</span><span class="ruby-operator">::</span><span class="ruby-constant">Screen</span>.<span class="ruby-identifier">default</span>, <span class="ruby-identifier">provider</span>, <span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">StyleProvider</span><span class="ruby-operator">::</span><span class="ruby-constant">PRIORITY_APPLICATION</span>)
+        <span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-classement" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">classement</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Méthode liée au bouton @BtnClassement. Accède au classement.</p>
+
+          <div class="method-source-code" id="classement-source">
+            <pre><span class="ruby-comment"># File Interface/InterfaceAccueilJeu.rb, line 141</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">classement</span>
+        <span class="ruby-ivar">@fenetre</span>.<span class="ruby-identifier">remove</span>(<span class="ruby-ivar">@box1</span>)
+        <span class="ruby-constant">Classement</span>.<span class="ruby-identifier">creer</span>(<span class="ruby-identifier">$pseudoJoueur</span>, <span class="ruby-ivar">@fenetre</span>, <span class="ruby-ivar">@box1</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-close" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">close</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Méthode liée au bouton @BtnQuitter. Permet de fermer l&#39;application.</p>
+
+          <div class="method-source-code" id="close-source">
+            <pre><span class="ruby-comment"># File Interface/InterfaceAccueilJeu.rb, line 147</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">close</span>
+            <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Fermeture de L&#39;application&quot;</span>
+            <span class="ruby-constant">Gtk</span>.<span class="ruby-identifier">main_quit</span>
+    <span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-jouer" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">jouer</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Méthode liée au bouton @BtnJouer. Accède à l&#39;interface du menu pour jouer.</p>
+
+          <div class="method-source-code" id="jouer-source">
+            <pre><span class="ruby-comment"># File Interface/InterfaceAccueilJeu.rb, line 135</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">jouer</span>
+        <span class="ruby-ivar">@fenetre</span>.<span class="ruby-identifier">remove</span>(<span class="ruby-ivar">@box1</span>)
+        <span class="ruby-constant">Interface_MenuJouer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@fenetre</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-theme" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">theme</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Appelle la méthode theme de la classe <a href="Theme.html"><code>Theme</code></a> pour modifier le thème</p>
+
+          <div class="method-source-code" id="theme-source">
+            <pre><span class="ruby-comment"># File Interface/InterfaceAccueilJeu.rb, line 130</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">theme</span>
+        <span class="ruby-constant">Theme</span>.<span class="ruby-identifier">theme</span>([<span class="ruby-ivar">@BtnTheme</span>])
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-valider" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">valider</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Méthode pour le bouton de validation du pop-up Ferme le pop-up et enregistre le pseudo du joueur</p>
+
+          <div class="method-source-code" id="valider-source">
+            <pre><span class="ruby-comment"># File Interface/InterfaceAccueilJeu.rb, line 122</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">valider</span>
+            <span class="ruby-keyword">if</span>(<span class="ruby-ivar">@entryPseudo</span>.<span class="ruby-identifier">text</span> <span class="ruby-operator">!=</span> <span class="ruby-string">&quot;&quot;</span>)
+                    <span class="ruby-identifier">$pseudoJoueur</span> = <span class="ruby-ivar">@entryPseudo</span>.<span class="ruby-identifier">text</span>
+            <span class="ruby-keyword">end</span>
+            <span class="ruby-ivar">@popupPseudo</span>.<span class="ruby-identifier">close</span>()
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+    </section>
+
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.3.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
